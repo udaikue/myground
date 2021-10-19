@@ -7,4 +7,9 @@
     = f.check_box :open, class: 'control checkbox'
     | する
   .field.is-grouped.control
-    = f.submit t('button.create'), class: 'button is-link'
+    = f.submit t('button.create'), class: 'button is-dark'
+    - case params[:action]
+    - when 'new', 'create'
+      = link_to t('button.back'), diaries_path, class: 'button is-normal is-light'
+    - when 'edit', 'update'
+      = link_to t('button.destroy'), diary, method: :delete, data: { confirm: '削除してよろしいですか?' }, class: 'button is-normal is-light'

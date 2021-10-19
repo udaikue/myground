@@ -29,7 +29,7 @@ class DiariesController < ApplicationController
 
   def update
     @diary = Diary.find(params[:id])
-    
+
     if @diary.update(diary_params)
       redirect_to diaries_path
     else
@@ -37,7 +37,11 @@ class DiariesController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    diary = Diary.find(params[:id])
+    diary.destroy
+    redirect_to diaries_path
+  end
 
   private
 
