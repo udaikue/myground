@@ -23,9 +23,19 @@ class DiariesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @diary = Diary.find(params[:id])
+  end
 
-  def update; end
+  def update
+    @diary = Diary.find(params[:id])
+    
+    if @diary.update(diary_params)
+      redirect_to diaries_path
+    else
+      render :edit
+    end
+  end
 
   def destroy; end
 
