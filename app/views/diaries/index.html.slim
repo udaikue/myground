@@ -5,4 +5,4 @@
 
 - @diaries.order(created_at: :desc).each do |diary|
   .container.notification.is-primary.is-light
-    = diary.comment
+    = link_to diary.comment, diary

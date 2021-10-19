@@ -1,2 +1,14 @@
-h1 Diaries#show
-p Find me in app/views/diaries/show.html.slim
+.title
+  | 観戦記録詳細
+
+.message
+  .message-header
+    | 5/5 カープ vs ドラゴンズ @マツダスタジアム
+  .message-body
+    = @diary.comment
+    br
+    = @diary.open
+
+.buttons
+  = link_to t('button.edit'), edit_diary_path(@diary), class: 'button is-normal is-dark'
+  = link_to t('button.back'), diaries_path, class: 'button is-normal is-light'
