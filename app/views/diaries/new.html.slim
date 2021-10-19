@@ -1,13 +1,4 @@
 .title
   | 観戦記録新規作成
 
-= form_with model: @diary, local: true do |f|
-  .field
-    = f.label '感想'
-    = f.text_area :comment, class: 'control textarea'
-  .field
-    = f.label '公開'
-    = f.check_box :open, class: 'control checkbox'
-    | する
-  .field.is-grouped.control
-    = f.submit t('button.create'), class: 'button is-link'
+= render partial: 'form', locals: { diary: @diary }
