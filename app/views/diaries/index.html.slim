@@ -1,2 +1,8 @@
-h1 Diaries#index
-p Find me in app/views/diaries/index.html.slim
+.title
+  | 観戦記録一覧
+
+= link_to t('button.new'), new_diary_path, class: 'button is-primary is-normal'
+
+- @diaries.order(created_at: :desc).each do |diary|
+  .container.notification.is-primary.is-light
+    = diary.comment
