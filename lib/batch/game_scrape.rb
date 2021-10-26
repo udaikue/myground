@@ -104,10 +104,10 @@ urls.map do |url|
     game.saving_pitcher = records[2].gsub('　', '(').concat(')')
   end
   if !records[3].blank?
-    game.homerun_home = records[3].gsub(/　|\[|\]/, '　' => ' ', '[' => '(', ']' => ')')
+    game.homerun_visitor = records[3].gsub(/　|\[|\]/, '　' => ' ', '[' => '(', ']' => ')')
   end
   if !records[4].blank?
-    game.homerun_visitor = records[4].gsub(/　|\[|\]/, '　' => ' ', '[' => '(', ']' => ')')
+    game.homerun_home = records[4].gsub(/　|\[|\]/, '　' => ' ', '[' => '(', ']' => ')')
   end
 
   game.save
