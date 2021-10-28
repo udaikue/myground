@@ -1,0 +1,5 @@
+h1 Games#index
+
+- @games.each do |game|
+  = game.date
+  p= link_to "#{game.team_home}vs#{game.team_visitor}", game
