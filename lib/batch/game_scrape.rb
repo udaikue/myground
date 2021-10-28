@@ -70,6 +70,7 @@ urls.map do |url|
   game.team_home = score_board.drop(1)[1].split(nil)[0]
 
   scores = []
+  innings = []
 
   # スコアを取得
   doc.css('.scoreboard tr').each do |team|
@@ -78,6 +79,10 @@ urls.map do |url|
     end
     scores << nil
   end
+
+    # scoresテーブルに保存するため
+  innings << scores.split(nil)[1][0..-4] << scores.split(nil)[2][0..-4]
+
   game.score_visitor = scores.split(nil)[1][-3]
   game.score_home = scores.split(nil)[2][-3]
   game.hits_visitor = scores.split(nil)[1][-2]
@@ -111,4 +116,14 @@ urls.map do |url|
   end
 
   game.save
+
+  # scoresテーブルにデータを保存
+  innings.transpose.each_with_index do |inning, index|
+    score = Score.new
+    score.game_id = Game.last.id
+    score.inning = index + 1
+    score.visitor = inning[0]
+    score.home = inning[1]
+    score.save
+  end
 end
