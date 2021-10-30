@@ -1,11 +1,11 @@
 class GamesController < ApplicationController
   def index
     @games = Game.order(:id)
-    # @game_date = @games.select(:date).distinct
   end
 
   def show
     @game = Game.find(params[:id])
+    @scores = Score.where("game_id = ?", params[:id])
   end
 
   def create

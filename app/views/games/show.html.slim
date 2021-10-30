@@ -20,29 +20,29 @@
         td 失
       tr
         td= @game.team_visitor
-        td
-        td
-        td
-        td
-        td
-        td
-        td
-        td
-        td
+        td= @scores.find_by(inning: 1).visitor
+        td= @scores.find_by(inning: 2).visitor
+        td= @scores.find_by(inning: 3).visitor
+        td= @scores.find_by(inning: 4).visitor
+        td= @scores.find_by(inning: 5).visitor
+        td= @scores.find_by(inning: 6).visitor
+        td= @scores.find_by(inning: 7).visitor
+        td= @scores.find_by(inning: 8).visitor
+        td= @scores.find_by(inning: 9).visitor
         td= @game.score_visitor
         td= @game.hits_visitor
         td= @game.errors_visitor
       tr
         td= @game.team_home
-        td
-        td
-        td
-        td
-        td
-        td
-        td
-        td
-        td
+        td= @scores.find_by(inning: 1).home
+        td= @scores.find_by(inning: 2).home
+        td= @scores.find_by(inning: 3).home
+        td= @scores.find_by(inning: 4).home
+        td= @scores.find_by(inning: 5).home
+        td= @scores.find_by(inning: 6).home
+        td= @scores.find_by(inning: 7).home
+        td= @scores.find_by(inning: 8).home
+        td= @scores.find_by(inning: 9).home
         td= @game.score_home
         td= @game.hits_home
         td= @game.errors_home
