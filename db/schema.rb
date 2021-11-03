@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_023714) do
+ActiveRecord::Schema.define(version: 2021_11_03_121110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "diaries", force: :cascade do |t|
-    t.boolean "open", default: false, null: false
+    t.boolean "published", default: false, null: false
     t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "game_id", null: false
+    t.index ["game_id"], name: "index_diaries_on_game_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -59,5 +61,6 @@ ActiveRecord::Schema.define(version: 2021_10_28_023714) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "diaries", "games"
   add_foreign_key "scores", "games"
 end
