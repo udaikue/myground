@@ -9,9 +9,7 @@ class DiariesController < ApplicationController
     @diary = Diary.find(params[:id])
   end
 
-  def new
-    @diary = Diary.new
-  end
+  def new ;end
 
   def create
     @diary = Diary.new(diary_params)
