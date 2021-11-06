@@ -1,5 +1,5 @@
 <template>
-  <div id="gameCards">
+  <div id="gameSchedule">
     <ul>
       <li v-for='game in games' :key='game.id'>
         {{ game.team_home }} VS {{ game.team_visitor }}
@@ -16,14 +16,14 @@ export default {
     }
   },
   created() {
-    this.getGameCards()
+    this.getGameSchedule()
   },
   methods: {
     token() {
       const meta = document.querySelector('meta[name="csrf-token"]')
       return meta ? meta.getAttribute('content') : ''
     },
-    getGameCards() {
+    getGameSchedule() {
       fetch('/api/diaries/new', {
         method: 'GET',
         headers: {
