@@ -5,7 +5,7 @@
         {{ game.team_home }} VS {{ game.team_visitor }}
       </li>
     </ul>
-    {{ currentYear }}年{{ currentMonth }}月
+      <p @click='previousMonth'>＜前の月</p>{{ calendarYear }}年{{ calendarMonth }}月<p @click='nextMonth'>次の月＞</p>
     <table class="table">
       <thead>
         <tr>
@@ -48,17 +48,18 @@ export default {
       games: [],
       currentYear: this.getCurrentYear(),
       currentMonth: this.getCurrentMonth(),
-      currentWday: this.getCurrentWday(),
+      calendarYear: this.getCurrentYear(),
+      calendarMonth: this.getCurrentMonth(),
       monthlyCalendar: [],
     }
   },
   computed: {
     firstWday() {
-      const firstDay = new Date(this.currentYear, this.currentMonth - 1, 1)
+      const firstDay = new Date(this.calendarYear, this.calendarMonth - 1, 1)
       return firstDay.getDay()
     },
     lastDate() {
-      const lastDay = new Date(this.currentYear, this.currentMonth, 0)
+      const lastDay = new Date(this.calendarYear, this.calendarMonth, 0)
       return lastDay.getDate()
     },
   },
@@ -97,9 +98,6 @@ export default {
     getCurrentMonth() {
       return new Date().getMonth() + 1
     },
-    getCurrentWday() {
-      return new Date().getDay()
-    },
     getMonthlyCalendar() {
       // 火~土(firstWday:2~6)のときは(firstWday-1)回空白をpush
       // 日(firstWday=1)のときは5つ空白をpush
@@ -118,6 +116,26 @@ export default {
           weeklyCalendar = []
         }
       }
+    },
+    previousMonth() {
+      if (this.calendarMonth === 1) {
+        this.calendarMonth = 12
+        this.calendarYear--
+      } else {
+        this.calendarMonth--
+      }
+      this.monthlyCalendar = []
+      this.getMonthlyCalendar()
+    },
+    nextMonth() {
+      if (this.calendarMonth === 12) {
+        this.calendarMonth = 1
+        this.calendarYear++
+      } else {
+        this.calendarMonth++
+      }
+      this.monthlyCalendar = []
+      this.getMonthlyCalendar()
     },
   }
 }
