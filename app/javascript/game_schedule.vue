@@ -5,8 +5,12 @@
         {{ game.team_home }} VS {{ game.team_visitor }}
       </li>
     </ul>
-      <p @click='previousMonth'>＜前の月</p>{{ calendarYear }}年{{ calendarMonth }}月<p @click='nextMonth'>次の月＞</p>
-    <table class="table">
+    <div class='columns is-mobile'>
+      <div class='column is-one-quarter-mobile' v-if='!oldestMonth()' @click='previousMonth'>前の月</div>
+      <div class='column is-one-quarter-mobile'>{{ calendarYear }}年{{ calendarMonth }}月</div>
+      <div class='column is-one-quarter-mobile' v-if='!newestMonth()' @click='nextMonth'>次の月</div>
+    </div>
+    <table class='table'>
       <thead>
         <tr>
           <th>月</th>
@@ -136,6 +140,18 @@ export default {
       }
       this.monthlyCalendar = []
       this.getMonthlyCalendar()
+    },
+    oldestMonth() {
+      return(
+        this.calendarYear === 2021 &&
+        this.calendarMonth === 3
+      )
+    },
+    newestMonth() {
+      return(
+        this.calendarYear === this.currentYear &&
+        this.calendarMonth === this.currentMonth
+      )
     },
   }
 }
