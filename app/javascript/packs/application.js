@@ -12,4 +12,4 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require('../game_cards.js')
+require('../game_schedule.js')
