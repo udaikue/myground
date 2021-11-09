@@ -1,10 +1,21 @@
 <template>
   <div id="gameSchedule">
-    <ul>
-      <li v-for='game in games' :key='game.id'>
-        {{ game.team_home }} VS {{ game.team_visitor }}
-      </li>
-    </ul>
+    <table class='table' v-if='gameCards.length'>
+      <thead>
+        <tr>
+          <th></th>
+          <th>{{ cardMonth }}月 {{ cardDate }}日</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for='game in gameCards' :key='game.id'>
+          <td>{{ game.team_home }}</td>
+          <td>{{ game.score_home }} - {{ game.score_visitor }}</td>
+          <td>{{ game.team_visitor }}</td>
+        </tr>
+      </tbody>
+    </table>
     <div class='columns is-mobile'>
       <div class='column is-one-quarter-mobile' v-if='!oldestMonth()' @click='previousMonth'>前の月</div>
       <div class='column is-one-quarter-mobile'>{{ calendarYear }}年{{ calendarMonth }}月</div>
@@ -24,22 +35,22 @@
       </thead>
       <tbody>
         <tr>
-          <td v-for='date in monthlyCalendar[0]' :key='date.id'>{{ date }}</td>
+          <td v-for='date in monthlyCalendar[0]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
         </tr>
         <tr>
-          <td v-for='date in monthlyCalendar[1]' :key='date.id'>{{ date }}</td>
+          <td v-for='date in monthlyCalendar[1]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
         </tr>
         <tr>
-          <td v-for='date in monthlyCalendar[2]' :key='date.id'>{{ date }}</td>
+          <td v-for='date in monthlyCalendar[2]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
         </tr>
         <tr>
-          <td v-for='date in monthlyCalendar[3]' :key='date.id'>{{ date }}</td>
+          <td v-for='date in monthlyCalendar[3]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
         </tr>
         <tr v-if='monthlyCalendar[4]'>
-          <td v-for='date in monthlyCalendar[4]' :key='date.id'>{{ date }}</td>
+          <td v-for='date in monthlyCalendar[4]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
         </tr>
         <tr v-if='monthlyCalendar[5]'>
-          <td v-for='date in monthlyCalendar[5]' :key='date.id'>{{ date }}</td>
+          <td v-for='date in monthlyCalendar[5]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
         </tr>
       </tbody>
     </table>
@@ -52,8 +63,13 @@ export default {
       games: [],
       currentYear: this.getCurrentYear(),
       currentMonth: this.getCurrentMonth(),
+      cardYear: this.getCurrentYear(),
+      cardMonth: this.getCurrentMonth(),
+      cardDate: this.getCurrentDate(),
       calendarYear: this.getCurrentYear(),
       calendarMonth: this.getCurrentMonth(),
+      calendarDate: this.getCurrentDate(),
+      gameCards: [],
       monthlyCalendar: [],
     }
   },
@@ -65,6 +81,11 @@ export default {
     lastDate() {
       const lastDay = new Date(this.calendarYear, this.calendarMonth, 0)
       return lastDay.getDate()
+    },
+    getTodayCards() {
+      this.gameCards = this.games.filter((value) => {
+        return value.date === this.formatMonthDate().join('-')
+      })
     },
   },
   mounted()  {
@@ -102,6 +123,9 @@ export default {
     getCurrentMonth() {
       return new Date().getMonth() + 1
     },
+    getCurrentDate() {
+      return new Date().getDate()
+    },
     getMonthlyCalendar() {
       // 火~土(firstWday:2~6)のときは(firstWday-1)回空白をpush
       // 日(firstWday=1)のときは5つ空白をpush
@@ -120,6 +144,26 @@ export default {
           weeklyCalendar = []
         }
       }
+    },
+    formatMonthDate() {
+      // 日付を'YYYY-MM-DD'にフォーマット
+      const date = `${this.cardYear}-${this.cardMonth}-${this.cardDate}`.split('-')
+      if (date[1].length === 1) {
+        date.splice(1, 1, `0${date[1]}`)
+      }
+      if (date[2].length === 1) {
+        date.splice(2, 1, `0${date[2]}`)
+      }
+      return date
+    },
+    getGameCards(date) {
+      this.cardYear = this.calendarYear
+      this.cardMonth = this.calendarMonth
+      this.cardDate = date
+
+      this.gameCards = this.games.filter((value) => {
+        return value.date === this.formatMonthDate().join('-')
+      })
     },
     previousMonth() {
       if (this.calendarMonth === 1) {
