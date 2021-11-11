@@ -1,6 +1,6 @@
 <template>
   <div id="gameSchedule">
-    <table class='table' v-if='gameCards.length'>
+    <table class='table' v-if='gameCards.length && !result'>
       <thead>
         <tr>
           <th></th>
@@ -11,17 +11,17 @@
       <tbody>
         <tr v-for='game in gameCards' :key='game.id'>
           <td>{{ game.team_home }}</td>
-          <td>{{ game.score_home }} - {{ game.score_visitor }}</td>
+          <td @click='getScore(game.id)'>{{ game.score_home }} - {{ game.score_visitor }}</td>
           <td>{{ game.team_visitor }}</td>
         </tr>
       </tbody>
     </table>
-    <div class='columns is-mobile'>
+    <div class='columns is-mobile' v-if='!result'>
       <div class='column is-one-quarter-mobile' v-if='!oldestMonth()' @click='previousMonth'>前の月</div>
       <div class='column is-one-quarter-mobile'>{{ calendarYear }}年{{ calendarMonth }}月</div>
       <div class='column is-one-quarter-mobile' v-if='!newestMonth()' @click='nextMonth'>次の月</div>
     </div>
-    <table class='table'>
+    <table class='table' v-if='!result'>
       <thead>
         <tr>
           <th>月</th>
@@ -54,6 +54,84 @@
         </tr>
       </tbody>
     </table>
+    <table class='table' v-if='result'>
+      <thead>
+        <tr>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>計</th>
+          <th>安</th>
+          <th>失</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ selectedGame.team_visitor }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{ selectedGame.score_visitor }}</td>
+          <td>{{ selectedGame.hits_visitor }}</td>
+          <td>{{ selectedGame.errors_visitor }}</td>
+        </tr>
+        <tr>
+          <td>{{ selectedGame.team_home }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{ selectedGame.score_home }}</td>
+          <td>{{ selectedGame.hits_home }}</td>
+          <td>{{ selectedGame.errors_home }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class='table is-bordered' v-if='result'>
+      <tbody>
+        <tr>
+          <td>勝利投手</td>
+          <td>{{ selectedGame.winning_pitcher }}</td>
+        </tr>
+        <tr>
+          <td>敗戦投手</td>
+          <td>{{ selectedGame.losing_pitcher }}</td>
+        </tr>
+        <tr>
+          <td>セーブ</td>
+          <td>{{ selectedGame.saving_pitcher }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class='table is-bordered' v-if='result'>
+      <tbody>
+        <tr>
+          <td rowspan='2'>本塁打</td>
+          <td>{{ selectedGame.homerun_visitor }}</td>
+        </tr>
+        <tr>
+          <td>{{ selectedGame.homerun_visitor }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 <script>
@@ -71,6 +149,8 @@ export default {
       calendarDate: this.getCurrentDate(),
       gameCards: [],
       monthlyCalendar: [],
+      result: false,
+      selectedGame: [],
     }
   },
   computed: {
@@ -163,6 +243,12 @@ export default {
 
       this.gameCards = this.games.filter((value) => {
         return value.date === this.formatMonthDate().join('-')
+      })
+    },
+    getScore(game_id) {
+      this.result = true
+      this.selectedGame = this.gameCards.find((value) => {
+        return value.id === game_id
       })
     },
     previousMonth() {
