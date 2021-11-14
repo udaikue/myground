@@ -1,0 +1,67 @@
+20211016gc:
+  date: 2021-10-16
+  ballpark: 東京ドーム
+  team_home: 巨人
+  team_visitor: カープ
+  score_home: 7
+  score_visitor: 8
+  hits_home: 11
+  hits_visitor: 12
+  errors_home: 0
+  errors_visitor: 1
+  winning_pitcher: 森下(8勝7敗0S)
+  losing_pitcher: 髙橋(11勝9敗0S)
+  saving_pitcher: 栗林(0勝1敗34S)
+  homerun_home: ウィーラー 14号(7回裏ソロ)
+  homerun_visitor: 宇草 3号(1回表ソロ) 鈴木誠 36号(3回表ソロ) 菊池涼 16号(3回表2ラン)
+
+20211016sd:
+  date: 2021-10-16
+  ballpark: 神宮
+  team_home: ヤクルト
+  team_visitor: 中日
+  score_home: 3
+  score_visitor: 5
+  hits_home: 8
+  hits_visitor: 10
+  errors_home: 0
+  errors_visitor: 2
+  winning_pitcher: ロドリゲス(1勝4敗0S)
+  losing_pitcher: 石川(4勝4敗0S)
+  saving_pitcher: R.マルティネス(1勝4敗23S)
+  homerun_home: サンタナ 18号(5回裏ソロ)
+  homerun_visitor:
+
+20211016el:
+  date: 2021-10-16
+  ballpark: 楽天生命パーク
+  team_home: 楽天
+  team_visitor: 西武
+  score_home: 3
+  score_visitor: 0
+  hits_home: 4
+  hits_visitor: 6
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 岸(9勝9敗0S)
+  losing_pitcher: 浜屋(1勝6敗0S)
+  saving_pitcher: 宋家豪(3勝3敗5S)
+  homerun_home: 島内 21号(1回裏2ラン)
+  homerun_visitor:
+
+20211016fb:
+  date: 2021-10-16
+  ballpark: 札幌ドーム
+  team_home: 日本ハム
+  team_visitor: オリックス
+  score_home: 1
+  score_visitor: 1
+  hits_home: 5
+  hits_visitor: 4
+  errors_home: 1
+  errors_visitor: 1
+  winning_pitcher:
+  losing_pitcher:
+  saving_pitcher:
+  homerun_home:
+  homerun_visitor:
