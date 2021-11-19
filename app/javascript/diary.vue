@@ -1,5 +1,5 @@
 <template>
-  <div id="gameSchedule">
+  <div id="game">
     <table class='table' v-if='gameCards.length && !result'>
       <thead>
         <tr>
@@ -128,14 +128,20 @@
           <td>{{ selectedGame.homerun_visitor }}</td>
         </tr>
         <tr>
-          <td>{{ selectedGame.homerun_visitor }}</td>
+          <td>{{ selectedGame.homerun_home }}</td>
         </tr>
       </tbody>
     </table>
+    <Form v-if='result' :game='selectedGame'></Form>
   </div>
 </template>
 <script>
+import Form from './form.vue'
+
 export default {
+  components: {
+    Form
+  },
   data() {
     return {
       games: [],
@@ -181,17 +187,15 @@ export default {
       fetch('/api/diaries/new', {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json; charset=utf-8',
           'X-Requested-With': 'XMLHttpRequest',
           'X-CSRF-Token': this.token()
         },
         credentials: 'same-origin',
-        redirect: 'manual'
+        // redirect: 'manual'
       })
         .then((response) => response.json())
         .then((json) => {
           this.games = json
-          this.loaded = true
         })
         .catch((error) => {
           console.warn('Failed to parsing', error)

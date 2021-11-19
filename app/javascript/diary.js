@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import gameSchedule from './game_schedule.vue'
+import Diary from './diary.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const selector = '#js-game-schedule'
+  const selector = '#js-diary'
   const games = document.querySelector(selector)
   if (games) {
     new Vue({
-      render: (h) => h(gameSchedule)
+      render: (h) => h(Diary)
     }).$mount(selector)
   }
 })

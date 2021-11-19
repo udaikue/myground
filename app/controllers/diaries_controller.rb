@@ -11,15 +11,7 @@ class DiariesController < ApplicationController
 
   def new ;end
 
-  def create
-    @diary = Diary.new(diary_params)
-
-    if @diary.save
-      redirect_to diaries_path
-    else
-      render :new
-    end
-  end
+  def create ;end
 
   def edit
     @diary = Diary.find(params[:id])
@@ -44,6 +36,6 @@ class DiariesController < ApplicationController
   private
 
   def diary_params
-    params.require(:diary).permit(:comment, :open)
+    params.require(:diary).permit(:comment, :published)
   end
 end

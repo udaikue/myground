@@ -1,0 +1,47 @@
+giants:
+  name: 巨人
+  league_id: 1
+
+swallows:
+  name: ヤクルト
+  league_id: 1
+
+baystars:
+  name: DeNA
+  league_id: 1
+
+dragons:
+  name: 中日
+  league_id: 1
+
+tigars:
+  name: 阪神
+  league_id: 1
+
+carp:
+  name: 広島
+  league_id: 1
+
+fighters:
+  name: 日本ハム
+  league_id: 2
+
+eagles:
+  name: 楽天
+  league_id: 2
+
+lions:
+  name: 西武
+  league_id: 2
+
+marines:
+  name: ロッテ
+  league_id: 2
+
+buffaloes:
+  name: オリックス
+  league_id: 2
+
+hawks:
+  name: ソフトバンク
+  league_id: 2
