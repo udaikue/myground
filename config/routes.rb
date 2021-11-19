@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'diaries#index'
 
   namespace :api do
-    resources :diaries, only: %i[new]
+    resources :diaries, only: %i[new create]
   end
 
   resources :diaries

@@ -187,17 +187,15 @@ export default {
       fetch('/api/diaries/new', {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json; charset=utf-8',
           'X-Requested-With': 'XMLHttpRequest',
           'X-CSRF-Token': this.token()
         },
         credentials: 'same-origin',
-        redirect: 'manual'
+        // redirect: 'manual'
       })
         .then((response) => response.json())
         .then((json) => {
           this.games = json
-          this.loaded = true
         })
         .catch((error) => {
           console.warn('Failed to parsing', error)
