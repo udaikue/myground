@@ -9,6 +9,12 @@
       </div>
     </div>
     <div class='field'>
+      <label class='label'>リンク</label>
+      <div class='control'>
+        <input class='input' name='link[url]'>
+        </div>
+    </div>
+    <div class='field'>
       <div class='control'>
         <label class='checkbox'>
           <input type='checkbox' name='diary[published]'>
