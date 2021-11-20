@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GamesController < ApplicationController
   def index
     @games = Game.order(:id)

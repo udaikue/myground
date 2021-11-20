@@ -1,8 +1,9 @@
 .title
   | 観戦記録一覧
 
-= link_to t('button.new'), new_diary_path, class: 'button is-primary is-normal'
+= link_to t('button.new'), new_diary_path, class: 'button is-normal'
 
-- @diaries.order(created_at: :desc).each do |diary|
-  .container.notification.is-primary.is-light
-    = link_to diary.comment, diary
+- @diaries.map do |diary|
+  - @game = Game.find(diary.game_id)
+  .container.notification.is-light
+    = link_to "#{@game.date.month}/#{@game.date.day} #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}", diary
