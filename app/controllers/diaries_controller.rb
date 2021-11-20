@@ -7,6 +7,9 @@ class DiariesController < ApplicationController
 
   def show
     @diary = Diary.find(params[:id])
+    @game = Game.find(@diary.game_id)
+    @news = News.where("diary_id = ?", params[:id])
+    @game_wday = day_of_week
   end
 
   def new ;end
@@ -34,6 +37,11 @@ class DiariesController < ApplicationController
   end
 
   private
+
+  def day_of_week
+    day_of_week = %w[日 月 火 水 木 金 土]
+    day_of_week[@game.date.wday]
+  end
 
   def diary_params
     params.require(:diary).permit(:comment, :published)

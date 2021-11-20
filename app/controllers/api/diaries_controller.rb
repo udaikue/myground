@@ -16,6 +16,11 @@ class API::DiariesController < API::BaseController
     else
       render :new
     end
+
+    news = News.new
+    news.diary_id = @diary.id
+    news.link_id = @link.id
+    news.save
   end
 
   private
