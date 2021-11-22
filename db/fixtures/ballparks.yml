@@ -1,0 +1,103 @@
+sapporo:
+  name: 札幌ドーム
+  available: true
+
+rakuten:
+  name: 楽天生命パーク
+  available: true
+
+metlife:
+  name: メットライフ
+  available: true
+
+tokyo:
+  name: 東京ドーム
+  available: true
+
+jingu:
+  name: 神宮
+  available: true
+
+zozo:
+  name: ZOZOマリン
+  available: true
+
+yokohama:
+  name: 横浜
+  available: true
+
+vantelin:
+  name: バンテリンドーム
+  available: true
+
+kyocera:
+  name: 京セラD大阪
+  available: true
+
+koshien:
+  name: 甲子園
+  available: true
+
+mazda:
+  name: マツダスタジアム
+  available: true
+
+paypay:
+  name: PayPayドーム
+  available: true
+
+kanazawa:
+  name: 金沢
+  available: true
+
+toyama:
+  name: 富山
+  available: true
+
+maebashi:
+  name: 前橋
+  available: true
+
+niigata:
+  name: 新潟
+  available: true
+
+matsuyama:
+  name: 松山
+  available: true
+
+shizuoka:
+  name: 静岡
+  available: true
+
+gifu:
+  name: 岐阜
+  available: true
+
+kobe:
+  name: ほっと神戸
+  available: true
+
+kitakyushu:
+  name: 北九州
+  available: true
+
+naha:
+  name: 那覇
+  available: true
+
+asahikawa:
+  name: 旭川
+  available: true
+
+kushiro:
+  name: 釧路
+  available: true
+
+obihiro:
+  name: 帯広
+  available: true
+
+miyazaki:
+  name: 宮崎
+  available: true

@@ -1,0 +1,2 @@
+class Ballpark < ApplicationRecord
+end
