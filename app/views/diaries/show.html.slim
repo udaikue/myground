@@ -5,8 +5,8 @@
     = @diary.comment
     br
     - @news.map do |n|
-      = Link.find(n.link_id).url
-    br
+      a href="#{Link.find(n.link_id).url}" target="_blank" rel="noopener noreferrer" #{Link.find(n.link_id).url}
+      br
     | #{@diary.published ? '公開' : '非公開'}
 
 .buttons
