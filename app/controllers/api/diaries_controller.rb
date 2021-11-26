@@ -9,18 +9,24 @@ class API::DiariesController < API::BaseController
 
   def create
     @diary = Diary.new(diary_params)
-    @link = Link.new(link_params)
 
-    if @diary.save && @link.save
-      redirect_to diaries_path, status: 302
+    if @diary.save
+      redirect_to diaries_path
     else
       render :new
     end
 
-    news = News.new
-    news.diary_id = @diary.id
-    news.link_id = @link.id
-    news.save
+    links = params[:link][:url].split(',')
+
+    links.map do |l|
+      link = Link.new
+      link.url = l
+      link.save
+      news = News.new
+      news.diary_id = @diary.id
+      news.link_id = link.id
+      news.save
+    end
   end
 
   private
