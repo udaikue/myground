@@ -2,7 +2,8 @@
   <form class='form' action='/api/diaries' method='post'>
     <input type='hidden' name='authenticity_token' v-bind:value='token()'>
     <input type='hidden' name='diary[game_id]' v-bind:value='game.id'>
-    <input type='hidden' name='link[url]' v-bind:value='links'>
+    <input type='hidden' name='link[url]' v-bind:value='links[0]'>
+    <input type='hidden' name='link[title]' v-bind:value='links[1]'>
     <div class='field'>
       <label class='label'>日記</label>
       <div class='control'>
@@ -11,9 +12,14 @@
     </div>
     <div class='field'>
       <label class='label'>リンク</label>
-      <p v-for='link in links' :key='link.index'>{{ link }}</p>
+      <div class='link' v-for='link in links' :key='link.index'>
+        {{ link[1] }}
+      </div>
       <div class='control'>
-        <input class='input' v-model='link'>
+        <p>URL</p>
+        <input class='input' v-model='url'>
+        <p>リンクタイトル</p>
+        <input class='input' v-model='title'>
         <input type='button' @click='addLink()' value='＋'>
       </div>
     </div>
@@ -43,7 +49,8 @@ export default {
   },
   data() {
     return {
-      link: '',
+      url: '',
+      title: '',
       links: [],
       comment: '',
       published: false
@@ -55,9 +62,11 @@ export default {
       return meta ? meta.getAttribute('content') : ''
     },
     addLink() {
-      if (!(this.link === null)) {
-        this.links.push(this.link)
-        this.link = ''
+      if (!(this.url === null) && !(this.title === null)) {
+        this.links.push([this.url, this.title])
+
+        this.url = ''
+        this.title = ''
       }
     },
   },

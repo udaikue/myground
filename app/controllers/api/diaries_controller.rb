@@ -16,11 +16,12 @@ class API::DiariesController < API::BaseController
       render :new
     end
 
-    links = params[:link][:url].split(',')
+    links = [params[:link][:url].split(','), params[:link][:title].split(',')]
 
     links.map do |l|
       link = Link.new
-      link.url = l
+      link.url = l[0]
+      link.title = l[1]
       link.save
       news = News.new
       news.diary_id = @diary.id
@@ -36,7 +37,7 @@ class API::DiariesController < API::BaseController
   end
 
   def link_params
-    params.require(:link).permit(:url)
+    params.require(:link).permit(:url, :title)
   end
 
 end
