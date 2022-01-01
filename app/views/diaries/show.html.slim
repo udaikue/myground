@@ -5,7 +5,7 @@
     = @diary.comment
     br
     - @news.map do |n|
-      a href="#{Link.find(n.link_id).url}" target="_blank" rel="noopener noreferrer" #{Link.find(n.link_id).url}
+      a href="#{Link.find(n.link_id).url}" target="_blank" rel="noopener noreferrer" #{Link.find(n.link_id).title}
       br
     | #{@diary.published ? '公開' : '非公開'}
 
