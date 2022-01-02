@@ -20,8 +20,8 @@ class API::DiariesController < API::BaseController
 
     links.map do |l|
       link = Link.new
-      link.url = l[0]
-      link.title = l[1]
+      link.url = l[1]
+      link.title = l[2]
       link.save
       news = News.new
       news.diary_id = @diary.id

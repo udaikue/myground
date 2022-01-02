@@ -12,8 +12,8 @@
     </div>
     <div class='field'>
       <label class='label'>リンク</label>
-      <div class='link' v-for='link in links' :key='link.index'>
-        {{ link[1] }}
+      <div class='link' v-for='link in links' :key='link.key'>
+        {{ link[2] }}
       </div>
       <div class='control'>
         <p>URL</p>
@@ -51,6 +51,7 @@ export default {
     return {
       url: '',
       title: '',
+      key: 0,
       links: [],
       comment: '',
       published: false
@@ -63,8 +64,8 @@ export default {
     },
     addLink() {
       if (!(this.url === null) && !(this.title === null)) {
-        this.links.push([this.url, this.title])
-
+        this.links.push([this.key, this.url, this.title])
+        this.key ++
         this.url = ''
         this.title = ''
       }
