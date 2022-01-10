@@ -184,14 +184,13 @@ export default {
       return meta ? meta.getAttribute('content') : ''
     },
     getGameSchedule() {
-      fetch('/api/diaries/new', {
+      fetch('/api/games', {
         method: 'GET',
         headers: {
           'X-Requested-With': 'XMLHttpRequest',
           'X-CSRF-Token': this.token()
         },
         credentials: 'same-origin',
-        // redirect: 'manual'
       })
         .then((response) => response.json())
         .then((json) => {

@@ -1,9 +1,7 @@
 <template>
-  <form class='form' action='/api/diaries' method='post'>
+  <form class='form' action='/diaries' method='post'>
     <input type='hidden' name='authenticity_token' v-bind:value='token()'>
     <input type='hidden' name='diary[game_id]' v-bind:value='game.id'>
-    <input type='hidden' name='link[url]' v-bind:value='links[0]'>
-    <input type='hidden' name='link[title]' v-bind:value='links[1]'>
     <div class='field'>
       <label class='label'>日記</label>
       <div class='control'>
@@ -13,13 +11,15 @@
     <div class='field'>
       <label class='label'>リンク</label>
       <div class='link' v-for='link in links' :key='link.key'>
-        {{ link[2] }}
+        <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][url]`" v-bind:value='link.url'>
+        <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][title]`" v-bind:value='link.title'>
+        {{ link.title }}
       </div>
       <div class='control'>
         <p>URL</p>
-        <input class='input' v-model='url'>
+        <input type='text' v-model='url'>
         <p>リンクタイトル</p>
-        <input class='input' v-model='title'>
+        <input type='text' v-model='title'>
         <input type='button' @click='addLink()' value='＋'>
       </div>
     </div>
@@ -33,7 +33,7 @@
     </div>
     <div class='field is-grouped'>
       <div class='control'>
-        <button class='button' @click='addLink()'>保存</button>
+        <button class='button'>保存</button>
       </div>
       <div class='control'>
         <button class='button is-light'>キャンセル</button>
@@ -63,8 +63,9 @@ export default {
       return meta ? meta.getAttribute('content') : ''
     },
     addLink() {
-      if (!(this.url === null) && !(this.title === null)) {
-        this.links.push([this.key, this.url, this.title])
+      if (!(this.url === '') && !(this.title === '')) {
+        const id = new Date().getTime()
+        this.links.push({id: id, key: this.key, url: this.url, title: this.title})
         this.key ++
         this.url = ''
         this.title = ''

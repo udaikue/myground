@@ -4,8 +4,8 @@
   .message-body
     = @diary.comment
     br
-    - @news.map do |n|
-      a href="#{Link.find(n.link_id).url}" target="_blank" rel="noopener noreferrer" #{Link.find(n.link_id).title}
+    - @diary.links.each do |link|
+      a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
       br
     | #{@diary.published ? '公開' : '非公開'}
 
