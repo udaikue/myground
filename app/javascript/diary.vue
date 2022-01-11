@@ -34,23 +34,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td v-for='date in monthlyCalendar[0]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
-        </tr>
-        <tr>
-          <td v-for='date in monthlyCalendar[1]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
-        </tr>
-        <tr>
-          <td v-for='date in monthlyCalendar[2]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
-        </tr>
-        <tr>
-          <td v-for='date in monthlyCalendar[3]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
-        </tr>
-        <tr v-if='monthlyCalendar[4]'>
-          <td v-for='date in monthlyCalendar[4]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
-        </tr>
-        <tr v-if='monthlyCalendar[5]'>
-          <td v-for='date in monthlyCalendar[5]' :key='date.id' @click='getGameCards(date)'>{{ date }}</td>
+        <tr v-for='week in monthlyCalendar' :key='week.id'>
+          <td v-for='date in week.value' :key='date.key' @click='getGameCards(date.date)'>{{ date.date }}</td>
         </tr>
       </tbody>
     </table>
@@ -168,11 +153,7 @@ export default {
       const lastDay = new Date(this.calendarYear, this.calendarMonth, 0)
       return lastDay.getDate()
     },
-    getTodayCards() {
-      this.gameCards = this.games.filter((value) => {
-        return value.date === this.formatMonthDate().join('-')
-      })
-    },
+
   },
   mounted()  {
     this.getGameSchedule()
@@ -195,6 +176,7 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           this.games = json
+          this.getTodayCards()
         })
         .catch((error) => {
           console.warn('Failed to parsing', error)
@@ -209,22 +191,37 @@ export default {
     getCurrentDate() {
       return new Date().getDate()
     },
+    getTodayCards() {
+      this.gameCards = this.games.filter((value) => {
+        return value.date === this.formatMonthDate().join('-')
+      })
+    },
     getMonthlyCalendar() {
-      // 火~土(firstWday:2~6)のときは(firstWday-1)回空白をpush
-      // 日(firstWday=1)のときは5つ空白をpush
-      let weeklyCalendar = []
+      // { id: 1, value: {{ key: 0 }, { key: 1 }, { key: 2, date: 1 }, ... }
+      // { id: 2, value: { ... }}
+      // 空白のときはvalueにはkeyのみ入る。上記は水曜はじまりの例
+
+      let value = []
+      let key = 0
+      let id = 1
       if (this.firstWday >= 2) {
         for (let blank = 1; blank < this.firstWday; blank++) {
-          weeklyCalendar.push('')
+          value.push({ key: key })
+          key++
         }
       } else if (this.firstWday === 0) {
-        weeklyCalendar.push('', '', '', '', '', '')
+        for (key = 0; key < 6; key++) {
+          value.push({ key: key })
+        }
       }
       for (let date = 1; date < this.lastDate + 1; date++) {
-        weeklyCalendar.push(date)
-        if (weeklyCalendar.length % 7 === 0 || date === this.lastDate) {
-          this.monthlyCalendar.push(weeklyCalendar)
-          weeklyCalendar = []
+        value.push({ key: key, date: date })
+        key++
+        if (value.length % 7 === 0 || date === this.lastDate) {
+          this.monthlyCalendar.push({ id: id, value: value })
+          value = []
+          id++
+          key = 0
         }
       }
     },
@@ -240,6 +237,7 @@ export default {
       return date
     },
     getGameCards(date) {
+      console.log(date)
       this.cardYear = this.calendarYear
       this.cardMonth = this.calendarMonth
       this.cardDate = date
