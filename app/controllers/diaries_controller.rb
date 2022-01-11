@@ -8,13 +8,19 @@ class DiariesController < ApplicationController
   def show
     @diary = Diary.find(params[:id])
     @game = Game.find(@diary.game_id)
-    @news = News.where("diary_id = ?", params[:id])
     @game_wday = day_of_week
   end
 
   def new ;end
 
-  def create ;end
+  def create
+    @diary = Diary.new(diary_params)
+    if @diary.save!
+      redirect_to diaries_path
+    else
+      render :new
+    end
+  end
 
   def edit
     @diary = Diary.find(params[:id])
@@ -44,6 +50,6 @@ class DiariesController < ApplicationController
   end
 
   def diary_params
-    params.require(:diary).permit(:comment, :published)
+    params.require(:diary).permit(:comment, :published, :game_id, links_attributes: [:id, :url, :title])
   end
 end

@@ -1,8 +1,7 @@
 <template>
-  <form class='form' action='/api/diaries' method='post'>
+  <form class='form' action='/diaries' method='post'>
     <input type='hidden' name='authenticity_token' v-bind:value='token()'>
     <input type='hidden' name='diary[game_id]' v-bind:value='game.id'>
-    <input type='hidden' name='link[url]' v-bind:value='links'>
     <div class='field'>
       <label class='label'>日記</label>
       <div class='control'>
@@ -11,9 +10,16 @@
     </div>
     <div class='field'>
       <label class='label'>リンク</label>
-      <p v-for='link in links' :key='link.index'>{{ link }}</p>
+      <div class='link' v-for='link in links' :key='link.key'>
+        <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][url]`" v-bind:value='link.url'>
+        <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][title]`" v-bind:value='link.title'>
+        {{ link.title }}
+      </div>
       <div class='control'>
-        <input class='input' v-model='link'>
+        <p>URL</p>
+        <input type='text' v-model='url'>
+        <p>リンクタイトル</p>
+        <input type='text' v-model='title'>
         <input type='button' @click='addLink()' value='＋'>
       </div>
     </div>
@@ -27,7 +33,7 @@
     </div>
     <div class='field is-grouped'>
       <div class='control'>
-        <button class='button' @click='addLink()'>保存</button>
+        <button class='button'>保存</button>
       </div>
       <div class='control'>
         <button class='button is-light'>キャンセル</button>
@@ -43,7 +49,9 @@ export default {
   },
   data() {
     return {
-      link: '',
+      url: '',
+      title: '',
+      key: 0,
       links: [],
       comment: '',
       published: false
@@ -55,9 +63,12 @@ export default {
       return meta ? meta.getAttribute('content') : ''
     },
     addLink() {
-      if (!(this.link === null)) {
-        this.links.push(this.link)
-        this.link = ''
+      if (!(this.url === '') && !(this.title === '')) {
+        const id = new Date().getTime()
+        this.links.push({id: id, key: this.key, url: this.url, title: this.title})
+        this.key ++
+        this.url = ''
+        this.title = ''
       }
     },
   },
