@@ -10,4 +10,5 @@ import 'channels'
 Rails.start()
 ActiveStorage.start()
 
-require('../diary.js')
+require('../new-diary.js')
+require('../edit-diary.js')

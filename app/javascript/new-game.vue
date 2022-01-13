@@ -1,5 +1,5 @@
 <template>
-  <div id="game">
+  <div id='diaries'>
     <table class='table' v-if='gameCards.length && !result'>
       <thead>
         <tr>
@@ -117,15 +117,15 @@
         </tr>
       </tbody>
     </table>
-    <Form v-if='result' :game='selectedGame'></Form>
+    <NewForm v-if='result' :game='selectedGame'></NewForm>
   </div>
 </template>
 <script>
-import Form from './form.vue'
+import NewForm from './new-form.vue'
 
 export default {
   components: {
-    Form
+    NewForm
   },
   data() {
     return {
@@ -172,6 +172,7 @@ export default {
           'X-CSRF-Token': this.token()
         },
         credentials: 'same-origin',
+        redirect: 'manual'
       })
         .then((response) => response.json())
         .then((json) => {
@@ -237,7 +238,6 @@ export default {
       return date
     },
     getGameCards(date) {
-      console.log(date)
       this.cardYear = this.calendarYear
       this.cardMonth = this.calendarMonth
       this.cardDate = date

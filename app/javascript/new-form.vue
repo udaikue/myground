@@ -36,7 +36,7 @@
         <button class='button'>保存</button>
       </div>
       <div class='control'>
-        <button class='button is-light'>キャンセル</button>
+        <button class='button is-light' type='button' onclick='history.back()'>キャンセル</button>
       </div>
     </div>
   </form>

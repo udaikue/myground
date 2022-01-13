@@ -2,6 +2,6 @@
 
 class Diary < ApplicationRecord
   has_one :game
-  has_many :links
+  has_many :links, dependent: :destroy
   accepts_nested_attributes_for :links, allow_destroy: true
 end
