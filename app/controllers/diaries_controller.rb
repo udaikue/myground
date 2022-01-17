@@ -2,7 +2,7 @@
 
 class DiariesController < ApplicationController
   def index
-    @diaries = Diary.all
+    @diaries = Diary.order(:id)
   end
 
   def show
@@ -29,8 +29,8 @@ class DiariesController < ApplicationController
   def update
     @diary = Diary.find(params[:id])
 
-    if @diary.update(diary_params)
-      redirect_to diaries_path
+    if @diary.update!(diary_params)
+      redirect_to diary_path(@diary)
     else
       render :edit
     end
@@ -50,6 +50,6 @@ class DiariesController < ApplicationController
   end
 
   def diary_params
-    params.require(:diary).permit(:comment, :published, :game_id, links_attributes: [:id, :url, :title])
+    params.require(:diary).permit(:id, :comment, :published, :game_id, links_attributes: [:id, :url, :title, :_destroy,])
   end
 end

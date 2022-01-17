@@ -2,7 +2,9 @@
   .message-header
     | #{@game.date.month}月#{@game.date.day}日(#{@game_wday}) #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}
   .message-body
-    = @diary.comment
+    / - comment = @diary.comment
+    / = h(comment).gsub(/\r\n/, "<br>").html_safe
+    = simple_format @diary.comment
     br
     - @diary.links.each do |link|
       a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
