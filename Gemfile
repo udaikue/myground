@@ -56,6 +56,7 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'devise'
 gem 'nokogiri'
 gem 'open-uri'
 
