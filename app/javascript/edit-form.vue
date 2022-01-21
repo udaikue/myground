@@ -6,7 +6,7 @@
       <div class='field'>
         <label class='label'>日記</label>
         <div class='control'>
-          <textarea id='comment' class='textarea' name='diary[comment]' v-bind:value='diary.comment'></textarea>
+          <textarea class='textarea' name='diary[comment]' v-bind:value='diary.comment'></textarea>
         </div>
       </div>
       <table class='table'>
@@ -22,7 +22,7 @@
           <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][title]`" v-bind:value='link.title'>
           <tr>
             <td>{{ link.title }}</td>
-            <td><input type='checkbox' v-bind:name="`diary[links_attributes][${link.id}][_destroy]`" links.persisted></td>
+            <td><input type='checkbox' v-bind:name="`diary[links_attributes][${link.id}][_destroy]`"></td>
           </tr>
         </tbody>
       </table>
@@ -37,9 +37,10 @@
       </div>
       <div class='field'>
         <div class='control'>
-          <label class='checkbox'>
-            <input type='checkbox' name='diary[published]' v-bind:checked='diary.published'>
-            公開する
+          <label class='label'>
+          <input name="diary[published]" type="hidden" value="0">
+          <input type="checkbox" value="1" name="diary[published]" v-bind:checked='diary.published'>
+          公開する
           </label>
         </div>
       </div>
@@ -73,8 +74,6 @@ export default {
       title: '',
       key: 0,
       links: [],
-      comment: '',
-      published: false
     }
   },
   mounted() {
