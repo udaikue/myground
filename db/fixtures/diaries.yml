@@ -1,0 +1,35 @@
+ohtani01:
+  published: true
+  comment: 'ohtaniの公開されている日記です。'
+  game_id: 111111111
+  user_id: 1
+
+ohtani02:
+  published: false
+  comment: 'ohtaniの非公開日記'
+  game_id: 222222222
+  user_id: 1
+
+ohtani03:
+  published: true
+  comment: 'ohtaniの公開されている日記です。'
+  game_id: 333333333
+  user_id: 1
+
+ohtani04:
+  published: true
+  comment: 'ohtaniの公開されている日記です。'
+  game_id: 444444444
+  user_id: 1
+
+ohtani05:
+  published: false
+  comment: 'ohtaniの非公開日記'
+  game_id: 555555555
+  user_id: 1
+
+suzuki01:
+  published: false
+  comment: 'Seiya Suzuki'
+  game_id: 555555555
+  user_id: 2
