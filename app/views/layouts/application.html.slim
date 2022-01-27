@@ -11,11 +11,15 @@ html
   body
     header
       nav
+        br
         - if user_signed_in?
           = link_to 'logout', destroy_user_session_path, method: :delete
         - else
           = link_to 'sign up', new_user_registration_path
           = link_to 'login', new_user_session_path
+        br
+        -if current_user.present?
+          = current_user.username
     .notice
       = notice
     .alert
