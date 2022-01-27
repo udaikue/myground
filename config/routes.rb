@@ -8,14 +8,14 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'diaries#index', as: :authenticated_root
+  root to: 'diaries#index'
+
+  scope ':username' do
+    resources :diaries
+  end
 
   namespace :api do
     resources :games, only: %i[index]
     resources :diaries, only: %i[show]
-  end
-
-  scope ':username' do
-    resources :diaries
   end
 end
