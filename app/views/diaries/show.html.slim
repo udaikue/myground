@@ -1,14 +1,127 @@
-.message
-  .message-header
+columns.column.is-full
     | #{@game.date.month}月#{@game.date.day}日(#{@game_wday}) #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}
-  .message-body
-    = simple_format @diary.comment
-    br
-    - @diary.links.each do |link|
-      a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
-      br
-    | #{@diary.published ? '公開' : '非公開'}
 
-.buttons
+table.table.is-bordered
+  thead
+    tr
+      th
+      th
+        | 1
+      th
+        | 2
+      th
+        | 3
+      th
+        | 4
+      th
+        | 5
+      th
+        | 6
+      th
+        | 7
+      th
+        | 8
+      th
+        | 9
+      th
+        | 計
+      th
+        | 安
+      th
+        | 失
+  tbody
+    tr
+      td
+        = @game.team_visitor
+      td
+        = @scores.find_by(inning: 1).visitor
+      td
+        = @scores.find_by(inning: 2).visitor
+      td
+        = @scores.find_by(inning: 3).visitor
+      td
+        = @scores.find_by(inning: 4).visitor
+      td
+        = @scores.find_by(inning: 5).visitor
+      td
+        = @scores.find_by(inning: 6).visitor
+      td
+        = @scores.find_by(inning: 7).visitor
+      td
+        = @scores.find_by(inning: 8).visitor
+      td
+        = @scores.find_by(inning: 9).visitor
+      td
+        = @game.score_visitor
+      td
+        = @game.hits_visitor
+      td
+        = @game.errors_visitor
+    tr
+      td
+        = @game.team_home
+      td
+        = @scores.find_by(inning: 1).home
+      td
+        = @scores.find_by(inning: 2).home
+      td
+        = @scores.find_by(inning: 3).home
+      td
+        = @scores.find_by(inning: 4).home
+      td
+        = @scores.find_by(inning: 5).home
+      td
+        = @scores.find_by(inning: 6).home
+      td
+        = @scores.find_by(inning: 7).home
+      td
+        = @scores.find_by(inning: 8).home
+      td
+        = @scores.find_by(inning: 9).home
+      td
+        = @game.score_home
+      td
+        = @game.hits_home
+      td
+        = @game.errors_home
+
+table.table.is-bordered
+  tbody
+    tr
+      td
+        | 勝利投手
+      td
+        = @game.winning_pitcher
+    tr
+      td
+        | 敗戦投手
+      td
+        = @game.losing_pitcher
+    tr
+      td
+        | セーブ
+      td
+        = @game.saving_pitcher
+
+table.table.is-bordered
+  tbody
+    tr
+      td rowspan='2'
+        | 本塁打
+      td
+        = @game.homerun_visitor
+    tr
+      td
+        = @game.homerun_home
+
+= simple_format @diary.comment
+br
+- @diary.links.each do |link|
+  a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
+br
+| #{@diary.published ? '公開' : '非公開'}
+
+br
+buttons
   = link_to t('button.edit'), edit_diary_path(@diary), class: 'button is-dark'
   = link_to t('button.back'), diaries_path(params[:username]), class: 'button is-light'

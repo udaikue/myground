@@ -9,6 +9,7 @@ class DiariesController < ApplicationController
   def show
     @game = Game.find(@diary.game_id)
     @game_wday = day_of_week
+    @scores = Score.where("game_id = ?", @diary.game_id)
   end
 
   def new ;end
