@@ -1,0 +1,53 @@
+score1_game20211016gc:
+  inning: 1
+  home: '0'
+  visitor: '4'
+  game_id: 111111111
+
+score2_game20211016gc:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111111
+
+score3_game20211016gc:
+  inning: 3
+  home: '0'
+  visitor: '3'
+  game_id: 111111111
+
+score4_game20211016gc:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111111
+
+score5_game20211016gc:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111111
+
+score6_game20211016gc:
+  inning: 6
+  home: '0'
+  visitor: '1'
+  game_id: 111111111
+
+score7_game20211016gc:
+  inning: 7
+  home: '5'
+  visitor: '0'
+  game_id: 111111111
+
+score8_game20211016gc:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111111
+
+score9_game20211016gc:
+  inning: 9
+  home: '2'
+  visitor: '0'
+  game_id: 111111111
