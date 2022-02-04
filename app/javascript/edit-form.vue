@@ -79,15 +79,16 @@ export default {
   mounted() {
     this.getDiary()
   },
-    methods: {
+  methods: {
     token() {
       const meta = document.querySelector('meta[name="csrf-token"]')
       return meta ? meta.getAttribute('content') : ''
     },
     getDiary() {
-      let diary_id = location.pathname.split('/')[2]
-      document.put.action = `/diaries/${diary_id}`
-      document.delete.action = `/diaries/${diary_id}`
+      let username = location.pathname.split('/')[1]
+      let diary_id = location.pathname.split('/')[3]
+      document.put.action = document.put.action.slice(0, -5)
+      document.delete.action = document.delete.action.slice(0, -5)
 
       fetch(`/api/diaries/${diary_id}`, {
         method: 'GET',

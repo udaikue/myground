@@ -10,12 +10,12 @@ Rails.application.routes.draw do
 
   root to: 'diaries#index'
 
-  scope ':username' do
-    resources :diaries
-  end
-
   namespace :api do
     resources :games, only: %i[index]
     resources :diaries, only: %i[show]
+  end
+
+  scope ':username' do
+    resources :diaries
   end
 end

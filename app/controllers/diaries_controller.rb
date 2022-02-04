@@ -17,7 +17,7 @@ class DiariesController < ApplicationController
   def create
     @diary = Diary.new(diary_params)
     @diary.user_id = current_user.id
-    
+
     if @diary.save!
       redirect_to diaries_path(params[:username])
     else
@@ -29,15 +29,15 @@ class DiariesController < ApplicationController
 
   def update
     if @diary.update!(diary_params)
-      redirect_to diary_path(@diary)
+      redirect_to diary_path(params[:username])
     else
       render :edit
     end
   end
 
   def destroy
-    diary.destroy
-    redirect_to diaries_path
+    @diary.destroy
+    redirect_to diaries_path(params[:username])
   end
 
   private
