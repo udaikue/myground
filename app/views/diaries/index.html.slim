@@ -1,12 +1,10 @@
 .title
   | 観戦記録一覧
 
-- if current_user.present? && current_user.username == params[:username]
-  = link_to t('button.new'), new_diary_path(params[:username]), class: 'button is-normal'
-- if current_user.present? && !params[:username]
+- if my_diaries_index?
   = link_to t('button.new'), new_diary_path(current_user.username), class: 'button is-normal'
 
 - @diaries.map do |diary|
   - @game = Game.find(diary.game_id)
   .container.notification.is-light
-    = link_to "#{@game.date.month}/#{@game.date.day} #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}", "/#{params[:username]}/diaries/#{diary.id}"
+    = link_to "#{@game.date.month}/#{@game.date.day} #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}", "/#{params[:username] ||= current_user.username}/diaries/#{diary.id}"

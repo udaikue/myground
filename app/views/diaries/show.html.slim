@@ -115,13 +115,13 @@ table.table.is-bordered
         = @game.homerun_home
 
 = simple_format @diary.comment
-br
 - @diary.links.each do |link|
   a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
-br
+  br
 | #{@diary.published ? '公開' : '非公開'}
 
 br
 buttons
-  = link_to t('button.edit'), edit_diary_path(@diary), class: 'button is-dark'
+  - if my_diary?
+    = link_to t('button.edit'), edit_diary_path(params[:username]), class: 'button is-dark'
   = link_to t('button.back'), diaries_path(params[:username]), class: 'button is-light'
