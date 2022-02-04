@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'diaries#index', as: :authenticated_root
+  root to: 'diaries#index'
 
   namespace :api do
     resources :games, only: %i[index]

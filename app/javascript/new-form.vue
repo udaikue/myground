@@ -1,5 +1,5 @@
 <template>
-  <form class='form' action='/diaries' method='post'>
+  <form class='form' action='' method='post' name='post'>
     <input type='hidden' name='authenticity_token' v-bind:value='token()'>
     <input type='hidden' name='diary[game_id]' v-bind:value='game.id'>
     <div class='field'>
@@ -54,13 +54,19 @@ export default {
       key: 0,
       links: [],
       comment: '',
-      published: false
+      published: false,
     }
+  },
+  mounted() {
+    this.getUsername()
   },
   methods: {
     token() {
       const meta = document.querySelector('meta[name="csrf-token"]')
       return meta ? meta.getAttribute('content') : ''
+    },
+    getUsername() {
+      document.post.action = document.post.action.slice(0, -4)
     },
     addLink() {
       if (!(this.url === '') && !(this.title === '')) {

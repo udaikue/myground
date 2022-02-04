@@ -5,6 +5,7 @@ require 'active_record/fixtures'
 ActiveRecord::FixtureSet.create_fixtures 'db/fixtures', %i[
   teams
   games
+  scores
   ballparks
   diaries
 ]
