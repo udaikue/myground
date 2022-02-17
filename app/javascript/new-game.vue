@@ -117,7 +117,7 @@
         </tr>
       </tbody>
     </table>
-    <NewForm v-if='result' :game='selectedGame'></NewForm>
+    <NewForm v-if='result' :game='selectedGame' :diariesPath='diariesPath'></NewForm>
   </div>
 </template>
 <script>
@@ -126,6 +126,9 @@ import NewForm from './new-form.vue'
 export default {
   components: {
     NewForm
+  },
+  props: {
+    diariesPath: { type: String, required: true }
   },
   data() {
     return {
