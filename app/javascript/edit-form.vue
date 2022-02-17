@@ -1,6 +1,6 @@
 <template>
   <div id='diaries'>
-    <form class='form' action='' method='post' name='put'>
+    <form class='form' v-bind:action='diariesEditPath' method='post' name='put'>
       <input type='hidden' name='_method' value='put'>
       <input type='hidden' name='authenticity_token' v-bind:value='token()'>
       <div class='field'>
@@ -53,7 +53,7 @@
         </div>
       </div>
     </form>
-    <form class='form' action='' method='post' name='delete'>
+    <form class='form' v-bind:action='diariesEditPath' method='post' name='delete'>
       <input type='hidden' name='_method' value='delete'>
       <input type='hidden' name='authenticity_token' v-bind:value='token()'>
       <div class='field'>
@@ -67,6 +67,11 @@
 
 <script>
 export default {
+  props: {
+    // diariesPath: { type: String, required: true },
+    diaryId: { type: String, required: true },
+    diariesEditPath: { type: String, required: true }
+  },
   data() {
     return {
       diary: [],
@@ -85,12 +90,7 @@ export default {
       return meta ? meta.getAttribute('content') : ''
     },
     getDiary() {
-      let username = location.pathname.split('/')[1]
-      let diary_id = location.pathname.split('/')[3]
-      document.put.action = document.put.action.slice(0, -5)
-      document.delete.action = document.delete.action.slice(0, -5)
-
-      fetch(`/api/diaries/${diary_id}`, {
+      fetch(`/api/diaries/${this.diaryId}`, {
         method: 'GET',
         headers: {
           'X-Requested-With': 'XMLHttpRequest',

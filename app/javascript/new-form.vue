@@ -1,5 +1,5 @@
 <template>
-  <form class='form' action='' method='post' name='post'>
+  <form class='form' v-bind:action='diariesPath' method='post'>
     <input type='hidden' name='authenticity_token' v-bind:value='token()'>
     <input type='hidden' name='diary[game_id]' v-bind:value='game.id'>
     <div class='field'>
@@ -45,7 +45,8 @@
 <script>
 export default {
   props: {
-    game: { type: Object, required: true }
+    game: { type: Object, required: true },
+    diariesPath: { type: String, required: true }
   },
   data() {
     return {
@@ -57,17 +58,17 @@ export default {
       published: false,
     }
   },
-  mounted() {
-    this.getUsername()
-  },
+  // mounted() {
+  //   this.getUsername()
+  // },
   methods: {
     token() {
       const meta = document.querySelector('meta[name="csrf-token"]')
       return meta ? meta.getAttribute('content') : ''
     },
-    getUsername() {
-      document.post.action = document.post.action.slice(0, -4)
-    },
+    // getUsername() {
+    //   document.post.action = document.post.action.slice(0, -4)
+    // },
     addLink() {
       if (!(this.url === '') && !(this.title === '')) {
         const id = new Date().getTime()
