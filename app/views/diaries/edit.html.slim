@@ -1,4 +1,4 @@
 .title
   | 観戦記録編集
 
-#js-edit-diary
+#js-edit-diary(data-diaries-path="#{diaries_path(username: current_user.username)}", data-diary-id="#{@diary.id}")
