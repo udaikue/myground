@@ -1,5 +1,5 @@
 .title
-  | 観戦記録一覧
+  = t('title.diaries')
 
 - if my_diaries_index?
   = link_to t('button.new'), new_diary_path(current_user.username), class: 'button is-normal'
