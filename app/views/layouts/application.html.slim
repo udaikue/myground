@@ -6,17 +6,17 @@ html
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all'
+    = javascript_pack_tag 'application'
   body
     header
       nav
         br
         - if user_signed_in?
-          = link_to 'logout', destroy_user_session_path, method: :delete
+          = link_to t('button.log_out'), destroy_user_session_path, method: :delete
         - else
-          = link_to 'sign up', new_user_registration_path
-          = link_to 'login', new_user_session_path
+          = link_to t('button.sign_up'), new_user_registration_path
+          = link_to t('button.log_in'), new_user_session_path
         br
         -if current_user.present?
           = current_user.username

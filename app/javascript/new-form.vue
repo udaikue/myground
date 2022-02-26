@@ -58,17 +58,11 @@ export default {
       published: false,
     }
   },
-  // mounted() {
-  //   this.getUsername()
-  // },
   methods: {
     token() {
       const meta = document.querySelector('meta[name="csrf-token"]')
       return meta ? meta.getAttribute('content') : ''
     },
-    // getUsername() {
-    //   document.post.action = document.post.action.slice(0, -4)
-    // },
     addLink() {
       if (!(this.url === '') && !(this.title === '')) {
         const id = new Date().getTime()
