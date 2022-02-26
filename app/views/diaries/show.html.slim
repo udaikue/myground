@@ -117,11 +117,16 @@ table.table.is-bordered
       td
         = @game.homerun_home
 
-= simple_format @diary.comment
-- @diary.links.each do |link|
-  a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
+.section.has-background-light
+  = simple_format @diary.comment
   br
-| #{@diary.published ? '公開' : '非公開'}
+  | リンク
+  br
+  - @diary.links.each do |link|
+    a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
+    br
+    br
+  | #{@diary.published ? '公開中' : '非公開'}
 
 br
 buttons
