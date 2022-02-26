@@ -68,7 +68,6 @@
 <script>
 export default {
   props: {
-    // diariesPath: { type: String, required: true },
     diaryId: { type: String, required: true },
     diariesEditPath: { type: String, required: true }
   },
