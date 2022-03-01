@@ -13,13 +13,13 @@ ohtani02:
 ohtani03:
   published: true
   comment: 'ohtaniの公開されている日記です。'
-  game_id: 333333333
+  game_id: 777777777
   user_id: 1
 
 ohtani04:
   published: true
   comment: 'ohtaniの公開されている日記です。'
-  game_id: 444444444
+  game_id: 666666666
   user_id: 1
 
 ohtani05:
