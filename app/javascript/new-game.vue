@@ -42,16 +42,8 @@
     <table class='table' v-if='result'>
       <thead>
         <tr>
-          <th></th>
-          <th>1</th>
-          <th>2</th>
-          <th>3</th>
-          <th>4</th>
-          <th>5</th>
-          <th>6</th>
-          <th>7</th>
-          <th>8</th>
-          <th>9</th>
+          <th ></th>
+          <th v-for='score in displayScores' :key='score.id'>{{ score.inning }}</th>
           <th>計</th>
           <th>安</th>
           <th>失</th>
@@ -60,30 +52,14 @@
       <tbody>
         <tr>
           <td>{{ selectedGame.team_visitor }}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
           <td>{{ selectedGame.score_visitor }}</td>
           <td>{{ selectedGame.hits_visitor }}</td>
           <td>{{ selectedGame.errors_visitor }}</td>
         </tr>
         <tr>
           <td>{{ selectedGame.team_home }}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
           <td>{{ selectedGame.score_home }}</td>
           <td>{{ selectedGame.hits_home }}</td>
           <td>{{ selectedGame.errors_home }}</td>
@@ -133,6 +109,7 @@ export default {
   data() {
     return {
       games: [],
+      scores: [],
       currentYear: this.getCurrentYear(),
       currentMonth: this.getCurrentMonth(),
       cardYear: this.getCurrentYear(),
@@ -142,6 +119,7 @@ export default {
       calendarMonth: this.getCurrentMonth(),
       calendarDate: this.getCurrentDate(),
       gameCards: [],
+      displayScores: [],
       monthlyCalendar: [],
       result: false,
       selectedGame: [],
@@ -186,6 +164,25 @@ export default {
           console.warn('Failed to parsing', error)
         })
     },
+    getGameScores(game_id) {
+      fetch('/api/scores', {
+        method: 'GET',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRF-Token': this.token()
+        },
+        credentials: 'same-origin',
+        redirect: 'manual'
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          this.scores = json
+          this.getDisplayScores(game_id)
+        })
+        .catch((error) => {
+          console.warn('Failed to parsing', error)
+        })
+    },
     getCurrentYear() {
       return new Date().getFullYear()
     },
@@ -199,6 +196,25 @@ export default {
       this.gameCards = this.games.filter((value) => {
         return value.date === this.formatMonthDate().join('-')
       })
+    },
+    getDisplayScores(game_id) {
+      let selectedScores = this.scores.filter((value) => {
+        return value.game_id === game_id
+      })
+
+      for (let id = 1; id <= selectedScores.length; id++) {
+        selectedScores.forEach(element => {
+          if (element.inning === id) {
+            this.displayScores.push({ id: id, inning: id, home: element.home, visitor: element.visitor })
+          }
+        })
+      }
+      // コールドゲーム(9回未満)のときもスコアは9回まで表示する
+      if (selectedScores.length < 9) {
+        for (let id = selectedScores.length + 1 ; id <= 9; id++) {
+          this.displayScores.push({ id: id, inning: id })
+        }
+      }
     },
     getMonthlyCalendar() {
       // { id: 1, value: {{ key: 0 }, { key: 1 }, { key: 2, date: 1 }, ... }
@@ -254,6 +270,7 @@ export default {
       this.selectedGame = this.gameCards.find((value) => {
         return value.id === game_id
       })
+      this.getGameScores(game_id)
     },
     previousMonth() {
       if (this.calendarMonth === 1) {
