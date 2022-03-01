@@ -8,8 +8,9 @@ class DiariesController < ApplicationController
 
   def show
     @game = Game.find(@diary.game_id)
-    @game_wday = day_of_week
+    @game_wday = set_day_of_week
     @scores = Score.where("game_id = ?", @diary.game_id)
+    set_display_innings
   end
 
   def new ;end
@@ -42,9 +43,13 @@ class DiariesController < ApplicationController
 
   private
 
-  def day_of_week
+  def set_day_of_week
     day_of_week = %w[日 月 火 水 木 金 土]
     day_of_week[@game.date.wday]
+  end
+
+  def set_display_innings
+    @display_innings = @scores.length >= 9 ? @scores.length : 9
   end
 
   def set_diary

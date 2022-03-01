@@ -51,3 +51,183 @@ score9_game20211016gc:
   home: '2'
   visitor: '0'
   game_id: 111111111
+
+score1_called7:
+  inning: 1
+  home: '2'
+  visitor: '0'
+  game_id: 555555555
+
+score2_called7:
+  inning: 2
+  home: '0'
+  visitor: '2'
+  game_id: 555555555
+
+score3_called7:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 555555555
+
+score4_called7:
+  inning: 4
+  home: '0'
+  visitor: '1'
+  game_id: 555555555
+
+score5_called7:
+  inning: 5
+  home: '0'
+  visitor: '2'
+  game_id: 555555555
+
+score6_called7:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 555555555
+
+score7_called7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 555555555
+
+score1_extra11:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 666666666
+
+score2_extra11:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 666666666
+
+score3_extra11:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 666666666
+
+score4_extra11:
+  inning: 4
+  home: '2'
+  visitor: '1'
+  game_id: 666666666
+
+score5_extra11:
+  inning: 5
+  home: '1'
+  visitor: '1'
+  game_id: 666666666
+
+score6_extra11:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 666666666
+
+score7_extra11:
+  inning: 7
+  home: '0'
+  visitor: '1'
+  game_id: 666666666
+
+score8_extra11:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 666666666
+
+score9_extra11:
+  inning: 9
+  home: '0'
+  visitor: '0'
+  game_id: 666666666
+
+score10_extra11:
+  inning: 10
+  home: '0'
+  visitor: '0'
+  game_id: 666666666
+
+score11_extra11:
+  inning: 11
+  home: '0'
+  visitor: '1'
+  game_id: 666666666
+
+score1_extra12:
+  inning: 1
+  home: '1'
+  visitor: '1'
+  game_id: 777777777
+
+score2_extra12:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score3_extra12:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score4_extra12:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score5_extra12:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score6_extra12:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score7_extra12:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score8_extra12:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score9_extra12:
+  inning: 9
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score10_extra12:
+  inning: 10
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score11_extra12:
+  inning: 11
+  home: '0'
+  visitor: '0'
+  game_id: 777777777
+
+score12_extra12:
+  inning: 12
+  home: '0'
+  visitor: '0'
+  game_id: 777777777

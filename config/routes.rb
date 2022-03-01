@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :games, only: %i[index]
+    resources :scores, only: %i[index]
     resources :diaries, only: %i[show]
   end
 
