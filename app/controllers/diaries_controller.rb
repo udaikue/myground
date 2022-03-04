@@ -5,8 +5,8 @@ class DiariesController < ApplicationController
   before_action :set_diary, only: %i[show edit update destroy]
 
   def index
-    @q = current_user.diaries.ransack(params[:q])
-    @diaries = @q.result(distinct: true).recent
+    @q = Diary.where("published = ?", true).ransack(params[:q])
+    @searched_diaries = @q.result(distinct: true).includes(:user).recent
   end
 
   def show
@@ -52,7 +52,7 @@ class DiariesController < ApplicationController
   end
 
   def set_display_innings
-    @display_innings = @scores.length >= 9 ? @scores.length : 9
+    @display_innings = [9, @scores.length].max
   end
 
   def set_diary
@@ -60,12 +60,12 @@ class DiariesController < ApplicationController
   end
 
   def set_diaries
-    # if (current_user.present? && current_user.username == params[:username]) || params[:username].nil?
-    #   @diaries = Diary.where("user_id = ?", current_user.id)
-    # else
-    #   @user = User.find_by(username: params[:username])
-    #   @diaries = Diary.where("user_id = ? and published = ?", @user.id, true)
-    # end
+    if (current_user.present? && current_user.username == params[:username]) || params[:username].nil?
+      @diaries = Diary.where("user_id = ?", current_user.id)
+    else
+      @user = User.find_by(username: params[:username])
+      @diaries = Diary.where("user_id = ? and published = ?", @user.id, true)
+    end
   end
 
   def diary_params
