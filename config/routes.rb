@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   end
 
   scope ':username' do
-    resources :diaries
+    resources :diaries do
+      collection do
+        get 'search'
+      end
+    end
   end
 end

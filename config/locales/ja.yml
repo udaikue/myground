@@ -39,6 +39,7 @@ ja:
     change_password: パスワードの変更
     resend_confirmation: 確認メールの再送
     resend_unlock_email: ロック解除メールの再送
+    search: 検索結果
   confirm:
     destroy: 本当に削除しますか?
   information:

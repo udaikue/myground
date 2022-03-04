@@ -3,11 +3,9 @@
 class DiariesController < ApplicationController
   before_action :set_diaries, only: %i[index]
   before_action :set_diary, only: %i[show edit update destroy]
+  before_action :set_q, only: %i[index search]
 
-  def index
-    @q = Diary.where("published = ?", true).ransack(params[:q])
-    @searched_diaries = @q.result(distinct: true).includes(:user).recent
-  end
+  def index ;end
 
   def show
     @game = Game.find(@diary.game_id)
@@ -44,6 +42,10 @@ class DiariesController < ApplicationController
     redirect_to diaries_path(params[:username])
   end
 
+  def search
+    @searched_diaries = @q.result(distinct: true).includes(:user).recent
+  end
+
   private
 
   def set_day_of_week
@@ -66,6 +68,10 @@ class DiariesController < ApplicationController
       @user = User.find_by(username: params[:username])
       @diaries = Diary.where("user_id = ? and published = ?", @user.id, true)
     end
+  end
+
+  def set_q
+    @q = Diary.where("published = ?", true).ransack(params[:q])
   end
 
   def diary_params

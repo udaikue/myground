@@ -1,0 +1,7 @@
+.title
+  = t('title.search')
+
+- @searched_diaries.map do |diary|
+  - @game = Game.find(diary.game_id)
+  .container.notification.is-light
+    = link_to "#{@game.date.month}/#{@game.date.day} #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}", "/#{params[:username] ||= current_user.username}/diaries/#{diary.id}"

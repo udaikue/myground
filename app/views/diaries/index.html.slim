@@ -12,7 +12,7 @@
 p 検索
 
 div.field
-  = search_form_for @q, url: diaries_path(params[:username] ||= current_user.username), class: 'is-grouped' do |f|
+  = search_form_for @q, url: search_diaries_path(params[:username] ||= current_user.username), class: 'is-grouped' do |f|
     .control
       = f.label :comment_cont, '観戦日記', class: 'label'
     .control
@@ -24,7 +24,3 @@ div.field
     .control
       = f.submit class: 'button is-light'
 
-- @searched_diaries.map do |diary|
-  - @game = Game.find(diary.game_id)
-  .container.notification.is-light
-    = link_to "#{@game.date.month}/#{@game.date.day} #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}", "/#{params[:username] ||= current_user.username}/diaries/#{diary.id}"
