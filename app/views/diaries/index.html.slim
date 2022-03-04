@@ -8,3 +8,23 @@
   - @game = Game.find(diary.game_id)
   .container.notification.is-light
     = link_to "#{@game.date.month}/#{@game.date.day} #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}", "/#{params[:username] ||= current_user.username}/diaries/#{diary.id}"
+
+p 検索
+
+div.field
+  = search_form_for @q, url: diaries_path(params[:username] ||= current_user.username), class: 'is-grouped' do |f|
+    .control
+      = f.label :comment_cont, '観戦日記', class: 'label'
+    .control
+      = f.search_field :comment_cont, class: 'input'
+    .control
+      = f.label :user_username_cont, 'ユーザー名', class: 'label'
+    .control
+      = f.search_field :user_username_cont, class: 'input'
+    .control
+      = f.submit class: 'button is-light'
+
+- @searched_diaries.map do |diary|
+  - @game = Game.find(diary.game_id)
+  .container.notification.is-light
+    = link_to "#{@game.date.month}/#{@game.date.day} #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}", "/#{params[:username] ||= current_user.username}/diaries/#{diary.id}"

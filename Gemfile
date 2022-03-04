@@ -59,6 +59,7 @@ end
 gem 'devise'
 gem 'nokogiri'
 gem 'open-uri'
+gem 'ransack'
 gem 'username_not_reserved_validator'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
