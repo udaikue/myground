@@ -1,103 +1,164 @@
 sapporo:
+  id: 1
   name: 札幌ドーム
   available: true
 
 rakuten:
+  id: 2
   name: 楽天生命パーク
   available: true
 
 metlife:
+  id: 3
   name: メットライフ
-  available: true
+  available: false
 
 tokyo:
+  id: 4
   name: 東京ドーム
   available: true
 
 jingu:
+  id: 5
   name: 神宮
   available: true
 
 zozo:
+  id: 6
   name: ZOZOマリン
   available: true
 
 yokohama:
+  id: 7
   name: 横浜
   available: true
 
 vantelin:
+  id: 8
   name: バンテリンドーム
   available: true
 
 kyocera:
+  id: 9
   name: 京セラD大阪
   available: true
 
 koshien:
+  id: 10
   name: 甲子園
   available: true
 
 mazda:
+  id: 11
   name: マツダスタジアム
   available: true
 
 paypay:
+  id: 12
   name: PayPayドーム
   available: true
 
 kanazawa:
+  id: 13
   name: 金沢
   available: true
 
 toyama:
+  id: 14
   name: 富山
   available: true
 
 maebashi:
+  id: 15
   name: 前橋
   available: true
 
 niigata:
+  id: 16
   name: 新潟
   available: true
 
 matsuyama:
+  id: 17
   name: 松山
   available: true
 
 shizuoka:
+  id: 18
   name: 静岡
   available: true
 
 gifu:
+  id: 19
   name: 岐阜
   available: true
 
 kobe:
+  id: 20
   name: ほっと神戸
   available: true
 
 kitakyushu:
+  id: 21
   name: 北九州
   available: true
 
 naha:
+  id: 22
   name: 那覇
   available: true
 
 asahikawa:
+  id: 23
   name: 旭川
   available: true
 
 kushiro:
+  id: 24
   name: 釧路
   available: true
 
 obihiro:
+  id: 25
   name: 帯広
   available: true
 
 miyazaki:
+  id: 26
   name: 宮崎
+  available: true
+
+belluna:
+  id: 27
+  name: ベルーナドーム
+  available: true
+
+nago:
+  id: 28
+  name: 名護
+  available: true
+
+urasoe:
+  id: 29
+  name: 浦添
+  available: true
+
+chatan:
+  id: 30
+  name: 北谷
+  available: true
+
+kamagaya:
+  id: 31
+  name: 鎌スタ
+  available: true
+
+kariya:
+  id: 32
+  name: 刈谷
+  available: true
+
+ube:
+  id: 33
+  name: 宇部
   available: true
