@@ -2,9 +2,6 @@ class CreateGames < ActiveRecord::Migration[6.1]
   def change
     create_table :games do |t|
       t.date :date, null: false
-      t.string :ballpark, null: false
-      t.string :team_home, null: false
-      t.string :team_visitor, null: false
       t.integer :score_home, null: false
       t.integer :score_visitor, null: false
       t.integer :hits_home, null: false

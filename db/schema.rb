@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_073952) do
+ActiveRecord::Schema.define(version: 2022_03_08_052514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,6 @@ ActiveRecord::Schema.define(version: 2022_01_20_073952) do
 
   create_table "games", force: :cascade do |t|
     t.date "date", null: false
-    t.string "ballpark", null: false
-    t.string "team_home", null: false
-    t.string "team_visitor", null: false
     t.integer "score_home", null: false
     t.integer "score_visitor", null: false
     t.integer "hits_home", null: false
@@ -51,6 +48,12 @@ ActiveRecord::Schema.define(version: 2022_01_20_073952) do
     t.string "homerun_visitor"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "ballpark_id", null: false
+    t.bigint "team_home_id", null: false
+    t.bigint "team_visitor_id", null: false
+    t.index ["ballpark_id"], name: "index_games_on_ballpark_id"
+    t.index ["team_home_id"], name: "index_games_on_team_home_id"
+    t.index ["team_visitor_id"], name: "index_games_on_team_visitor_id"
   end
 
   create_table "links", force: :cascade do |t|
@@ -94,6 +97,9 @@ ActiveRecord::Schema.define(version: 2022_01_20_073952) do
 
   add_foreign_key "diaries", "games"
   add_foreign_key "diaries", "users"
+  add_foreign_key "games", "ballparks"
+  add_foreign_key "games", "teams", column: "team_home_id"
+  add_foreign_key "games", "teams", column: "team_visitor_id"
   add_foreign_key "links", "diaries"
   add_foreign_key "scores", "games"
 end
