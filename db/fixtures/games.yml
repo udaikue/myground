@@ -1,125 +1,17 @@
-20211016gc:
+20220226hbs:
   id: 111111111
-  date: 2021-10-16
-  ballpark: 東京ドーム
-  team_home: 巨人
-  team_visitor: 広島
-  score_home: 7
+  date: 2022-02-26
+  ballpark_id: 26
+  team_home_id: 12
+  team_visitor_id: 11
+  score_home: 4
   score_visitor: 8
-  hits_home: 11
-  hits_visitor: 12
-  errors_home: 0
-  errors_visitor: 1
-  winning_pitcher: 森下(8勝7敗0S)
-  losing_pitcher: 髙橋(11勝9敗0S)
-  saving_pitcher: 栗林(0勝1敗34S)
-  homerun_home: ウィーラー 14号(7回裏ソロ)
-  homerun_visitor: 宇草 3号(1回表ソロ) 鈴木誠 36号(3回表ソロ) 菊池涼 16号(3回表2ラン)
-
-20211016sd:
-  id: 222222222
-  date: 2021-10-16
-  ballpark: 神宮
-  team_home: ヤクルト
-  team_visitor: 中日
-  score_home: 3
-  score_visitor: 5
-  hits_home: 8
-  hits_visitor: 10
-  errors_home: 0
-  errors_visitor: 2
-  winning_pitcher: ロドリゲス(1勝4敗0S)
-  losing_pitcher: 石川(4勝4敗0S)
-  saving_pitcher: R.マルティネス(1勝4敗23S)
-  homerun_home: サンタナ 18号(5回裏ソロ)
-  homerun_visitor:
-
-20211016el:
-  id: 333333333
-  date: 2021-10-16
-  ballpark: 楽天生命パーク
-  team_home: 楽天
-  team_visitor: 西武
-  score_home: 3
-  score_visitor: 0
-  hits_home: 4
-  hits_visitor: 6
-  errors_home: 0
-  errors_visitor: 0
-  winning_pitcher: 岸(9勝9敗0S)
-  losing_pitcher: 浜屋(1勝6敗0S)
-  saving_pitcher: 宋家豪(3勝3敗5S)
-  homerun_home: 島内 21号(1回裏2ラン)
-  homerun_visitor:
-
-20211016fb:
-  id: 444444444
-  date: 2021-10-16
-  ballpark: 札幌ドーム
-  team_home: 日本ハム
-  team_visitor: オリックス
-  score_home: 1
-  score_visitor: 1
-  hits_home: 5
-  hits_visitor: 4
-  errors_home: 1
-  errors_visitor: 1
-  winning_pitcher:
-  losing_pitcher:
-  saving_pitcher:
-  homerun_home:
-  homerun_visitor:
-
-called7:
-  id: 555555555
-  date: 2022-03-01
-  ballpark: 神宮
-  team_home: ヤクルト
-  team_visitor: 中日
-  score_home: 2
-  score_visitor: 5
-  hits_home: 5
-  hits_visitor: 10
-  errors_home: 0
-  errors_visitor: 1
-  winning_pitcher: ロドリゲス(3勝4敗0S)
-  losing_pitcher: 石川(4勝5敗0S)
-  saving_pitcher: R.マルティネス(1勝4敗23S)
-  homerun_home: サンタナ 21号(1回裏ソロ)
-  homerun_visitor:
-
-extra11:
-  id: 666666666
-  date: 2022-03-01
-  ballpark: 楽天生命パーク
-  team_home: 楽天
-  team_visitor: 西武
-  score_home: 3
-  score_visitor: 4
-  hits_home: 7
-  hits_visitor: 6
-  errors_home: 0
-  errors_visitor: 0
-  winning_pitcher: 岸(9勝10敗0S)
-  losing_pitcher: 浜屋(2勝6敗0S)
-  saving_pitcher: 宋家豪(4勝3敗5S)
-  homerun_home: 島内 24号(4回裏2ラン)
-  homerun_visitor:
-
-extra12:
-  id: 777777777
-  date: 2022-03-01
-  ballpark: 札幌ドーム
-  team_home: 日本ハム
-  team_visitor: オリックス
-  score_home: 1
-  score_visitor: 1
-  hits_home: 3
-  hits_visitor: 4
+  hits_home: 10
+  hits_visitor: 15
   errors_home: 1
   errors_visitor: 0
-  winning_pitcher:
-  losing_pitcher:
+  winning_pitcher: 竹安 (1勝0敗0S)
+  losing_pitcher: 千賀 (0勝1敗0S)
   saving_pitcher:
-  homerun_home:
+  homerun_home: 上林 1号(6回裏2ラン)
   homerun_visitor:
