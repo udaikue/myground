@@ -2,7 +2,7 @@
   = t('title.show_diary')
 
 columns.column.is-full
-    | #{@game.date.month}月#{@game.date.day}日(#{@game_wday}) #{@game.team_home}VS#{@game.team_visitor} @#{@game.ballpark}
+    | #{@game.date.month}月#{@game.date.day}日(#{@game_wday}) #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name} @#{Ballpark.find(@game.ballpark_id).name}
 
 table.table.is-bordered
   thead
@@ -20,7 +20,7 @@ table.table.is-bordered
   tbody
     tr
       td
-        = @game.team_visitor
+        = Team.find(@game.team_visitor_id).name
       - 1.upto(@display_innings) do |i|
         td
           = @scores.find_by(inning: i)&.visitor
@@ -32,7 +32,7 @@ table.table.is-bordered
         = @game.errors_visitor
     tr
       td
-        = @game.team_home
+        = Team.find(@game.team_visitor_id).name
       - 1.upto(@display_innings) do |i|
         td
           = @scores.find_by(inning: i)&.home
