@@ -1,233 +1,53 @@
-score1_game20211016gc:
+20220226hbs_1:
   inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111111
+
+20220226hbs_2:
+  inning: 2
   home: '0'
   visitor: '4'
   game_id: 111111111
 
-score2_game20211016gc:
-  inning: 2
-  home: '0'
-  visitor: '0'
-  game_id: 111111111
-
-score3_game20211016gc:
+20220226hbs_3:
   inning: 3
   home: '0'
-  visitor: '3'
+  visitor: '0'
   game_id: 111111111
 
-score4_game20211016gc:
+20220226hbs_4:
   inning: 4
-  home: '0'
-  visitor: '0'
-  game_id: 111111111
-
-score5_game20211016gc:
-  inning: 5
-  home: '0'
-  visitor: '0'
-  game_id: 111111111
-
-score6_game20211016gc:
-  inning: 6
-  home: '0'
-  visitor: '1'
-  game_id: 111111111
-
-score7_game20211016gc:
-  inning: 7
-  home: '5'
-  visitor: '0'
-  game_id: 111111111
-
-score8_game20211016gc:
-  inning: 8
-  home: '0'
-  visitor: '0'
-  game_id: 111111111
-
-score9_game20211016gc:
-  inning: 9
-  home: '2'
-  visitor: '0'
-  game_id: 111111111
-
-score1_called7:
-  inning: 1
-  home: '2'
-  visitor: '0'
-  game_id: 555555555
-
-score2_called7:
-  inning: 2
   home: '0'
   visitor: '2'
-  game_id: 555555555
+  game_id: 111111111
 
-score3_called7:
-  inning: 3
-  home: '0'
-  visitor: '0'
-  game_id: 555555555
-
-score4_called7:
-  inning: 4
-  home: '0'
-  visitor: '1'
-  game_id: 555555555
-
-score5_called7:
+20220226hbs_5:
   inning: 5
   home: '0'
-  visitor: '2'
-  game_id: 555555555
+  visitor: '0'
+  game_id: 111111111
 
-score6_called7:
+20220226hbs_6:
   inning: 6
-  home: '0'
-  visitor: '0'
-  game_id: 555555555
-
-score7_called7:
-  inning: 7
-  home: '0'
-  visitor: '0'
-  game_id: 555555555
-
-score1_extra11:
-  inning: 1
-  home: '0'
-  visitor: '0'
-  game_id: 666666666
-
-score2_extra11:
-  inning: 2
-  home: '0'
-  visitor: '0'
-  game_id: 666666666
-
-score3_extra11:
-  inning: 3
-  home: '0'
-  visitor: '0'
-  game_id: 666666666
-
-score4_extra11:
-  inning: 4
   home: '2'
-  visitor: '1'
-  game_id: 666666666
+  visitor: '2'
+  game_id: 111111111
 
-score5_extra11:
-  inning: 5
-  home: '1'
-  visitor: '1'
-  game_id: 666666666
-
-score6_extra11:
-  inning: 6
-  home: '0'
-  visitor: '0'
-  game_id: 666666666
-
-score7_extra11:
-  inning: 7
-  home: '0'
-  visitor: '1'
-  game_id: 666666666
-
-score8_extra11:
-  inning: 8
-  home: '0'
-  visitor: '0'
-  game_id: 666666666
-
-score9_extra11:
-  inning: 9
-  home: '0'
-  visitor: '0'
-  game_id: 666666666
-
-score10_extra11:
-  inning: 10
-  home: '0'
-  visitor: '0'
-  game_id: 666666666
-
-score11_extra11:
-  inning: 11
-  home: '0'
-  visitor: '1'
-  game_id: 666666666
-
-score1_extra12:
-  inning: 1
-  home: '1'
-  visitor: '1'
-  game_id: 777777777
-
-score2_extra12:
-  inning: 2
-  home: '0'
-  visitor: '0'
-  game_id: 777777777
-
-score3_extra12:
-  inning: 3
-  home: '0'
-  visitor: '0'
-  game_id: 777777777
-
-score4_extra12:
-  inning: 4
-  home: '0'
-  visitor: '0'
-  game_id: 777777777
-
-score5_extra12:
-  inning: 5
-  home: '0'
-  visitor: '0'
-  game_id: 777777777
-
-score6_extra12:
-  inning: 6
-  home: '0'
-  visitor: '0'
-  game_id: 777777777
-
-score7_extra12:
+20220226hbs_7:
   inning: 7
   home: '0'
   visitor: '0'
-  game_id: 777777777
+  game_id: 111111111
 
-score8_extra12:
+20220226hbs_8:
   inning: 8
   home: '0'
   visitor: '0'
-  game_id: 777777777
+  game_id: 111111111
 
-score9_extra12:
+20220226hbs_9:
   inning: 9
-  home: '0'
+  home: '2'
   visitor: '0'
-  game_id: 777777777
-
-score10_extra12:
-  inning: 10
-  home: '0'
-  visitor: '0'
-  game_id: 777777777
-
-score11_extra12:
-  inning: 11
-  home: '0'
-  visitor: '0'
-  game_id: 777777777
-
-score12_extra12:
-  inning: 12
-  home: '0'
-  visitor: '0'
-  game_id: 777777777
+  game_id: 111111111
