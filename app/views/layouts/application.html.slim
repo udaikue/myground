@@ -10,16 +10,21 @@ html
     = javascript_pack_tag 'application'
   body
     header
-      nav
-        br
-        - if user_signed_in?
-          = link_to t('button.log_out'), destroy_user_session_path, method: :delete
-        - else
-          = link_to t('button.sign_up'), new_user_registration_path
-          = link_to t('button.log_in'), new_user_session_path
-        br
-        -if current_user.present?
-          = current_user.username
+      nav.navbar role="navigation" aria-label="main navigation"
+        .navbar-brand
+          .navbar-item
+            .field class="is-grouped"
+              .control
+                a href="https://bulma.io"
+                  img src="https://bulma.io/images/bulma-logo.png" width="56" height="14"
+              .control
+                | 最新日記
+              .control
+                | マイページ
+          a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+            span aria-hidden="true"
+            span aria-hidden="true"
+            span aria-hidden="true"
     .notice
       = notice
     .alert
