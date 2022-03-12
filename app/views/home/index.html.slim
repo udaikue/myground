@@ -1,8 +1,5 @@
 .title
-  = "#{params[:username] ||= current_user.username}の#{t('title.diaries')}"
-
-- if my_diaries_index?
-  = link_to t('button.new'), new_diary_path(current_user.username), class: 'button is-normal'
+  = "#{t('title.latest_diaries')}"
 
 - @diaries.map do |diary|
   - @game = Game.find(diary.game_id)

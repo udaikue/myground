@@ -19,7 +19,7 @@ ja:
     cancel_account: アカウント削除
     log_in: ログイン
     log_out: ログアウト
-    sign_up: ユーザー登録
+    sign_up: 登録
     forgot_password: パスワードを忘れた場合
     confirmation_email: 確認メールが届かない場合
     unlock_email: ロック解除メールが届かない場合
@@ -35,6 +35,7 @@ ja:
     log_in: ログイン
     sign_up: ユーザー登録
     edit_user: 登録情報編集
+    latest_diaries: 新着日記
     forgot_password: パスワードのリセット
     change_password: パスワードの変更
     resend_confirmation: 確認メールの再送
