@@ -1,0 +1,15 @@
+br
+.has-text-centered
+  | 自分だけの野球観戦日記を作ろう
+
+br
+br
+
+.has-text-centered
+  = link_to '登録してはじめる', new_user_registration_path, class: 'button is-normal'
+br
+.has-text-centered
+  = link_to t('button.log_in'), new_user_session_path, class: 'button is-normal'
+br
+.has-text-centered
+  = link_to '新着日記をみる', latest_diaries_path, class: 'button is-normal'
