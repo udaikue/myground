@@ -3,12 +3,12 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
-    unauthenticated :user do
-      root to: 'devise/sessions#new', as: :unauthenticated_root
+    authenticated :user do
+      root to: 'home#index', as: :authenticated_root
     end
   end
 
-  root to: 'diaries#index'
+  root to: 'welcome#index'
 
   namespace :api do
     resources :games, only: %i[index]
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :diaries, only: %i[show]
   end
 
+  get '/diaries', to: 'home#index', as: 'latest_diaries'
   scope ':username' do
     resources :diaries
   end
