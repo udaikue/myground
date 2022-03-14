@@ -12,18 +12,21 @@ html
     - if !(current_page?(root_path) && current_user.nil?)
       header
         nav.navbar role="navigation" aria-label="main navigation"
-          .navbar-branG
+          .navbar-brand
             .navbar-item
               .field class="is-grouped"
                 .control
-                  a href="https://bulma.io"
-                    img src="https://bulma.io/images/bulma-logo.png" width="56" height="14"
+                  = link_to image_tag('logo.png'), root_path
                 .control
-                  | 最新日記
-                .control
-                  | マイページ
-                .control
-                  - if user_signed_in?
+                  = link_to image_tag('diaries.png'), root_path
+                - if current_user
+                  .control
+                    = link_to image_tag('me.png'), "/#{current_user.username}/diaries"
+                - else
+                  .control
+                    = link_to image_tag('me.png'), new_user_session_path
+                - if user_signed_in?
+                  .control
                     = link_to t('button.log_out'), destroy_user_session_path, method: :delete
             a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
               span aria-hidden="true"
