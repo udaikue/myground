@@ -21,7 +21,7 @@ html
                   = link_to image_tag('diaries.png'), root_path
                 - if current_user
                   .control
-                    = link_to image_tag('me.png'), diaries_path(current_user)
+                    = link_to image_tag('me.png'), "/#{current_user.username}/diaries"
                 - else
                   .control
                     = link_to image_tag('me.png'), new_user_session_path
