@@ -8,6 +8,28 @@ ja:
         comment: 感想
       user:
         username: ユーザー名
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              invalid: は有効な値ではありません
+              blank: が入力されていません
+              taken: は使用されています
+              too_short: は3文字以上に設定してください
+              too_long: は25文字以下に設定してください
+            email:
+              invalid: は有効な値ではありません
+              blank: が入力されていません
+            password:
+              invalid: は有効な値ではありません
+              blank: が入力されていません
+              confirmation: が内容とあっていません
+        score:
+          attributes:
+            inning:
+              inclusion: 1~12の整数を入れてください
+
   button:
     create: 保存
     show: 詳細
