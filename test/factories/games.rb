@@ -12,5 +12,8 @@ FactoryBot.define do
     saving_pitcher { '栗林 (0勝0敗1S)' }
     homerun_home { '' }
     homerun_visitor { '' }
+    association: ballpark, factory: :zozo
+    association: team_home, factory: :marines
+    association: team_visitor, factory: :carp
   end
 end
