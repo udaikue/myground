@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :diaries, dependent: :destroy
 
   validates :username, uniqueness: true,
-                       format: { with: /\A[a-zA-Z0-9\d]+\z/ },
+                       format: { with: /\A[a-zA-Z_0-9\d]+\z/ },
                        length: { minimum: 3, maximum: 25 },
                        username_not_reserved: true
 end
