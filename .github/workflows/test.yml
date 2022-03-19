@@ -29,10 +29,6 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-    env:
-      RAILS_ENV: test
-      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
-
     steps:
       - name: Set Timezone
         uses: szenius/set-timezone@v1.0
