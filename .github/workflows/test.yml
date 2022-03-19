@@ -26,6 +26,8 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+        ports:
+          - 5432:5432
 
     steps:
       - name: Set Timezone
@@ -35,6 +37,12 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Connect to PostgreSQL
+        run: node client.js
+        env:
+          POSTGRES_HOST: postgres
+          POSTGRES_PORT: 5432
 
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1
