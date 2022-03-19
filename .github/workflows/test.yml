@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
@@ -5,11 +6,24 @@
 # This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
 # For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
 
+=======
+# This workflow uses actions that are not certified by GitHub.  They are
+# provided by a third-party and are governed by separate terms of service,
+# privacy policy, and support documentation.
+#
+# This workflow will install a prebuilt Ruby version, install dependencies, and
+# run tests and linters.
+>>>>>>> 39ff67c (Add system test)
 name: Test
 
 on:
   push:
     branches: [ main ]
+<<<<<<< HEAD
+=======
+  pull_request:
+    branches: [ main ]
+>>>>>>> 39ff67c (Add system test)
 
 jobs:
   test:
@@ -21,9 +35,13 @@ jobs:
 
     services:
       postgres:
+<<<<<<< HEAD
         image: postgres
         ports:
           - 5432:5432
+=======
+        image: postgres:11-alpine
+>>>>>>> 39ff67c (Add system test)
         env:
           POSTGRES_PASSWORD: postgres
         options: >-
@@ -31,6 +49,7 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+<<<<<<< HEAD
 
     steps:
 
@@ -53,3 +72,50 @@ jobs:
 
     - name: Run test
       run: bundle exec rspec
+=======
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Set Timezone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Tokyo"
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          cache: 'npm'
+
+      - name: Cache node modules
+        uses: actions/cache@v2.1.4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.2
+          bundler-cache: true
+
+      - name: Install uri 0.11.0
+        run: gem install uri -v 0.11.0
+
+      - name: Yarn install
+        run:  yarn install --check-files
+
+      - name: Set up database
+        run: bundle exec rails db:setup
+
+      - name: Run Rubocop
+        run:  bundle exec rubocop
+
+      - name: Run tests
+        run: bundle exec rspec
+>>>>>>> 39ff67c (Add system test)
