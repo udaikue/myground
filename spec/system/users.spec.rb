@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'ユーザー管理', type: :system do
@@ -35,7 +37,6 @@ describe 'ユーザー管理', type: :system do
         # 再考して書く
       end
     end
-
   end
 
   describe 'ログイン' do

@@ -4,29 +4,29 @@ class DiariesController < ApplicationController
   before_action :set_diaries, only: %i[index]
   before_action :set_diary, only: %i[show edit update destroy]
 
-  def index ;end
+  def index; end
 
   def show
     @game = Game.find(@diary.game_id)
     @game_wday = set_day_of_week
-    @scores = Score.where("game_id = ?", @diary.game_id)
+    @scores = Score.where('game_id = ?', @diary.game_id)
     set_display_innings
   end
 
-  def new ;end
+  def new; end
 
   def create
     @diary = Diary.new(diary_params)
     @diary.user_id = current_user.id
 
     if @diary.save
-      redirect_to diaries_path(params[:username]), notice:'日記を登録しました'
+      redirect_to diaries_path(params[:username]), notice: '日記を登録しました'
     else
       render :new
     end
   end
 
-  def edit ;end
+  def edit; end
 
   def update
     if @diary.update(diary_params)
@@ -58,14 +58,14 @@ class DiariesController < ApplicationController
 
   def set_diaries
     if (current_user.present? && current_user.username == params[:username]) || params[:username].nil?
-      @diaries = Diary.where("user_id = ?", current_user.id)
+      @diaries = Diary.where('user_id = ?', current_user.id)
     else
       @user = User.find_by(username: params[:username])
-      @diaries = Diary.where("user_id = ? and published = ?", @user.id, true)
+      @diaries = Diary.where('user_id = ? and published = ?', @user.id, true)
     end
   end
 
   def diary_params
-    params.require(:diary).permit(:id, :comment, :published, :game_id, links_attributes: [:id, :url, :title, :_destroy,])
+    params.require(:diary).permit(:id, :comment, :published, :game_id, links_attributes: %i[id url title _destroy])
   end
 end

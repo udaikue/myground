@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe '観戦日記管理', type: :system do
@@ -17,7 +19,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示される' do
-        expect(page).to have_content "#{Date.today.month}/#{Date.today.day} ロッテVS広島 @ZOZOマリン"
+        expect(page).to have_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島 @ZOZOマリン"
       end
     end
   end
@@ -30,7 +32,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示される' do
-        expect(page).to have_content "#{Date.today.month}/#{Date.today.day} ロッテVS広島 @ZOZOマリン"
+        expect(page).to have_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島 @ZOZOマリン"
       end
     end
 
@@ -41,7 +43,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示されない' do
-        expect(page).to have_no_content "#{Date.today.month}/#{Date.today.day} ロッテVS広島 @ZOZOマリン"
+        expect(page).to have_no_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島 @ZOZOマリン"
       end
 
       it '本人がログイン時は表示される' do
@@ -51,7 +53,7 @@ describe '観戦日記管理', type: :system do
         click_button 'ログイン'
 
         visit diaries_path(@user.username)
-        expect(page).to have_content "#{Date.today.month}/#{Date.today.day} ロッテVS広島 @ZOZOマリン"
+        expect(page).to have_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島 @ZOZOマリン"
       end
     end
 
@@ -97,7 +99,7 @@ describe '観戦日記管理', type: :system do
     end
   end
 
-    describe '#create' do
+  describe '#create' do
     before do
       @diary = FactoryBot.create(:diary)
     end

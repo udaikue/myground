@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :game do
     id { '123456789' }
-    date { Date.today }
+    date { Time.zone.today }
     score_home { '1' }
     score_visitor { '2' }
     hits_home { '4' }
