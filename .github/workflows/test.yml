@@ -47,7 +47,7 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: yarn install
+      - name: Yarn install
         run:  yarn install --check-files
 
       - name: Run Rubocop
