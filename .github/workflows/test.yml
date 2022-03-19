@@ -51,8 +51,8 @@ jobs:
       - name: Yarn install
         run:  yarn install --check-files
 
-      - name: Run Rubocop
-        run:  bundle exec rubocop
+      # - name: Run Rubocop
+      #   run:  bundle exec rubocop
 
       - name: Run tests
         run:  bundle exec rspec
