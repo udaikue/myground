@@ -51,7 +51,7 @@ jobs:
         run:  yarn install --check-files
 
       - name: Run Rubocop
-        run:  rubocop
+        run:  bundle exec rubocop
 
       - name: Run tests
-        run: bundle exec rspec
+        run:  bundle exec rspec
