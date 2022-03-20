@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'ユーザー管理', type: :system do
@@ -35,7 +37,6 @@ describe 'ユーザー管理', type: :system do
         # 再考して書く
       end
     end
-
   end
 
   describe 'ログイン' do
@@ -76,6 +77,35 @@ describe 'ユーザー管理', type: :system do
 
       it '「Eメールまたはパスワードが違います」と表示される' do
         expect(page).to have_text 'Eメールまたはパスワードが違います'
+      end
+    end
+  end
+
+  describe 'ユーザー情報更新' do
+    before do
+      @user = FactoryBot.create(:user)
+      visit new_user_session_path
+
+      fill_in 'Eメール', with: @user.email
+      fill_in 'パスワード', with: @user.password
+      click_button 'ログイン'
+    end
+
+    describe 'ログイン中であれば' do
+      it '編集画面が表示される' do
+        visit edit_user_registration_path
+        expect(page).to have_text 'ユーザー名'
+      end
+    end
+
+    describe 'ログイン中であれば' do
+      it '更新できる' do
+        visit edit_user_registration_path
+        fill_in 'ユーザー名', with: "#{@user.username}xxx"
+        fill_in '現在のパスワード', with: @user.password
+        click_button '更新'
+        
+        expect(page).to have_text 'アカウント情報を変更しました。'
       end
     end
   end

@@ -1,21 +1,18 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :edit, :update]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: %i[show edit update]
+  before_action :set_user, only: %i[show edit update destroy]
 
   def show
     @user = User.find_by(username: params[:username])
   end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 
