@@ -60,7 +60,7 @@ end
 
 gem 'devise'
 gem 'nokogiri'
-gem 'open-uri'
+gem 'open-uri', '~> 0.2.0'
 gem 'ransack'
 gem 'username_not_reserved_validator'
 
