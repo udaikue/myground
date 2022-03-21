@@ -14,9 +14,9 @@
         </thead>
         <tbody>
           <tr v-for='game in gameCards' :key='game.id'>
-            <td>{{ game.team_home }}</td>
+            <td>{{ game.team_home_id }}</td>
             <td @click='getScore(game.id)'>{{ game.score_home }} - {{ game.score_visitor }}</td>
-            <td>{{ game.team_visitor }}</td>
+            <td>{{ game.team_visitor_id }}</td>
           </tr>
         </tbody>
       </table>
@@ -55,14 +55,14 @@
         </thead>
         <tbody>
           <tr>
-            <td>{{ selectedGame.team_visitor }}</td>
+            <td>{{ selectedGame.team_visitor_id }}</td>
             <td v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
             <td>{{ selectedGame.score_visitor }}</td>
             <td>{{ selectedGame.hits_visitor }}</td>
             <td>{{ selectedGame.errors_visitor }}</td>
           </tr>
           <tr>
-            <td>{{ selectedGame.team_home }}</td>
+            <td>{{ selectedGame.team_home_id }}</td>
             <td v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
             <td>{{ selectedGame.score_home }}</td>
             <td>{{ selectedGame.hits_home }}</td>

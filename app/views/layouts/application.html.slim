@@ -7,7 +7,9 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_pack_tag 'application', media: 'all'
+    script crossorigin="anonymous" src="https://kit.fontawesome.com/7a3d65f006.js"
     = javascript_pack_tag 'application'
+
   body
     - if !(current_page?(root_path) && current_user.nil?)
       header
@@ -29,9 +31,7 @@ html
                   .control
                     = link_to t('button.log_out'), destroy_user_session_path, method: :delete
             a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-              span aria-hidden="true"
-              span aria-hidden="true"
-              span aria-hidden="true"
+              i.fas.fa-cog
     .notice
       = notice
     .alert

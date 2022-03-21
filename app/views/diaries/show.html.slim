@@ -32,7 +32,7 @@ table.table.is-bordered
         = @game.errors_visitor
     tr
       td
-        = Team.find(@game.team_visitor_id).name
+        = Team.find(@game.team_home_id).name
       - 1.upto(@display_innings) do |i|
         td
           = @scores.find_by(inning: i)&.home
@@ -75,7 +75,7 @@ table.table.is-bordered
 .section.has-background-light
   = simple_format @diary.comment
   br
-  | リンク
+  | ニュースリンク
   br
   - @diary.links.each do |link|
     a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
