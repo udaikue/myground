@@ -58,9 +58,12 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-node-
-          
-    - name: yarn install
+
+    - name: Yarn install
       run:  yarn install --check-files
+
+    - name: Install uri 0.11.0
+      run: gem install uri -v 0.11.0
 
     - name: Setup test DB
       run: bundle exec rails db:setup
