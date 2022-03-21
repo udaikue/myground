@@ -4,7 +4,7 @@
       <h2>試合結果</h2>
         <p v-if='!gameCards.length && !result'>いつの日記を書きますか？</p>
         <p v-if='gameCards.length && !result'>どの試合について書きますか？</p>
-      <table class='table' v-if='gameCards.length && !result'>
+      <table class='table' v-if='gameCards.length && !result' id='game-cards'>
         <thead>
           <tr>
             <th></th>
@@ -13,10 +13,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for='game in gameCards' :key='game.id'>
-            <td>{{ game.team_home_id }}</td>
-            <td @click='getScore(game.id)'>{{ game.score_home }} - {{ game.score_visitor }}</td>
-            <td>{{ game.team_visitor_id }}</td>
+          <tr v-for='game in gameCards' :key='game.id' @click='getScore(game.id)'>
+            <td>{{ getTeamName(game.team_home_id) }}</td>
+            <td>{{ game.score_home }} - {{ game.score_visitor }}</td>
+            <td>{{ getTeamName(game.team_visitor_id) }}</td>
           </tr>
         </tbody>
       </table>
@@ -25,7 +25,7 @@
         <div class='column is-one-quarter-mobile'>{{ calendarYear }}年{{ calendarMonth }}月</div>
         <div class='column is-one-quarter-mobile' v-if='!newestMonth()' @click='nextMonth'>次の月</div>
       </div>
-      <table class='table' v-if='!result'>
+      <table class='table' v-if='!result' id='calendar'>
         <thead>
           <tr>
             <th>月</th>
@@ -55,14 +55,14 @@
         </thead>
         <tbody>
           <tr>
-            <td>{{ selectedGame.team_visitor_id }}</td>
+            <td>{{ getTeamName(selectedGame.team_visitor_id) }}</td>
             <td v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
             <td>{{ selectedGame.score_visitor }}</td>
             <td>{{ selectedGame.hits_visitor }}</td>
             <td>{{ selectedGame.errors_visitor }}</td>
           </tr>
           <tr>
-            <td>{{ selectedGame.team_home_id }}</td>
+            <td>{{ getTeamName(selectedGame.team_home_id) }}</td>
             <td v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
             <td>{{ selectedGame.score_home }}</td>
             <td>{{ selectedGame.hits_home }}</td>
@@ -189,6 +189,34 @@ export default {
           console.warn('Failed to parsing', error)
         })
     },
+    getTeamName(team_id) {
+      switch(team_id) {
+        case 1:
+          return '巨人'
+        case 2:
+          return 'ヤクルト'
+        case 3:
+          return 'DeNA'
+        case 4:
+          return '中日'
+        case 5:
+          return '阪神'
+        case 6:
+          return '広島'
+        case 7:
+          return '日本ハム'
+        case 8:
+          return '楽天'
+        case 9:
+          return '西武'
+        case 10:
+          return 'ロッテ'
+        case 11:
+          return 'オリックス'
+        case 12:
+          return 'ソフトバンク'
+      }
+    },
     getCurrentYear() {
       return new Date().getFullYear()
     },
@@ -270,6 +298,9 @@ export default {
       this.gameCards = this.games.filter((value) => {
         return value.date === this.formatMonthDate().join('-')
       })
+      // this.gameCards.forEach((value, index) => {
+      //   console.log(value.replace(1, 1))
+      // })
     },
     getScore(game_id) {
       this.result = true
