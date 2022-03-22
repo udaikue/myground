@@ -68,6 +68,9 @@ jobs:
     - name: Setup test DB
       run: bundle exec rails db:setup
 
+    - name: Install webpacker
+      run: bundle exec rails webpacker:install
+
     - name: Compile webpacker
       run: bundle exec rails webpacker:compile
 
