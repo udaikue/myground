@@ -63,7 +63,7 @@
           </tr>
           <tr>
             <td>{{ getTeamName(selectedGame.team_home_id) }}</td>
-            <td v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
+            <td v-for='score in displayScores' :key='score.id'>{{ score.home }}</td>
             <td>{{ selectedGame.score_home }}</td>
             <td>{{ selectedGame.hits_home }}</td>
             <td>{{ selectedGame.errors_home }}</td>
