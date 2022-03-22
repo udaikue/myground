@@ -62,14 +62,14 @@ jobs:
     - name: Yarn install
       run:  yarn install --check-files
 
-    - name: Uninstall uri 0.10.1
-      run: gem uninstall uri -v 0.10.1
-
     - name: Install uri 0.11.0
       run: gem install uri -v 0.11.0
 
     - name: Setup test DB
       run: bundle exec rails db:setup
+
+    - name: Compile webpacker
+      run: bundle exec rails webpacker:compile
 
     - name: Run tests
       run: bundle exec rspec
