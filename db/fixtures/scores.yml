@@ -1455,3 +1455,867 @@
   home: 'X'
   visitor: '0'
   game_id: 111111137
+
+2022030671_1:
+  inning: 1
+  home: '2'
+  visitor: '0'
+  game_id: 111111138
+
+2022030671_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111138
+
+2022030671_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111138
+
+2022030671_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111138
+
+2022030671_5:
+  inning: 5
+  home: '1'
+  visitor: '0'
+  game_id: 111111138
+
+2022030671_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111138
+
+2022030671_7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 111111138
+
+2022030671_8:
+  inning: 8
+  home: '1'
+  visitor: '1'
+  game_id: 111111138
+
+2022030671_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111138
+
+20220306311_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111139
+
+20220306311_2:
+  inning: 2
+  home: '1'
+  visitor: '0'
+  game_id: 111111139
+
+20220306311_3:
+  inning: 3
+  home: '2'
+  visitor: '0'
+  game_id: 111111139
+
+20220306311_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111139
+
+20220306311_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111139
+
+20220306311_6:
+  inning: 6
+  home: '1'
+  visitor: '0'
+  game_id: 111111139
+
+20220306311_7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 111111139
+
+20220306311_8:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111139
+
+20220306311_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111139
+
+2022030658_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111140
+
+2022030658_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111140
+
+2022030658_3:
+  inning: 3
+  home: '1'
+  visitor: '0'
+  game_id: 111111140
+
+2022030658_4:
+  inning: 4
+  home: '2'
+  visitor: '0'
+  game_id: 111111140
+
+2022030658_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111140
+
+2022030658_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111140
+
+2022030658_7:
+  inning: 7
+  home: '0'
+  visitor: '1'
+  game_id: 111111140
+
+2022030658_8:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111140
+
+2022030658_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111140
+
+2022030669_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111141
+
+2022030669_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111141
+
+2022030669_3:
+  inning: 3
+  home: '2'
+  visitor: '0'
+  game_id: 111111141
+
+2022030669_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111141
+
+2022030669_5:
+  inning: 5
+  home: '0'
+  visitor: '1'
+  game_id: 111111141
+
+2022030669_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111141
+
+2022030669_7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 111111141
+
+2022030669_8:
+  inning: 8
+  home: '0'
+  visitor: '1'
+  game_id: 111111141
+
+2022030669_9:
+  inning: 9
+  home: '1X'
+  visitor: '0'
+  game_id: 111111141
+
+202203061210_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111142
+
+202203061210_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111142
+
+202203061210_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111142
+
+202203061210_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111142
+
+202203061210_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111142
+
+202203061210_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111142
+
+202203061210_7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 111111142
+
+202203061210_8:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111142
+
+202203061210_9:
+  inning: 9
+  home: '0'
+  visitor: '0'
+  game_id: 111111142
+
+20220308710_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111144
+
+20220308710_2:
+  inning: 2
+  home: '0'
+  visitor: '4'
+  game_id: 111111144
+
+20220308710_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111144
+
+20220308710_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111144
+
+20220308710_5:
+  inning: 5
+  home: '1'
+  visitor: '1'
+  game_id: 111111144
+
+20220308710_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111144
+
+20220308710_7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 111111144
+
+20220308710_8:
+  inning: 8
+  home: '4'
+  visitor: '0'
+  game_id: 111111144
+
+20220308710_9:
+  inning: 9
+  home: '0'
+  visitor: '0'
+  game_id: 111111144
+
+2022030839_1:
+  inning: 1
+  home: '3'
+  visitor: '0'
+  game_id: 111111145
+
+2022030839_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111145
+
+2022030839_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111145
+
+2022030839_4:
+  inning: 4
+  home: '1'
+  visitor: '1'
+  game_id: 111111145
+
+2022030839_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111145
+
+2022030839_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111145
+
+2022030839_7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 111111145
+
+2022030839_8:
+  inning: 8
+  home: '0'
+  visitor: '1'
+  game_id: 111111145
+
+2022030839_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111145
+
+2022030882_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111146
+
+2022030882_2:
+  inning: 2
+  home: '1'
+  visitor: '0'
+  game_id: 111111146
+
+2022030882_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111146
+
+2022030882_4:
+  inning: 4
+  home: '3'
+  visitor: '0'
+  game_id: 111111146
+
+2022030882_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111146
+
+2022030882_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111146
+
+2022030882_7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 111111146
+
+2022030882_8:
+  inning: 8
+  home: '1'
+  visitor: '0'
+  game_id: 111111146
+
+2022030882_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111146
+
+20220308411_1:
+  inning: 1
+  home: '1'
+  visitor: '0'
+  game_id: 111111147
+
+20220308411_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111147
+
+20220308411_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111147
+
+20220308411_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111147
+
+20220308411_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111147
+
+20220308411_6:
+  inning: 6
+  home: '0'
+  visitor: '2'
+  game_id: 111111147
+
+20220308411_7:
+  inning: 7
+  home: '0'
+  visitor: '2'
+  game_id: 111111147
+
+20220308411_8:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111147
+
+20220308411_9:
+  inning: 9
+  home: '0'
+  visitor: '0'
+  game_id: 111111147
+
+2022030856_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111148
+
+2022030856_2:
+  inning: 2
+  home: '1'
+  visitor: '0'
+  game_id: 111111148
+
+2022030856_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111148
+
+2022030856_4:
+  inning: 4
+  home: '1'
+  visitor: '0'
+  game_id: 111111148
+
+2022030856_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111148
+
+2022030856_6:
+  inning: 6
+  home: '8'
+  visitor: '2'
+  game_id: 111111148
+
+2022030856_7:
+  inning: 7
+  home: '0'
+  visitor: '1'
+  game_id: 111111148
+
+2022030856_8:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111148
+
+2022030856_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111148
+
+20220308121_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111149
+
+20220308121_2:
+  inning: 2
+  home: '2'
+  visitor: '0'
+  game_id: 111111149
+
+20220308121_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111149
+
+20220308121_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111149
+
+20220308121_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111149
+
+20220308121_6:
+  inning: 6
+  home: '1'
+  visitor: '2'
+  game_id: 111111149
+
+20220308121_7:
+  inning: 7
+  home: '3'
+  visitor: '0'
+  game_id: 111111149
+
+20220308121_8:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111149
+
+20220308121_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111149
+
+20220309710_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111150
+
+20220309710_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111150
+
+20220309710_3:
+  inning: 3
+  home: '0'
+  visitor: '1'
+  game_id: 111111150
+
+20220309710_4:
+  inning: 4
+  home: '2'
+  visitor: '0'
+  game_id: 111111150
+
+20220309710_5:
+  inning: 5
+  home: '4'
+  visitor: '0'
+  game_id: 111111150
+
+20220309710_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111150
+
+20220309710_7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 111111150
+
+20220309710_8:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111150
+
+20220309710_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111150
+
+2022030939_1:
+  inning: 1
+  home: '1'
+  visitor: '1'
+  game_id: 111111151
+
+2022030939_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111151
+
+2022030939_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111151
+
+2022030939_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111151
+
+2022030939_5:
+  inning: 5
+  home: '1'
+  visitor: '0'
+  game_id: 111111151
+
+2022030939_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111151
+
+2022030939_7:
+  inning: 7
+  home: '0'
+  visitor: '0'
+  game_id: 111111151
+
+2022030939_8:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111151
+
+2022030939_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111151
+
+2022030982_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111152
+
+2022030982_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111152
+
+2022030982_3:
+  inning: 3
+  home: '1'
+  visitor: '0'
+  game_id: 111111152
+
+2022030982_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111152
+
+2022030982_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111152
+
+2022030982_6:
+  inning: 6
+  home: '0'
+  visitor: '1'
+  game_id: 111111152
+
+2022030982_7:
+  inning: 7
+  home: '1'
+  visitor: '0'
+  game_id: 111111152
+
+2022030982_8:
+  inning: 8
+  home: '1'
+  visitor: '0'
+  game_id: 111111152
+
+2022030982_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111152
+
+20220309411_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111153
+
+20220309411_2:
+  inning: 2
+  home: '0'
+  visitor: '0'
+  game_id: 111111153
+
+20220309411_3:
+  inning: 3
+  home: '0'
+  visitor: '0'
+  game_id: 111111153
+
+20220309411_4:
+  inning: 4
+  home: '0'
+  visitor: '0'
+  game_id: 111111153
+
+20220309411_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111153
+
+20220309411_6:
+  inning: 6
+  home: '0'
+  visitor: '1'
+  game_id: 111111153
+
+20220309411_7:
+  inning: 7
+  home: '0'
+  visitor: '1'
+  game_id: 111111153
+
+20220309411_8:
+  inning: 8
+  home: '0'
+  visitor: '0'
+  game_id: 111111153
+
+20220309411_9:
+  inning: 9
+  home: '0'
+  visitor: '0'
+  game_id: 111111153
+
+20220309121_1:
+  inning: 1
+  home: '0'
+  visitor: '0'
+  game_id: 111111155
+
+20220309121_2:
+  inning: 2
+  home: '1'
+  visitor: '0'
+  game_id: 111111155
+
+20220309121_3:
+  inning: 3
+  home: '1'
+  visitor: '0'
+  game_id: 111111155
+
+20220309121_4:
+  inning: 4
+  home: '2'
+  visitor: '0'
+  game_id: 111111155
+
+20220309121_5:
+  inning: 5
+  home: '0'
+  visitor: '0'
+  game_id: 111111155
+
+20220309121_6:
+  inning: 6
+  home: '0'
+  visitor: '0'
+  game_id: 111111155
+
+20220309121_7:
+  inning: 7
+  home: '1'
+  visitor: '1'
+  game_id: 111111155
+
+20220309121_8:
+  inning: 8
+  home: '1'
+  visitor: '0'
+  game_id: 111111155
+
+20220309121_9:
+  inning: 9
+  home: 'X'
+  visitor: '0'
+  game_id: 111111155

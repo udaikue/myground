@@ -7,8 +7,8 @@ import Rails from '@rails/ujs'
 import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
 
-require('../new-diary.js')
-require('../edit-diary.js')
-
 Rails.start()
 ActiveStorage.start()
+
+require('../new-diary.js')
+require('../edit-diary.js')
