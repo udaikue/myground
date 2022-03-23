@@ -1,5 +1,4 @@
 202202261211:
-  id: 111111111
   date: 2022-02-26
   ballpark_id: 26
   team_home_id: 12
@@ -17,7 +16,6 @@
   homerun_visitor:
 
 2022022673:
-  id: 111111112
   date: 2022-02-26
   ballpark_id: 28
   team_home_id: 7
@@ -35,7 +33,6 @@
   homerun_visitor: ソト 1号(2回表ソロ) 、 ソト 2号(4回表ソロ)
 
 2022022628:
-  id: 111111113
   date: 2022-02-26
   ballpark_id: 29
   team_home_id: 2
@@ -53,7 +50,6 @@
   homerun_visitor:
 
 2022022645:
-  id: 111111114
   date: 2022-02-26
   ballpark_id: 30
   team_home_id: 4
@@ -71,7 +67,6 @@
   homerun_visitor:
 
 2022022616:
-  id: 111111115
   date: 2022-02-26
   ballpark_id: 22
   team_home_id: 1
@@ -89,7 +84,6 @@
   homerun_visitor: 末包 1号(5回表2ラン)
 
 2022022713:
-  id: 111111116
   date: 2022-02-27
   ballpark_id: 22
   team_home_id: 1
@@ -107,7 +101,6 @@
   homerun_visitor:
 
 2022022776:
-  id: 111111117
   date: 2022-02-27
   ballpark_id: 28
   team_home_id: 7
@@ -125,7 +118,6 @@
   homerun_visitor: 大盛 1号(9回表ソロ)
 
 2022022725:
-  id: 111111118
   date: 2022-02-27
   ballpark_id: 29
   team_home_id: 2
@@ -143,7 +135,6 @@
   homerun_visitor: 江越 1号(7回表2ラン) 、 小野寺 1号(9回表3ラン)
 
 2022022748:
-  id: 111111119
   date: 2022-02-27
   ballpark_id: 30
   team_home_id: 4
@@ -161,7 +152,6 @@
   homerun_visitor:
 
 202203011110:
-  id: 111111120
   date: 2022-03-01
   ballpark_id: 9
   team_home_id: 11
@@ -179,7 +169,6 @@
   homerun_visitor:
 
 2022030236:
-  id: 111111121
   date: 2022-03-02
   ballpark_id: 7
   team_home_id: 3
@@ -197,7 +186,6 @@
   homerun_visitor:
 
 202203021110:
-  id: 111111122
   date: 2022-03-02
   ballpark_id: 9
   team_home_id: 11
@@ -215,7 +203,6 @@
   homerun_visitor:
 
 2022030272:
-  id: 111111123
   date: 2022-03-02
   ballpark_id: 1
   team_home_id: 7
@@ -233,7 +220,6 @@
   homerun_visitor:
 
 2022030219:
-  id: 111111124
   date: 2022-03-02
   ballpark_id: 4
   team_home_id: 1
@@ -251,7 +237,6 @@
   homerun_visitor:
 
 20220302124:
-  id: 111111125
   date: 2022-03-02
   ballpark_id: 12
   team_home_id: 12
@@ -269,7 +254,6 @@
   homerun_visitor: 阿部 1号(7回表ソロ)
 
 2022030336:
-  id: 111111126
   date: 2022-03-03
   ballpark_id: 7
   team_home_id: 3
@@ -287,7 +271,6 @@
   homerun_visitor: 持丸 1号(5回表2ラン)
 
 2022030372:
-  id: 111111127
   date: 2022-03-03
   ballpark_id: 1
   team_home_id: 7
@@ -305,7 +288,6 @@
   homerun_visitor:
 
 2022030319:
-  id: 111111128
   date: 2022-03-03
   ballpark_id: 4
   team_home_id: 1
@@ -323,7 +305,6 @@
   homerun_visitor:
 
 20220303124:
-  id: 111111129
   date: 2022-03-03
   ballpark_id: 12
   team_home_id: 12
@@ -341,7 +322,6 @@
   homerun_visitor: 鵜飼 1号(6回表2ラン)
 
 2022030458:
-  id: 111111130
   date: 2022-03-04
   ballpark_id: 10
   team_home_id: 5
@@ -359,7 +339,6 @@
   homerun_visitor:
 
 202203041210:
-  id: 111111131
   date: 2022-03-04
   ballpark_id: 12
   team_home_id: 12
@@ -377,7 +356,6 @@
   homerun_visitor:
 
 20220305311:
-  id: 111111132
   date: 2022-03-05
   ballpark_id: 7
   team_home_id: 3
@@ -395,7 +373,6 @@
   homerun_visitor:
 
 2022030558:
-  id: 111111133
   date: 2022-03-05
   ballpark_id: 10
   team_home_id: 5
@@ -413,7 +390,6 @@
   homerun_visitor:
 
 2022030569:
-  id: 111111134
   date: 2022-03-05
   ballpark_id: 11
   team_home_id: 6
@@ -431,7 +407,6 @@
   homerun_visitor: 外崎 1号(9回表ソロ)
 
 2022030571:
-  id: 111111135
   date: 2022-03-05
   ballpark_id: 1
   team_home_id: 7
@@ -449,7 +424,6 @@
   homerun_visitor:
 
 2022030542:
-  id: 111111136
   date: 2022-03-05
   ballpark_id: 8
   team_home_id: 4
@@ -467,7 +441,6 @@
   homerun_visitor:
 
 202203051210:
-  id: 111111137
   date: 2022-03-05
   ballpark_id: 12
   team_home_id: 12
@@ -485,7 +458,6 @@
   homerun_visitor:
 
 2022030671:
-  id: 111111138
   date: 2022-03-06
   ballpark_id: 1
   team_home_id: 7
@@ -503,7 +475,6 @@
   homerun_visitor: 大城 1号(8回表ソロ)
 
 20220306311:
-  id: 111111139
   date: 2022-03-06
   ballpark_id: 7
   team_home_id: 3
@@ -521,7 +492,6 @@
   homerun_visitor:
 
 2022030658:
-  id: 111111140
   date: 2022-03-06
   ballpark_id: 10
   team_home_id: 5
@@ -539,7 +509,6 @@
   homerun_visitor:
 
 2022030669:
-  id: 111111141
   date: 2022-03-06
   ballpark_id: 11
   team_home_id: 6
@@ -557,7 +526,6 @@
   homerun_visitor:
 
 202203061210:
-  id: 111111142
   date: 2022-03-06
   ballpark_id: 12
   team_home_id: 12
@@ -575,7 +543,6 @@
   homerun_visitor:
 
 2022030642:
-  id: 111111143
   date: 2022-03-06
   ballpark_id: 8
   team_home_id: 4
@@ -593,7 +560,6 @@
   homerun_visitor:
 
 20220308710:
-  id: 111111144
   date: 2022-03-08
   ballpark_id: 31
   team_home_id: 7
@@ -611,7 +577,6 @@
   homerun_visitor:
 
 2022030839:
-  id: 111111145
   date: 2022-03-08
   ballpark_id: 7
   team_home_id: 3
@@ -629,7 +594,6 @@
   homerun_visitor: 山川 1号(4回表ソロ)
 
 2022030882:
-  id: 111111146
   date: 2022-03-08
   ballpark_id: 18
   team_home_id: 8
@@ -647,7 +611,6 @@
   homerun_visitor:
 
 20220308411:
-  id: 111111147
   date: 2022-03-08
   ballpark_id: 32
   team_home_id: 4
@@ -665,7 +628,6 @@
   homerun_visitor:
 
 2022030856:
-  id: 111111148
   date: 2022-03-08
   ballpark_id: 10
   team_home_id: 5
@@ -683,7 +645,6 @@
   homerun_visitor:
 
 20220308121:
-  id: 111111149
   date: 2022-03-08
   ballpark_id: 33
   team_home_id: 12
@@ -701,7 +662,6 @@
   homerun_visitor:
 
 20220309710:
-  id: 111111150
   date: 2022-03-09
   ballpark_id: 31
   team_home_id: 7
@@ -719,7 +679,6 @@
   homerun_visitor:
 
 2022030939:
-  id: 111111151
   date: 2022-03-09
   ballpark_id: 7
   team_home_id: 3
@@ -737,7 +696,6 @@
   homerun_visitor: 外崎 2号(1回表ソロ)
 
 2022030982:
-  id: 111111152
   date: 2022-03-09
   ballpark_id: 18
   team_home_id: 8
@@ -773,7 +731,6 @@
   homerun_visitor: 大下 1号(7回表ソロ)
 
 20220309121:
-  id: 111111155
   date: 2022-03-09
   ballpark_id: 12
   team_home_id: 12

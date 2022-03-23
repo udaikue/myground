@@ -1,11 +1,11 @@
 ohtani01:
   published: true
   comment: 'ohtaniの公開されている日記です。'
-  game_id: 111111111
+  game: 202202261211
   user_id: 1
 
 suzuki01:
   published: false
   comment: '最高でーーーす！'
-  game_id: 111111111
+  game: 202202261211
   user_id: 2
