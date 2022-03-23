@@ -18,15 +18,15 @@ html
             .navbar-item
               .field class="is-grouped"
                 .control
-                  = link_to image_tag('logo.png'), root_path
+                  = link_to 'ロゴ', root_path
                 .control
-                  = link_to image_tag('diaries.png'), root_path
+                  = link_to '最新日記', root_path
                 - if current_user
                   .control
-                    = link_to image_tag('me.png'), "/#{current_user.username}/diaries"
+                    = link_to 'Me', "/#{current_user.username}/diaries"
                 - else
                   .control
-                    = link_to image_tag('me.png'), new_user_session_path
+                    = link_to 'ログイン', new_user_session_path
                 - if user_signed_in?
                   .control
                     = link_to t('button.log_out'), destroy_user_session_path, method: :delete
