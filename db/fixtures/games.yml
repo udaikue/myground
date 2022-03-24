@@ -1256,3 +1256,360 @@
   saving_pitcher: 湯浅 (0勝0敗1S)
   homerun_home: 栗原 1号(4回裏2ラン) 、 松田 1号(4回裏ソロ)
   homerun_visitor: 佐藤輝 2号(2回表3ラン) 、 坂本 1号(5回表ソロ)
+
+2022031892:
+  date: 2022-03-18
+  ballpark_id: 27
+  team_home_id: 9
+  team_visitor_id: 2
+  score_home: 1
+  score_visitor: 1
+  hits_home: 8
+  hits_visitor: 7
+  errors_home: 0
+  errors_visitor: 1
+  winning_pitcher:
+  losing_pitcher:
+  saving_pitcher:
+  homerun_home:
+  homerun_visitor:
+
+2022031873:
+  date: 2022-03-18
+  ballpark_id: 1
+  team_home_id: 7
+  team_visitor_id: 3
+  score_home: 1
+  score_visitor: 6
+  hits_home: 6
+  hits_visitor: 13
+  errors_home: 2
+  errors_visitor: 0
+  winning_pitcher: 東 (1勝0敗0S)
+  losing_pitcher: 伊藤 (1勝1敗0S)
+  saving_pitcher:
+  homerun_home:
+  homerun_visitor: 桑原 1号(7回表ソロ)
+
+20220318110:
+  date: 2022-03-18
+  ballpark_id: 4
+  team_home_id: 1
+  team_visitor_id: 10
+  score_home: 7
+  score_visitor: 5
+  hits_home: 9
+  hits_visitor: 9
+  errors_home: 0
+  errors_visitor: 1
+  winning_pitcher: 今村 (1勝1敗0S)
+  losing_pitcher: 小沼 (0勝1敗1S)
+  saving_pitcher: 大勢 (0勝0敗1S)
+  homerun_home: 岡本和 5号(5回裏満塁) 、 ウィーラー 2号(6回裏ソロ)
+  homerun_visitor: 中村奨 2号(1回表ソロ) 、 レアード 2号(2回表ソロ) 、 藤原 1号(5回表ソロ)
+
+2022031848:
+  date: 2022-03-18
+  ballpark_id: 8
+  team_home_id: 4
+  team_visitor_id: 8
+  score_home: 1
+  score_visitor: 1
+  hits_home: 5
+  hits_visitor: 6
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher:
+  losing_pitcher:
+  saving_pitcher:
+  homerun_home:
+  homerun_visitor:
+
+20220318115:
+  date: 2022-03-18
+  ballpark_id: 9
+  team_home_id: 11
+  team_visitor_id: 5
+  score_home: 2
+  score_visitor: 3
+  hits_home: 5
+  hits_visitor: 8
+  errors_home: 0
+  errors_visitor: 1
+  winning_pitcher: 岩田 (1勝0敗0S)
+  losing_pitcher: 比嘉 (0勝1敗0S)
+  saving_pitcher: 齋藤 (0勝0敗2S)
+  homerun_home:
+  homerun_visitor:
+
+20220318126:
+  date: 2022-03-18
+  ballpark_id: 12
+  team_home_id: 12
+  team_visitor_id: 6
+  score_home: 5
+  score_visitor: 1
+  hits_home: 10
+  hits_visitor: 7
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 千賀 (1勝1敗0S)
+  losing_pitcher: 大瀬良 (1勝2敗0S)
+  saving_pitcher:
+  homerun_home: 三森 2号(3回裏2ラン)
+  homerun_visitor:
+
+2022031992:
+  date: 2022-03-19
+  ballpark_id: 27
+  team_home_id: 9
+  team_visitor_id: 2
+  score_home: 6
+  score_visitor: 5
+  hits_home: 12
+  hits_visitor: 8
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 増田 (1勝1敗0S)
+  losing_pitcher: 木澤 (0勝1敗0S)
+  saving_pitcher:
+  homerun_home:
+  homerun_visitor:
+
+20220319126:
+  date: 2022-03-19
+  ballpark_id: 12
+  team_home_id: 12
+  team_visitor_id: 6
+  score_home: 4
+  score_visitor: 4
+  hits_home: 7
+  hits_visitor: 10
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher:
+  losing_pitcher:
+  saving_pitcher:
+  homerun_home: 野村勇 2号(4回裏ソロ)
+  homerun_visitor: 西川 1号(5回表ソロ)
+
+2022031973:
+  date: 2022-03-19
+  ballpark_id: 1
+  team_home_id: 7
+  team_visitor_id: 3
+  score_home: 6
+  score_visitor: 4
+  hits_home: 10
+  hits_visitor: 5
+  errors_home: 1
+  errors_visitor: 2
+  winning_pitcher: 杉浦 (1勝0敗0S)
+  losing_pitcher: エスコバー (0勝2敗0S)
+  saving_pitcher: 堀 (0勝0敗1S)
+  homerun_home:
+  homerun_visitor:
+
+20220319110:
+  date: 2022-03-19
+  ballpark_id: 4
+  team_home_id: 1
+  team_visitor_id: 10
+  score_home: 2
+  score_visitor: 7
+  hits_home: 9
+  hits_visitor: 10
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 小島 (1勝0敗0S)
+  losing_pitcher: 山﨑伊 (1勝2敗0S)
+  saving_pitcher:
+  homerun_home:
+  homerun_visitor: 藤岡 2号(3回表ソロ) 、 レアード 3号(3回表2ラン) 、 岡 2号(9回表ソロ)
+
+2022031948:
+  date: 2022-03-19
+  ballpark_id: 8
+  team_home_id: 4
+  team_visitor_id: 8
+  score_home: 2
+  score_visitor: 2
+  hits_home: 7
+  hits_visitor: 5
+  errors_home: 1
+  errors_visitor: 0
+  winning_pitcher:
+  losing_pitcher:
+  saving_pitcher:
+  homerun_home:
+  homerun_visitor:
+
+20220319511:
+  date: 2022-03-19
+  ballpark_id: 9
+  team_home_id: 5
+  team_visitor_id: 11
+  score_home: 4
+  score_visitor: 2
+  hits_home: 7
+  hits_visitor: 8
+  errors_home: 1
+  errors_visitor: 0
+  winning_pitcher: 小川 (1勝0敗0S)
+  losing_pitcher: 宮城 (1勝2敗0S)
+  saving_pitcher: ガンケル (0勝0敗1S)
+  homerun_home:
+  homerun_visitor: 宗 1号(6回表ソロ)
+
+2022032073:
+  date: 2022-03-20
+  ballpark_id: 1
+  team_home_id: 7
+  team_visitor_id: 3
+  score_home: 4
+  score_visitor: 1
+  hits_home: 10
+  hits_visitor: 6
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 望月 (1勝1敗1S)
+  losing_pitcher: 上茶谷 (0勝2敗0S)
+  saving_pitcher: 北山 (0勝0敗2S)
+  homerun_home:
+  homerun_visitor:
+
+2022032092:
+  date: 2022-03-20
+  ballpark_id: 27
+  team_home_id: 9
+  team_visitor_id: 2
+  score_home: 1
+  score_visitor: 2
+  hits_home: 5
+  hits_visitor: 3
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 田口 (1勝0敗0S)
+  losing_pitcher: 増田 (1勝2敗0S)
+  saving_pitcher: 鈴木 (0勝0敗1S)
+  homerun_home: 栗山 1号(5回裏ソロ)
+  homerun_visitor: 村上 1号(9回表ソロ)
+
+2022032018:
+  date: 2022-03-20
+  ballpark_id: 4
+  team_home_id: 1
+  team_visitor_id: 8
+  score_home: 1
+  score_visitor: 2
+  hits_home: 7
+  hits_visitor: 8
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 瀧中 (2勝1敗0S)
+  losing_pitcher: 赤星 (0勝1敗0S)
+  saving_pitcher: 松井裕 (1勝0敗2S)
+  homerun_home: 岡本和 6号(8回裏ソロ)
+  homerun_visitor: 和田 1号(8回表ソロ)
+
+20220320410:
+  date: 2022-03-20
+  ballpark_id: 8
+  team_home_id: 4
+  team_visitor_id: 10
+  score_home: 4
+  score_visitor: 2
+  hits_home: 7
+  hits_visitor: 5
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 柳 (3勝0敗0S)
+  losing_pitcher: ロメロ (0勝2敗0S)
+  saving_pitcher: ロドリゲス (0勝0敗1S)
+  homerun_home: 木下 2号(3回裏3ラン)
+  homerun_visitor:
+
+20220320115:
+  date: 2022-03-20
+  ballpark_id: 9
+  team_home_id: 11
+  team_visitor_id: 5
+  score_home: 2
+  score_visitor: 1
+  hits_home: 4
+  hits_visitor: 4
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 本田 (1勝0敗0S)
+  losing_pitcher: 小野 (0勝1敗0S)
+  saving_pitcher:
+  homerun_home:
+  homerun_visitor:
+
+20220320612:
+  date: 2022-03-20
+  ballpark_id: 11
+  team_home_id: 6
+  team_visitor_id: 12
+  score_home: 3
+  score_visitor: 8
+  hits_home: 8
+  hits_visitor: 19
+  errors_home: 1
+  errors_visitor: 2
+  winning_pitcher: 大関 (2勝0敗0S)
+  losing_pitcher: 遠藤 (0勝1敗1S)
+  saving_pitcher:
+  homerun_home: 坂倉 1号(4回裏ソロ)
+  homerun_visitor:
+
+2022032192:
+  date: 2022-03-21
+  ballpark_id: 27
+  team_home_id: 9
+  team_visitor_id: 2
+  score_home: 4
+  score_visitor: 1
+  hits_home: 6
+  hits_visitor: 5
+  errors_home: 0
+  errors_visitor: 0
+  winning_pitcher: 佐藤 (1勝0敗1S)
+  losing_pitcher: サイスニード (0勝1敗0S)
+  saving_pitcher: 佐々木 (0勝0敗1S)
+  homerun_home: 源田 1号(4回裏3ラン)
+  homerun_visitor:
+
+2022032118:
+  date: 2022-03-21
+  ballpark_id: 4
+  team_home_id: 1
+  team_visitor_id: 8
+  score_home: 3
+  score_visitor: 4
+  hits_home: 7
+  hits_visitor: 7
+  errors_home: 0
+  errors_visitor: 1
+  winning_pitcher: 藤平 (1勝0敗0S)
+  losing_pitcher: 大勢 (0勝1敗1S)
+  saving_pitcher: 弓削 (2勝0敗1S)
+  homerun_home: 岡本和 7号(4回裏ソロ) 、 丸 2号(5回裏ソロ)
+  homerun_visitor: 茂木 1号(2回表ソロ) 、 マルモレホス 1号(8回表ソロ)
+
+20220321410:
+  date: 2022-03-21
+  ballpark_id: 8
+  team_home_id: 4
+  team_visitor_id: 10
+  score_home: 2
+  score_visitor: 10
+  hits_home: 7
+  hits_visitor: 12
+  errors_home: 1
+  errors_visitor: 3
+  winning_pitcher: 西野 (1勝0敗0S)
+  losing_pitcher: マルク (0勝1敗1S)
+  saving_pitcher:
+  homerun_home:
+  homerun_visitor: 藤原 2号(8回表満塁)
