@@ -162,3 +162,8 @@ ube:
   id: 33
   name: 宇部
   available: true
+
+nagoya:
+  id: 34
+  name: ナゴヤ球場
+  available: true
