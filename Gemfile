@@ -70,3 +70,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'slim-rails'
 # ERB形式からSlim形式に変換するコマンドを提供する
 gem 'html2slim'
+gem 'bulma-rails', '~> 0.9.3'
