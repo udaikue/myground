@@ -4,6 +4,7 @@
 
 .notification {
   padding: 1rem;
+  // text-decoration: none;
 }
 
 .page-header {
@@ -13,4 +14,9 @@
 
 .page-body {
   padding: 1rem 0;
+}
+
+h2 {
+  font-size: large;
+  font-weight: bold;
 }
