@@ -46,9 +46,9 @@
       </div>
       <div class='field is-grouped'>
         <div class='control'>
-          <button class='button'>保存</button>
-        </div>
-        <div class='control'>
+          <button class='button is-dark'>保存</button>
+        <!-- </div>
+        <div class='control'> -->
           <button class='button is-light' type='button' onclick='history.back()'>キャンセル</button>
         </div>
       </div>
@@ -58,7 +58,7 @@
       <input type='hidden' name='authenticity_token' v-bind:value='token()'>
       <div class='field'>
         <div class='control'>
-          <button class='button'>削除</button>
+          <button class='button is-danger'>削除</button>
         </div>
       </div>
     </form>

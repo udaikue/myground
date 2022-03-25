@@ -1,6 +1,10 @@
 = render partial: 'tabs', locals: { user: @user }
 
-.title
-  = t('title.new_diary')
+header.page-header
+  .container
+    h1.page-header__title
+      = t('title.new_diary')
 
-#js-new-diary(data-diaries-path="#{diaries_path(username: current_user.username)}")
+.page-body
+  .container
+    #js-new-diary(data-diaries-path="#{diaries_path(username: current_user.username)}")
