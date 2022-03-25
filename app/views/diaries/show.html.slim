@@ -83,14 +83,15 @@ header.page-header
         = simple_format @diary.comment
 
       columns.column.is-full
-        - @diary.links.each do |link|
-          a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
-          br
+        ul
+          - @diary.links.each do |link|
+            li
+              a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
 
       columns.column.is-full
         | #{@diary.published ? '公開中' : '非公開'}
     br
-    
+
     buttons
       - if my_diary?
         = link_to t('button.edit'), edit_diary_path(params[:username]), class: 'button is-dark'
