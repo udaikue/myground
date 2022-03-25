@@ -1,90 +1,98 @@
-.title
-  = t('title.show_diary')
+= render partial: 'tabs', locals: { user: @user }
 
-columns.column.is-full
-    | #{@game.date.month}月#{@game.date.day}日(#{@game_wday}) #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name} @#{Ballpark.find(@game.ballpark_id).name}
+header.page-header
+  .container
+    h1.page-header__title
+      = t('title.show_diary')
 
-table.table.is-bordered
-  thead
-    tr
-      th
-      - 1.upto(@display_innings) do |i|
-        th
-          = i
-      th
-        | 計
-      th
-        | 安
-      th
-        | 失
-  tbody
-    tr
-      td
-        = Team.find(@game.team_visitor_id).name
-      - 1.upto(@display_innings) do |i|
-        td
-          = @scores.find_by(inning: i)&.visitor
-      td
-        = @game.score_visitor
-      td
-        = @game.hits_visitor
-      td
-        = @game.errors_visitor
-    tr
-      td
-        = Team.find(@game.team_home_id).name
-      - 1.upto(@display_innings) do |i|
-        td
-          = @scores.find_by(inning: i)&.home
-      td
-        = @game.score_home
-      td
-        = @game.hits_home
-      td
-        = @game.errors_home
+.page-body
+  .container
+    columns.column.is-full
+        | #{@game.date.month}月#{@game.date.day}日(#{@game_wday}) #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name} @#{Ballpark.find(@game.ballpark_id).name}
 
-table.table.is-bordered
-  tbody
-    tr
-      td
-        | 勝利投手
-      td
-        = @game.winning_pitcher
-    tr
-      td
-        | 敗戦投手
-      td
-        = @game.losing_pitcher
-    tr
-      td
-        | セーブ
-      td
-        = @game.saving_pitcher
+    table.table.is-bordered
+      thead
+        tr
+          th
+          - 1.upto(@display_innings) do |i|
+            th
+              = i
+          th
+            | 計
+          th
+            | 安
+          th
+            | 失
+      tbody
+        tr
+          td
+            = Team.find(@game.team_visitor_id).name
+          - 1.upto(@display_innings) do |i|
+            td
+              = @scores.find_by(inning: i)&.visitor
+          td
+            = @game.score_visitor
+          td
+            = @game.hits_visitor
+          td
+            = @game.errors_visitor
+        tr
+          td
+            = Team.find(@game.team_home_id).name
+          - 1.upto(@display_innings) do |i|
+            td
+              = @scores.find_by(inning: i)&.home
+          td
+            = @game.score_home
+          td
+            = @game.hits_home
+          td
+            = @game.errors_home
 
-table.table.is-bordered
-  tbody
-    tr
-      td rowspan='2'
-        | 本塁打
-      td
-        = @game.homerun_visitor
-    tr
-      td
-        = @game.homerun_home
+    table.table.is-bordered
+      tbody
+        tr
+          td
+            | 勝利投手
+          td
+            = @game.winning_pitcher
+        tr
+          td
+            | 敗戦投手
+          td
+            = @game.losing_pitcher
+        tr
+          td
+            | セーブ
+          td
+            = @game.saving_pitcher
 
-.section.has-background-light
-  = simple_format @diary.comment
-  br
-  | ニュースリンク
-  br
-  - @diary.links.each do |link|
-    a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
+    table.table.is-bordered
+      tbody
+        tr
+          td rowspan='2'
+            | 本塁打
+          td
+            = @game.homerun_visitor
+        tr
+          td
+            = @game.homerun_home
+
+    .container.has-background-light
+      columns.column.is-full
+        = simple_format @diary.comment
+
+      columns.column.is-full
+        ul
+          - @diary.links.each do |link|
+            li
+              a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
+
+      columns.column.is-full
+        | #{@diary.published ? '公開中' : '非公開'}
     br
-    br
-  | #{@diary.published ? '公開中' : '非公開'}
 
-br
-buttons
-  - if my_diary?
-    = link_to t('button.edit'), edit_diary_path(params[:username]), class: 'button is-dark'
-  = link_to t('button.back'), diaries_path(params[:username]), class: 'button is-light'
+    buttons
+      - if my_diary?
+        = link_to t('button.edit'), edit_diary_path(params[:username]), class: 'button is-dark'
+      = link_to t('button.back'), diaries_path(params[:username]), class: 'button is-light'

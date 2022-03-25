@@ -1,12 +1,16 @@
-h2
-  = t('title.resend_confirmation')
+header.page-header
+  .container
+    h1.page-header__title
+      = t('title.resend_confirmation')
 
-= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
-  .actions
-    = f.submit t('button.resend_confirmation')
-= render "devise/shared/links"
+.page-body
+  .container
+    = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+      = render 'devise/shared/error_messages', resource: resource
+      .field
+        = f.label :email
+        br
+        = f.email_field :email, autofocus: true, autocomplete: 'email', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+      .actions
+        = f.submit t('button.resend_confirmation')
+    = render 'devise/shared/links'

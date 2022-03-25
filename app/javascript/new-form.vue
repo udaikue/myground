@@ -1,16 +1,16 @@
 <template>
   <form class='form' v-bind:action='diariesPath' method='post'>
-    <h2>観戦記録をつける</h2>
+    <h2>観戦日記をつける</h2>
     <input type='hidden' name='authenticity_token' v-bind:value='token()'>
     <input type='hidden' name='diary[game_id]' v-bind:value='game.id'>
     <div class='field'>
-      <label class='label'>感想</label>
+      <label class='label'>日記</label>
       <div class='control'>
         <textarea class='textarea' name='diary[comment]'></textarea>
       </div>
     </div>
     <div class='field'>
-      <label class='label'>ニュース</label>
+      <label class='label'>ニュースのリンク</label>
       <div class='link' v-for='link in links' :key='link.key'>
         <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][url]`" v-bind:value='link.url'>
         <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][title]`" v-bind:value='link.title'>
