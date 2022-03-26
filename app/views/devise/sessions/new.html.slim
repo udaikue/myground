@@ -3,6 +3,9 @@ header.page-header
     h1.page-header__title
       = t('title.log_in')
 
+.alert
+  = alert
+
 .page-body
   .container
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
