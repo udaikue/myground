@@ -10,6 +10,10 @@ h2 {
 
 .container {
   padding: 0 1rem;
+
+  p {
+    font-size: small;
+  }
 }
 
 .notification {
@@ -27,4 +31,14 @@ h2 {
 
 .column li {
   font-size: small;
+}
+
+#error_explanation {
+  h2 {
+    font-size: small;
+  }
+
+  li {
+    font-size: small;
+  }
 }
