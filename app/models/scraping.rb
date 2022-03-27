@@ -1,0 +1,2 @@
+class Scraping < ApplicationRecord
+end
