@@ -9,6 +9,7 @@ import 'channels'
 
 import '../new-diary.js'
 import '../edit-diary.js'
+import '../header.js'
 
 Rails.start()
 ActiveStorage.start()
