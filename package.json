@@ -13,9 +13,6 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
-  "scripts": {
-    "start": "node application.js"
-  },
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3"
