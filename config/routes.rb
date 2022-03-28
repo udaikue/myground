@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   root to: 'welcome#index'
+  get '/pp', to: 'home#pp', as: 'pp'
+  get '/tos', to: 'home#tos', as: 'tos'
 
   namespace :api do
     resources :games, only: %i[index]
