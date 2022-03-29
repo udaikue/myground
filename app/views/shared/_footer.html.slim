@@ -1,0 +1,11 @@
+footer.footer
+  .content.has-text-centered
+    = link_to '利用規約', tos_path
+    = link_to 'プライバシーポリシー', pp_path
+    = link_to 'https://github.com/udaikue/myground', class: 'sns-icon' do
+      i.fab.fa-github
+  .content.has-text-centered
+    i.far.fa-copyright
+    span
+      = Time.current.year
+      |  udaikue

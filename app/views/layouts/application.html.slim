@@ -11,35 +11,10 @@ html
     = javascript_pack_tag 'application'
 
   body
-    - if current_user.present?
-      header
-        nav.navbar role="navigation" aria-label="main navigation"
-          .navbar-brand
-            .navbar-item
-              .field class="is-grouped"
-                .control
-                  = link_to 'ロゴ', root_path
-                - if user_signed_in?
-                  .control
-                    = link_to t('button.log_out'), destroy_user_session_path, method: :delete
-            a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-              i.fas.fa-cog
-                / span aria-hidden="true" ログアウト
-                / span aria-hidden="true" ユーザー情報編集
-                / span aria-hidden="true"
-
+    - if user_signed_in? || params[:controller] == 'diaries' || params[:controller] == 'home'
+      = render partial: 'shared/header'
     .notice
       = notice
     = yield
 
-  footer.footer
-    .content.has-text-centered
-      = link_to '利用規約', tos_path
-      = link_to 'プライバシーポリシー', pp_path
-      = link_to 'https://github.com/udaikue/myground', class: 'sns-icon' do
-        i.fab.fa-github
-    .content.has-text-centered
-      i.far.fa-copyright
-      span
-        = Time.current.year
-        |  udaikue
+  = render partial: 'shared/footer'

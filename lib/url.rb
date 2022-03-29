@@ -5,11 +5,6 @@ require 'nokogiri'
 
 class URL
   def initialize
-    # ToDo
-    # 試合がない日は?
-    # 中止になった場合は?
-    # 25:00までを今日としたい
-
     schedule_url = 'https://baseball-freak.com/game/'
 
     schedule_html = URI.parse(schedule_url).open.read
@@ -23,13 +18,13 @@ class URL
   end
 
   def today_cards
-    # today_element = @schedule.grep(/#{DateTime.now.month}月#{DateTime.now.day}日*/)
-    today_element = @schedule.grep(/3月27日*/)
+    today_element = @schedule.grep(/#{DateTime.now.month}月#{DateTime.now.day}日*/)
+    # today_element = @schedule.grep(/3月26日*/)
 
     today_cards = []
-    today_element.to_s.gsub(/\d+?月+\d+?日\(.\)|\d+?|京セラD大阪|楽天生命パーク/, '').scan(/巨|ヤ|D|中|阪|広|日|楽|西|ロ|オ|ソ/).each_slice(2) do |g|
-      # path = DateTime.now.strftime('%y%m%d') + g.join('-')
-      path = '220327' + g.join('-')
+    today_element.to_s.gsub(/\d+?月+\d+?日\(.\)|\d+?|京セラD大阪|楽天生命パーク|中止/, '').scan(/巨|ヤ|D|中|阪|広|日|楽|西|ロ|オ|ソ/).each_slice(2) do |g|
+      path = DateTime.now.strftime('%y%m%d') + g.join('-')
+      # path = '220326' + g.join('-')
       url = "https://baseball-freak.com/game/#{path}.html"
       today_cards << url.gsub(/巨|ヤ|D|中|阪|広|日|楽|西|ロ|オ|ソ/,
                               '巨' => 'g',
