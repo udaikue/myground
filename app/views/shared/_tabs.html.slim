@@ -1,8 +1,8 @@
 nav.page-nav
-  .tabs
+  .tabs.is-boxed
     ul
-      li.is-active
-        a href="/diaries" 新着日記
+      li
+          a href="/diaries" 新着日記
       li
         - if current_user
           a href="/#{current_user&.username}/diaries" マイ日記

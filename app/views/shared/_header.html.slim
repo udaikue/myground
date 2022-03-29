@@ -1,0 +1,15 @@
+header
+  nav.navbar
+    .navbar-brand
+      = link_to image_tag('logo.png', size: '50x50'), latest_diaries_path, class: 'logo-image'
+      .navbar-burger aria-label="menu" data-target="menu"
+        i.fas.fa-cog
+
+    .navbar-menu#menu
+      .navbar-end
+        - if user_signed_in?
+          = link_to t('button.log_out'), destroy_user_session_path, method: :delete, class: 'navbar-item'
+          = link_to 'ユーザー情報編集', edit_user_registration_path, class: 'navbar-item'
+        - else
+          = link_to t('button.sign_up'), new_user_registration_path, class: 'navbar-item'
+          = link_to t('button.log_in'), new_user_session_path, class: 'navbar-item'
