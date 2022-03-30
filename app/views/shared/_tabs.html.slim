@@ -1,8 +1,15 @@
 nav.page-nav
   .tabs.is-boxed
     ul
-      li
+      - if is_first_tab_active?
+        li.is-active
           a href="/diaries" 新着日記
-      li
-        - if current_user
-          a href="/#{current_user&.username}/diaries" マイ日記
+        li
+          - if current_user
+            a href="/#{current_user&.username}/diaries" マイ日記
+      - else
+        li
+          a href="/diaries" 新着日記
+        li.is-active
+          - if current_user
+            a href="/#{current_user&.username}/diaries" マイ日記

@@ -2,10 +2,14 @@
 
 module ApplicationHelper
   def my_diaries_index?
-    return true if current_user&.username == params[:username] || !params[:username]
+    return current_user&.username == params[:username] || !params[:username]
   end
 
   def my_diary?
-    return true if current_user&.username == params[:username]
+    return current_user&.username == params[:username]
+  end
+
+  def is_first_tab_active?
+    return request.path == ('/diaries' || '/')
   end
 end
