@@ -7,7 +7,7 @@ class Search
 
   def initialize
     @scrapings = Scraping.where('game_date = ? and done = ?', DateTime.now, false)
-    # @scrapings = Scraping.where('game_date = ? and done = ?', '2022-3-26', false)
+    # @scrapings = Scraping.where('game_date = ? and done = ?', '2022-3-31', false)
   end
 
   def responsed_urls

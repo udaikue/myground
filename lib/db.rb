@@ -8,7 +8,7 @@ class DB
       scraping = Scraping.new
       scraping.url = url
       scraping.game_date = DateTime.now
-      # scraping.game_date = '2022-3-26'
+      # scraping.game_date = '2022-3-31'
       scraping.save
     end
   end
