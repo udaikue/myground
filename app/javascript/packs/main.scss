@@ -12,6 +12,7 @@ h1 {
 h2 {
   font-size: large;
   font-weight: bold;
+  padding: 0.5rem 0;
 }
 
 a {
@@ -26,8 +27,22 @@ a {
     padding: 3rem 0;
   }
 
+  ol {
+    font-size: small;
+    padding: 0 1rem;
+  }
+
+  li {
+    padding: 0.25rem 0;
+
+    li {
+      padding: 0;
+    }
+  }
+
   p {
     font-size: small;
+    padding: 0.25rem 0;
   }
 }
 
@@ -44,30 +59,34 @@ a {
 
 .page-header {
   background-color: #fbfaf5;
-  color: #203744;
+  color: #383c3c;
   padding: 0.75rem 0;
 }
 
 .page-body {
   background-color: #fbfaf5;
-  color: #203744;
+  color: #383c3c;
   padding: 1rem 0;
 }
 
 .column li {
   font-size: small;
+
+  a {
+    text-decoration-line: underline;
+  }
 }
 
 .tabs ul {
   background-color: #fbfaf5;
-  color: #203744;
+  color: #383c3c;
 
   .is-active a {
-    color: #adadad;
+    color: #494a41;
   }
 
   a {
-  color: #494a41;
+    color: #adadad;
   }
 
 }
