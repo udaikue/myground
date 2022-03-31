@@ -1,3 +1,9 @@
+body {
+.notice {
+  background-color: #fbfaf5;
+  }
+}
+
 h1 {
   font-size: x-large;
   font-weight: bold;
@@ -13,7 +19,12 @@ a {
 }
 
 .container {
+  background-color: #fbfaf5;
   padding: 0 1rem;
+
+  .overview {
+    padding: 3rem 0;
+  }
 
   p {
     font-size: small;
@@ -32,16 +43,33 @@ a {
 }
 
 .page-header {
-  background-color: #ddd;
+  background-color: #fbfaf5;
+  color: #203744;
   padding: 0.75rem 0;
 }
 
 .page-body {
+  background-color: #fbfaf5;
+  color: #203744;
   padding: 1rem 0;
 }
 
 .column li {
   font-size: small;
+}
+
+.tabs ul {
+  background-color: #fbfaf5;
+  color: #203744;
+
+  .is-active a {
+    color: #adadad;
+  }
+
+  a {
+  color: #494a41;
+  }
+
 }
 
 #error_explanation {
