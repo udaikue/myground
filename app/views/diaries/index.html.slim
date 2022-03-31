@@ -8,7 +8,7 @@ header.page-header
 .page-body
   .container
     - if my_diaries_index?
-      = link_to t('button.new'), new_diary_path(current_user.username), class: 'button is-normal'
+      = link_to t('button.new'), new_diary_path(current_user.username), class: 'button is-outlined'
     - if @diaries.present?
       - @diaries.map do |diary|
         - @game = Game.find(diary.game_id)

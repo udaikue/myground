@@ -52,8 +52,8 @@ ja:
   title:
     diaries: 観戦日記
     new_diary: 観戦日記の新規作成
-    show_diary: 観戦日記の内容
-    edit_diary: 観戦日記を編集する
+    show_diary: 観戦日記詳細
+    edit_diary: 観戦日記の編集
     log_in: ログイン
     sign_up: ユーザー登録
     edit_user: 登録情報編集
