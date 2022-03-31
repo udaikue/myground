@@ -4,72 +4,78 @@
       <h2>試合結果</h2>
         <p v-if='!gameCards.length && !result'>いつの日記を書きますか？</p>
         <p v-if='gameCards.length && !result'>どの試合について書きますか？</p>
-      <table class='table' v-if='gameCards.length && !result' id='game-cards'>
-        <thead>
-          <tr>
-            <th></th>
-            <th>{{ cardMonth }}月 {{ cardDate }}日</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for='game in gameCards' :key='game.id' @click='getScore(game.id)'>
-            <td>{{ getTeamName(game.team_home_id) }}</td>
-            <td>{{ game.score_home }} - {{ game.score_visitor }}</td>
-            <td>{{ getTeamName(game.team_visitor_id) }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class='columns is-mobile'>
+        <table class='table is-fullwidth' v-if='gameCards.length && !result' id='game-cards'>
+          <thead>
+            <tr>
+              <th></th>
+              <th>{{ cardMonth }}月 {{ cardDate }}日</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for='game in gameCards' :key='game.id' @click='getScore(game.id)'>
+              <td>{{ getTeamName(game.team_home_id) }}</td>
+              <td>{{ game.score_home }} - {{ game.score_visitor }}</td>
+              <td>{{ getTeamName(game.team_visitor_id) }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div class='columns is-mobile' v-if='!result'>
         <div class='column is-one-quarter-mobile' v-if='!oldestMonth()' @click='previousMonth'>前の月</div>
         <div class='column is-one-quarter-mobile'>{{ calendarYear }}年{{ calendarMonth }}月</div>
         <div class='column is-one-quarter-mobile' v-if='!newestMonth()' @click='nextMonth'>次の月</div>
       </div>
-      <table class='table' v-if='!result' id='calendar'>
-        <thead>
-          <tr>
-            <th>月</th>
-            <th>火</th>
-            <th>水</th>
-            <th>木</th>
-            <th>金</th>
-            <th>土</th>
-            <th>日</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for='week in monthlyCalendar' :key='week.id'>
-            <td v-for='date in week.value' :key='date.key' @click='getGameCards(date.date)'>{{ date.date }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class='table' v-if='result'>
-        <thead>
-          <tr>
-            <th ></th>
-            <th v-for='score in displayScores' :key='score.id'>{{ score.inning }}</th>
-            <th>計</th>
-            <th>安</th>
-            <th>失</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ getTeamName(selectedGame.team_visitor_id) }}</td>
-            <td v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
-            <td>{{ selectedGame.score_visitor }}</td>
-            <td>{{ selectedGame.hits_visitor }}</td>
-            <td>{{ selectedGame.errors_visitor }}</td>
-          </tr>
-          <tr>
-            <td>{{ getTeamName(selectedGame.team_home_id) }}</td>
-            <td v-for='score in displayScores' :key='score.id'>{{ score.home }}</td>
-            <td>{{ selectedGame.score_home }}</td>
-            <td>{{ selectedGame.hits_home }}</td>
-            <td>{{ selectedGame.errors_home }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class='columns is-mobile'>
+        <table class='table is-fullwidth' v-if='!result' id='calendar'>
+          <thead>
+            <tr>
+              <th>月</th>
+              <th>火</th>
+              <th>水</th>
+              <th>木</th>
+              <th>金</th>
+              <th>土</th>
+              <th>日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for='week in monthlyCalendar' :key='week.id'>
+              <td v-for='date in week.value' :key='date.key' @click='getGameCards(date.date)'>{{ date.date }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class='columns is-mobile'>
+        <table class='table is-fullwidth' v-if='result'>
+          <thead>
+            <tr>
+              <th ></th>
+              <th v-for='score in displayScores' :key='score.id'>{{ score.inning }}</th>
+              <th>計</th>
+              <th>安</th>
+              <th>失</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ getTeamName(selectedGame.team_visitor_id) }}</td>
+              <td v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
+              <td>{{ selectedGame.score_visitor }}</td>
+              <td>{{ selectedGame.hits_visitor }}</td>
+              <td>{{ selectedGame.errors_visitor }}</td>
+            </tr>
+            <tr>
+              <td>{{ getTeamName(selectedGame.team_home_id) }}</td>
+              <td v-for='score in displayScores' :key='score.id'>{{ score.home }}</td>
+              <td>{{ selectedGame.score_home }}</td>
+              <td>{{ selectedGame.hits_home }}</td>
+              <td>{{ selectedGame.errors_home }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <table class='table is-bordered' v-if='result'>
         <tbody>
           <tr>

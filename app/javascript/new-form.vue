@@ -18,10 +18,10 @@
       </div>
       <div class='control'>
         <p>URL</p>
-        <input type='text' v-model='url'>
+        <input type='text' class='input is-small' v-model='url'>
         <p>タイトル</p>
-        <input type='text' v-model='title'>
-        <input type='button' @click='addLink()' value='追加'>
+        <input type='text' class='input is-small' v-model='title'>
+        <input type='button' @click='addLink()' value='追加' class='button'>
       </div>
     </div>
     <div class='field'>
