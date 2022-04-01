@@ -13,7 +13,7 @@ class Result
 
       fetch_scores
       # スコアボードに得点が入っていない場合は試合が終了していない
-      next if @scores.split(nil)[1][-3] == ''
+      next if @scores.split(nil)[1][-3] == '' || @scores.split(nil)[1][-3] == nil
 
       fetch_game_date
       fetch_ballpark
@@ -35,8 +35,8 @@ class Result
       @scores << nil
     end
 
-    p @game.score_visitor = @scores.split(nil)[1][-3]
-    p @game.score_home = @scores.split(nil)[2][-3]
+    @game.score_visitor = @scores.split(nil)[1][-3]
+    @game.score_home = @scores.split(nil)[2][-3]
     @game.hits_visitor = @scores.split(nil)[1][-2]
     @game.hits_home = @scores.split(nil)[2][-2]
     @game.errors_visitor = @scores.split(nil)[1][-1]
@@ -44,8 +44,8 @@ class Result
   end
 
   def fetch_game_date
-    # @game.date = DateTime.now
-    @game.date = '2022-3-31'
+    @game.date = DateTime.now
+    # @game.date = '2022-3-31'
   end
 
   def fetch_ballpark
