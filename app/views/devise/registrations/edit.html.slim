@@ -44,8 +44,7 @@ header.page-header
         .control
           = f.password_field :current_password, autocomplete: 'current-password', class: 'input is-small'
       .actions
-        = f.submit t('button.update'), class: 'button is-normal'
-
-    br
+        = f.submit t('button.update'), class: 'button is-primary'
+        
     = button_to t('button.cancel_account'), registration_path(resource_name), data: { confirm: t('confirm.destroy') }, method: :delete, class: 'button is-danger'
     = link_to t('button.back'), :back

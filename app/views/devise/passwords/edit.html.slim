@@ -23,5 +23,5 @@ header.page-header
         .control
           = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'input is-small'
       .actions
-        = f.submit t('button.change_password)', class: 'button is-normal'
+        = f.submit t('button.change_password)', class: 'button is-info'
     = render 'devise/shared/links'

@@ -16,4 +16,12 @@
       li.visitor-actions__item
         = link_to t('button.log_in'), new_user_session_path, class: 'button is-normal is-fullwidth'
       li.visitor-actions__item
-        = link_to '新着日記をみる', latest_diaries_path, class: 'button is-normal is-fullwidth'
+        p
+          | 新着日記
+      li.visitor-actions__item
+        - @diaries.map do |diary|
+          - game = Game.find(diary.game_id)
+          .container.index-container
+            a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}" #{game.date.month}/#{game.date.day} #{Team.find(game.team_home_id).name}VS#{Team.find(game.team_visitor_id).name} @#{Ballpark.find(game.ballpark_id).name} #{User.find(diary.user_id).username}
+      li.visitor-actions__item
+        = link_to 'もっとみる', latest_diaries_path, class: 'button is-normal is-fullwidth'

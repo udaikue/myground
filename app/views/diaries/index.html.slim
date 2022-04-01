@@ -8,11 +8,11 @@ header.page-header
 .page-body
   .container
     - if my_diaries_index?
-      = link_to t('button.new'), new_diary_path(current_user.username), class: 'button is-outlined'
+      = link_to t('button.new'), new_diary_path(current_user&.username), class: 'button is-warning'
     - if @diaries.present?
       - @diaries.map do |diary|
         - @game = Game.find(diary.game_id)
-        .container.index-container.has-text-centered
+        .container.index-container
           = link_to "#{@game.date.month}/#{@game.date.day} #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name} @#{Ballpark.find(@game.ballpark_id).name}", "/#{User.find(diary.user_id).username}/diaries/#{diary.id}"
     - else
       .block.has-text-centered

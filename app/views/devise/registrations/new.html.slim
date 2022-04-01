@@ -32,7 +32,7 @@ header.page-header
         .control
           = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'input is-small'
       .actions
-        = f.submit t('button.sign_up'), class: 'button is-normal'
+        = f.submit t('button.sign_up'), class: 'button is-primary'
     = render 'devise/shared/links'
 
     = link_to t('button.back'), root_path
