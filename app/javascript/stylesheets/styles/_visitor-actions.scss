@@ -2,4 +2,8 @@
   &:not(:first-child) {
     margin-top: 1rem;
   }
+
+  p {
+    font-weight: 700;
+  }
 }

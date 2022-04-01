@@ -26,7 +26,7 @@ header.page-header
               = f.check_box :remember_me
               = f.label :remember_me, class: 'checkbox'
       .actions
-        = f.submit t('button.log_in'), class: 'button is-normal'
+        = f.submit t('button.log_in'), class: 'button is-primary'
     = render 'devise/shared/links'
 
     = link_to t('button.back'), root_path
