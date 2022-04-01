@@ -1,18 +1,19 @@
-.container
-  .overview
-    .has-text-centered
-      = image_tag('logo.png', size: '200x200')
-    .has-text-centered
-      | 自分だけの野球観戦日記を作ろう
+.overview
+  .container
+    .overview__inner
+      .overview__logo-container
+        = image_tag('logo.png', class: 'overview__logo', alt: 'My Groundのロゴ')
+      h1.overview__copy.has-text-centered
+        | 自分だけの
+        br
+        | 野球観戦日記を作ろう
 
-.container
-  columns.column.is-full
-    = link_to '登録してはじめる', new_user_registration_path, class: 'button is-normal is-fullwidth'
-
-.container
-  columns.column.is-full
-    = link_to t('button.log_in'), new_user_session_path, class: 'button is-normal is-fullwidth'
-
-.container
-  columns.column.is-full
-    = link_to '新着日記をみる', latest_diaries_path, class: 'button is-normal is-fullwidth'
+.visitor-actions
+  .container
+    ul.visitor-actions__items
+      li.visitor-actions__item
+        = link_to '登録してはじめる', new_user_registration_path, class: 'button is-normal is-fullwidth is-primary'
+      li.visitor-actions__item
+        = link_to t('button.log_in'), new_user_session_path, class: 'button is-normal is-fullwidth'
+      li.visitor-actions__item
+        = link_to '新着日記をみる', latest_diaries_path, class: 'button is-normal is-fullwidth'
