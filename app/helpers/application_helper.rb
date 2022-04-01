@@ -10,6 +10,6 @@ module ApplicationHelper
   end
 
   def is_first_tab_active?
-    return request.path == ('/diaries' || '/')
+    return request.path == '/diaries' || request.path == '/'
   end
 end
