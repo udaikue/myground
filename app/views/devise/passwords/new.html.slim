@@ -13,5 +13,5 @@ header.page-header
         .control
           = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input is-small'
       .actions
-        = f.submit t('button.send_reset_password'), class: 'button is-normal'
+        = f.submit t('button.send_reset_password'), class: 'button is-info'
     = render 'devise/shared/links'

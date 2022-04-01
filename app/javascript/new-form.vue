@@ -21,7 +21,7 @@
         <input type='text' class='input is-small' v-model='url'>
         <p>タイトル</p>
         <input type='text' class='input is-small' v-model='title'>
-        <input type='button' @click='addLink()' value='追加' class='button'>
+        <input type='button' @click='addLink()' value='リンク追加' class='button is-small'>
       </div>
     </div>
     <div class='field'>
@@ -34,7 +34,7 @@
     </div>
     <div class='field is-grouped'>
       <div class='control'>
-        <button class='button'>保存</button>
+        <button class='button is-primary'>保存</button>
       </div>
       <div class='control'>
         <button class='button is-light' type='button' onclick='history.back()'>キャンセル</button>

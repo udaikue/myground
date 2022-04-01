@@ -7,7 +7,9 @@ header.page-header
 
 .page-body
   .container
+    - if current_user
+      = link_to t('button.new'), new_diary_path(current_user&.username), class: 'button is-warning'
     - @diaries.map do |diary|
-      - @game = Game.find(diary.game_id)
-      .container.index-container.has-text-centered
-        a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}" #{@game.date.month}/#{@game.date.day} #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name} @#{Ballpark.find(@game.ballpark_id).name} #{User.find(diary.user_id).username}
+      - game = Game.find(diary.game_id)
+      .container.index-container
+        a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}" #{game.date.month}/#{game.date.day} #{Team.find(game.team_home_id).name}VS#{Team.find(game.team_visitor_id).name} @#{Ballpark.find(game.ballpark_id).name} #{User.find(diary.user_id).username}
