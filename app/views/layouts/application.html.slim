@@ -11,10 +11,12 @@ html
     = javascript_pack_tag 'application'
 
   body
-    - if user_signed_in? || params[:controller] == 'diaries' || params[:controller] == 'home'
-      = render partial: 'shared/header'
-    .notice
-      = notice
-    = yield
-
-  = render partial: 'shared/footer'
+    .wrapper
+      .wrapper__start
+        - if has_header?
+          = render 'shared/header'
+        - if notice
+          = render 'shared/flash'
+        = yield
+      .wrapper__end
+        = render 'shared/footer'

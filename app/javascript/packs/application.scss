@@ -1,8 +1,13 @@
-$footer-padding: 1rem 1.5rem 1rem;
+
+@import '../stylesheets/variables/colors';
+@import '../stylesheets/variables/layout';
 
 @import 'bulma';
-@import 'main';
-@import 'button';
-@import 'navbar-burger';
-@import 'footer';
-@import 'table';
+
+@import '../stylesheets/styles/wrapper';
+@import '../stylesheets/styles/main';
+@import '../stylesheets/styles/navbar-burger';
+@import '../stylesheets/styles/footer';
+@import '../stylesheets/styles/table';
+@import '../stylesheets/styles/overview';
+@import '../stylesheets/styles/visitor-actions';
