@@ -304,9 +304,11 @@ export default {
       this.gameCards = this.games.filter((value) => {
         return value.date === this.formatMonthDate().join('-')
       })
-      // this.gameCards.forEach((value, index) => {
-      //   console.log(value.replace(1, 1))
-      // })
+      this.gameCards.sort(function(a, b) {
+        if(a.team_home_id < b.team_home_id) return -1
+        if(a.team_home_id < b.team_home_id) return 1
+        return 0
+      })
     },
     getScore(game_id) {
       this.result = true
