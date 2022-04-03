@@ -56,7 +56,7 @@
       <input type='hidden' name='authenticity_token' v-bind:value='token()'>
       <div class='field'>
         <div class='control'>
-          <button class='button is-danger' onclick="return confirm('削除してよろしいですか?')">削除</button>
+          <button class='button is-danger' onclick="return confirm('本当に削除しますか?')">削除</button>
         </div>
       </div>
     </form>

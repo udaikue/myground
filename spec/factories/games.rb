@@ -15,8 +15,9 @@ FactoryBot.define do
     saving_pitcher { '栗林 (0勝0敗1S)' }
     homerun_home { '' }
     homerun_visitor { '' }
-    ballpark_id { '100' }
-    team_home_id { '200' }
-    team_visitor_id { '100' }
+    team_home { FactoryBot.create(:marines) }
+    team_visitor { FactoryBot.create(:carp) }
+
+    ballpark
   end
 end
