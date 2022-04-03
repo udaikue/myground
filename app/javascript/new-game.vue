@@ -103,7 +103,7 @@
           </tr>
         </tbody>
       </table>
-      <button v-if='!result' class='button is-light' type='button' onclick='history.back()'>キャンセル</button>
+      <button v-if='!result' class='button is-gray-light' type='button' onclick='history.back()'>キャンセル</button>
     </section>
     <NewForm v-if='result' :game='selectedGame' :diariesPath='diariesPath'></NewForm>
   </div>

@@ -95,4 +95,4 @@ header.page-header
     buttons
       - if my_diary?
         = link_to t('button.edit'), edit_diary_path(params[:username]), class: 'button is-info'
-      = link_to t('button.back'), diaries_path(params[:username]), class: 'button is-outlined'
+      = link_to t('button.back'), :back, class: 'button is-outlined'
