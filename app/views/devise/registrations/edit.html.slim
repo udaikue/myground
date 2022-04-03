@@ -24,15 +24,17 @@ header.page-header
       .field
         label.label
           = f.label :password
-      i
-        = t('information.leave_blank_if_not_change')
+      .password-information
+        i
+          = t('information.leave_blank_if_not_change')
       .control
         = f.password_field :password, autocomplete: 'new-password', class: 'input is-small'
         - if @minimum_password_length
           br
-          em
-            = @minimum_password_length
-            = t('information.minimum_character')
+          .password-information
+            em
+              = @minimum_password_length
+              = t('information.minimum_character')
       .field
         label.label
           = f.label :password_confirmation
@@ -45,6 +47,6 @@ header.page-header
           = f.password_field :current_password, autocomplete: 'current-password', class: 'input is-small'
       .actions
         = f.submit t('button.update'), class: 'button is-primary'
-        
+
     = button_to t('button.cancel_account'), registration_path(resource_name), data: { confirm: t('confirm.destroy') }, method: :delete, class: 'button is-danger'
     = link_to t('button.back'), :back
