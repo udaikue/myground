@@ -2,10 +2,7 @@
 
 FactoryBot.define do
   factory :diary do
-    comment { '床田よかった！坂倉と小園好調！' }
+    comment { '菊池の守備がいい！' }
     published { 'true' }
-    
-    user
-    game
   end
 end

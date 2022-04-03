@@ -5,7 +5,6 @@ FactoryBot.define do
     inning { '1' }
     home { '2' }
     visitor { '0' }
-
     game
   end
 end

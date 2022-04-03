@@ -2,7 +2,6 @@
 
 FactoryBot.define do
   factory :game do
-    id { '123456789' }
     date { Time.zone.today }
     score_home { '1' }
     score_visitor { '2' }
@@ -17,7 +16,6 @@ FactoryBot.define do
     homerun_visitor { '' }
     team_home { FactoryBot.create(:marines) }
     team_visitor { FactoryBot.create(:carp) }
-
     ballpark
   end
 end
