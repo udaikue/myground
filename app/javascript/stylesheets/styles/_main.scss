@@ -46,7 +46,20 @@
   }
 }
 
-.edit-notice {
+.edit-information {
+  font-size: 12px;
+}
+
+.password-information {
+  font-size: 12px;
+  font-weight: 700;
+
+  i {
+  color: #f14668;
+  }
+}
+
+.forgot-password {
   font-size: 12px;
 }
 
