@@ -9,6 +9,8 @@ ja:
       user:
         username: ユーザー名
     errors:
+      messages:
+        record_invalid: 有効な値ではありません
       models:
         user:
           attributes:

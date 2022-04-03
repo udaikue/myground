@@ -20,8 +20,8 @@ RSpec.describe User, type: :model do
 
     context 'メールアドレス' do
       it '重複の場合は無効' do
-        user = FactoryBot.create(:user)
-        user = FactoryBot.build(:user, id: 101, username: 'user101')
+        FactoryBot.create(:user)
+        user = FactoryBot.build(:user, username: 'user101')
         user.valid?
         expect(user.errors[:email]).to include('は使用されています')
       end

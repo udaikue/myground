@@ -7,14 +7,14 @@ describe '観戦日記管理', type: :system do
     FactoryBot.create(:marines)
     FactoryBot.create(:carp)
     FactoryBot.create(:ballpark)
-    FactoryBot.create(:game)
+    @game = FactoryBot.create(:game)
     @user = FactoryBot.create(:user)
   end
 
   describe 'latest_diaries#index' do
     context '公開された日記がある場合' do
       before do
-        diary = FactoryBot.create(:diary)
+        FactoryBot.create(:diary, game: @game, user: @user)
         visit latest_diaries_path
       end
 
@@ -27,7 +27,7 @@ describe '観戦日記管理', type: :system do
   describe '#index' do
     context '公開された日記がある場合' do
       before do
-        diary = FactoryBot.create(:diary)
+        FactoryBot.create(:diary, game: @game, user: @user)
         visit diaries_path(@user.username)
       end
 
@@ -38,7 +38,7 @@ describe '観戦日記管理', type: :system do
 
     context '非公開の日記がある場合' do
       before do
-        diary = FactoryBot.create(:diary, published: 'false')
+        FactoryBot.create(:diary, game: @game, user: @user, published: false)
         visit diaries_path(@user.username)
       end
 
@@ -70,7 +70,7 @@ describe '観戦日記管理', type: :system do
 
   describe '#show' do
     before do
-      @diary = FactoryBot.create(:diary)
+      @diary = FactoryBot.create(:diary, game: @game, user: @user)
     end
 
     context '自分の日記の場合' do
@@ -101,7 +101,7 @@ describe '観戦日記管理', type: :system do
 
   describe '#create' do
     before do
-      @diary = FactoryBot.create(:diary)
+      @diary = FactoryBot.create(:diary, game: @game, user: @user)
     end
 
     context 'ログイン中であれば' do
@@ -125,7 +125,7 @@ describe '観戦日記管理', type: :system do
 
   describe '#update' do
     before do
-      @diary = FactoryBot.create(:diary)
+      @diary = FactoryBot.create(:diary, game: @game, user: @user)
     end
 
     context 'ログイン中であれば' do
@@ -148,7 +148,7 @@ describe '観戦日記管理', type: :system do
 
   describe '#destroy' do
     before do
-      @diary = FactoryBot.create(:diary)
+      @diary = FactoryBot.create(:diary, game: @game, user: @user)
     end
 
     context 'ログイン中であれば' do

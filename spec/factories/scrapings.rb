@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :scraping do
     url { 'https://baseball-freak.com/game/' }
     game_date { Time.zone.today }
-    done { 'falese' }
+    done { 'false' }
   end
 end
