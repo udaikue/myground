@@ -163,6 +163,7 @@ describe '観戦日記管理', type: :system do
 
       it '日記を削除できる' do
         click_button '削除'
+        expect(page.accept_confirm).to eq '本当に削除しますか?'
         expect(page).to have_text '日記を削除しました'
       end
     end

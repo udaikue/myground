@@ -33,8 +33,8 @@ describe 'ユーザー管理', type: :system do
         click_button '登録'
       end
 
-      it 'エラーメッセージが表示される' do
-        # 再考して書く
+      it '「Eメール は使用されています」と表示される' do
+        expect(page).to have_text 'Eメール は使用されています'
       end
     end
   end
@@ -104,7 +104,7 @@ describe 'ユーザー管理', type: :system do
         fill_in 'ユーザー名', with: "#{@user.username}xxx"
         fill_in '現在のパスワード', with: @user.password
         click_button '更新'
-        
+
         expect(page).to have_text 'アカウント情報を変更しました。'
       end
     end
