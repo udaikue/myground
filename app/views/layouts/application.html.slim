@@ -14,7 +14,7 @@ html
   body
     .wrapper
       .wrapper__start
-        - if has_header?
+        - if header?
           = render 'shared/header'
         - if notice
           = render 'shared/flash'
