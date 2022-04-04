@@ -13,7 +13,7 @@ class Result
 
       fetch_scores
       # スコアボードに得点が入っていない場合は試合が終了していない
-      next if @scores.split(nil)[1][-3] == '' || @scores.split(nil)[1][-3] == nil
+      next if @scores.split(nil)[1][-3] == '' || @scores.split(nil)[1][-3].nil?
 
       fetch_game_date
       fetch_ballpark
