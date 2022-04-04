@@ -115,8 +115,10 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記を作成できる' do
-        pending 'tableのidかclassを指定した上で修正する'
-        find('td').click
+        within '#game-cards' do
+          find('.game-card').click
+        end
+        fill_in 'diary[comment]', with: 'テスト日記です。'
         click_button '保存'
         expect(page).to have_text '日記を登録しました'
       end

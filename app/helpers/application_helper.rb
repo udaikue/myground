@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def has_header?
+  def header?
     user_signed_in? || params[:controller] == 'diaries' || params[:controller] == 'home'
   end
 
@@ -13,7 +13,7 @@ module ApplicationHelper
     current_user&.username == params[:username]
   end
 
-  def is_first_tab_active?
+  def first_tab_active?
     request.path == '/diaries' || request.path == '/'
   end
 end
