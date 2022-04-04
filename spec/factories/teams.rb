@@ -2,12 +2,12 @@
 
 FactoryBot.define do
   factory :carp, class: Team do
-    league_id { '0' }
+    league_id { '1' }
     name { '広島' }
   end
 
   factory :marines, class: Team do
-    league_id { '1' }
+    league_id { '2' }
     name { 'ロッテ' }
   end
 end

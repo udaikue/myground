@@ -16,7 +16,7 @@
           <tbody>
             <tr v-for='game in gameCards' :key='game.id' @click='getScore(game.id)'>
               <td>{{ getTeamName(game.team_home_id) }}</td>
-              <td>{{ game.score_home }} - {{ game.score_visitor }}</td>
+              <td class='game-card'>{{ game.score_home }} - {{ game.score_visitor }}</td>
               <td>{{ getTeamName(game.team_visitor_id) }}</td>
             </tr>
           </tbody>
