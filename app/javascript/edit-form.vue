@@ -29,10 +29,10 @@
       <div class='field'>
         <div class='control'>
           <p>URL</p>
-          <input type='text' v-model='url'>
+          <input type='text' class='input is-small' v-model='url'>
           <p>リンクタイトル</p>
-          <input type='text' v-model='title'>
-          <input type='button' @click='addLink()' value='＋'>
+          <input type='text' class='input is-small' v-model='title'>
+          <input type='button' @click='addLink()' value='リンク追加' class='button is-small'>
         </div>
       </div>
       <div class='field'>
