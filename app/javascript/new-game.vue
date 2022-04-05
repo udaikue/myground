@@ -9,7 +9,7 @@
           <thead>
             <tr>
               <th></th>
-              <th>{{ cardMonth }}月 {{ cardDate }}日</th>
+              <th>{{ cardMonth }}月 {{ cardDate }}日 結果</th>
               <th></th>
             </tr>
           </thead>
@@ -22,10 +22,10 @@
           </tbody>
         </table>
       </div>
-      <div class='columns is-mobile' v-if='!result'>
-        <div class='column is-one-quarter-mobile' v-if='!oldestMonth()' @click='previousMonth'>前の月</div>
-        <div class='column is-one-quarter-mobile'>{{ calendarYear }}年{{ calendarMonth }}月</div>
-        <div class='column is-one-quarter-mobile' v-if='!newestMonth()' @click='nextMonth'>次の月</div>
+      <div class='columns is-mobile' v-if='!result' id='calendar-title'>
+        <div class='column' v-if='!oldestMonth()' @click='previousMonth'>前の月</div>
+        <div class='column'>{{ calendarYear }}年{{ calendarMonth }}月</div>
+        <div class='column' v-if='!newestMonth()' @click='nextMonth'>次の月</div>
       </div>
       <div class='columns is-mobile'>
         <table class='table is-fullwidth' v-if='!result' id='calendar'>
@@ -48,7 +48,7 @@
         </table>
       </div>
       <div class='columns is-mobile'>
-        <table class='table is-fullwidth' v-if='result'>
+        <table class='table is-fullwidth' v-if='result' id='score-board'>
           <thead>
             <tr>
               <th ></th>
