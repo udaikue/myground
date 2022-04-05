@@ -7,75 +7,83 @@ header.page-header
 
 .page-body
   .container
-    columns.column.is-full
-        | #{@game.date.month}月#{@game.date.day}日(#{@game_wday}) #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name} @#{Ballpark.find(@game.ballpark_id).name}
+    columns.column
+      .game-header-date
+        | #{@game.date.year}年#{@game.date.month}月#{@game.date.day}日(#{@game_wday})
+      .game-header-card
+        | #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name} @#{Ballpark.find(@game.ballpark_id).name}
 
-    table.table.is-bordered
+    table.table.is-bordered.is-fullwidth.score-board
       thead
         tr
-          th
+          th.score-team-name.has-text-left
           - 1.upto(@display_innings) do |i|
-            th
+            th.has-text-centered
               = i
-          th
+          th.has-text-centered
             | 計
-          th
+          th.has-text-centered
             | 安
-          th
+          th.has-text-centered
             | 失
       tbody
         tr
-          td
+          td.has-text-left.score-element
             = Team.find(@game.team_visitor_id).name
           - 1.upto(@display_innings) do |i|
-            td
+            td.has-text-centered.score-element
               = @scores.find_by(inning: i)&.visitor
-          td
+          td.has-text-centered.score-element
             = @game.score_visitor
-          td
+          td.has-text-centered.score-element
             = @game.hits_visitor
-          td
+          td.has-text-centered.score-element
             = @game.errors_visitor
         tr
-          td
+          td.has-text-left.score-element
             = Team.find(@game.team_home_id).name
           - 1.upto(@display_innings) do |i|
-            td
+            td.has-text-centered.score-element
               = @scores.find_by(inning: i)&.home
-          td
+          td.has-text-centered.score-element
             = @game.score_home
-          td
+          td.has-text-centered.score-element
             = @game.hits_home
-          td
+          td.has-text-centered.score-element
             = @game.errors_home
-
-    table.table.is-bordered
+    h2
+      | 責任投手
+    table.table.is-bordered.is-fullwidth.record
       tbody
         tr
-          td
+          td.record-element width='100'
             | 勝利投手
-          td
+          td.record-element
             = @game.winning_pitcher
         tr
-          td
+          td.record-element width='100'
             | 敗戦投手
-          td
+          td.record-element
             = @game.losing_pitcher
         tr
-          td
+          td.record-element
             | セーブ
-          td
+          td.record-element
             = @game.saving_pitcher
 
-    table.table.is-bordered
+    h2
+      | 本塁打
+    table.table.is-bordered.is-fullwidth.record
       tbody
         tr
-          td rowspan='2'
-            | 本塁打
-          td
+          td.record-element width='100'
+            = Team.find(@game.team_visitor_id).name
+          td.record-element
             = @game.homerun_visitor
         tr
-          td
+          td.record-element width='100'
+            = Team.find(@game.team_home_id).name
+          td.record-element
             = @game.homerun_home
 
     .container.has-background-light

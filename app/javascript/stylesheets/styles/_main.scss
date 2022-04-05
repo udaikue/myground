@@ -4,10 +4,9 @@
 }
 
 .index-container {
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 5px;
-  background-color: #c0c0c0;
+  padding: 0.5rem;
+  border-bottom: solid #adadad;
+  border-width: 2px;
 }
 
 .page-header {
@@ -23,9 +22,30 @@
 
 .page-body {
   color: #383c3c;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
 
-  #score-board, #calendar-title {
+  .card-date-header {
+    padding: 0.5rem;
+  }
+
+  .score-element, .record-element {
+    padding: 0.25rem;
+  }
+
+  .game-card-columns {
+    margin: 1rem 0.5rem;
+  }
+
+  .game-header-date {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .game-header-card {
+    font-weight: 700;
+  }
+
+  .calendar-month-selector {
     font-size: 14px;
   }
 
@@ -39,12 +59,12 @@
   }
 
   a {
-    color: #698aab;
+    color: #696969;
   }
 }
 
-.policy-section {
-  padding: 0.75rem 0;
+.plus {
+  border-radius: 50px;
 }
 
 .column li {
@@ -55,16 +75,10 @@
   }
 }
 
-.tabs ul {
-  color: #383c3c;
-
-  .is-active a {
-    color: #494a41;
-  }
-
-  a {
-    color: #adadad;
-  }
+.game-card-column {
+  padding: 0.25rem;
+  border-bottom: solid #adadad;
+  border-width: 1px;
 }
 
 .edit-information {
