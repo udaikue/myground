@@ -25,9 +25,26 @@
   color: #383c3c;
   padding: 1rem 0;
 
+  #score-board, #calendar-title {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  p, li {
+    font-size: 14px;
+  }
+
   a {
     color: #698aab;
   }
+}
+
+.policy-section {
+  padding: 0.75rem 0;
 }
 
 .column li {
