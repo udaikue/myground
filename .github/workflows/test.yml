@@ -72,6 +72,7 @@ jobs:
 
     - name: Run test
       run: bundle exec rspec
+<<<<<<< HEAD
 =======
         ports:
           - 5432:5432
@@ -119,3 +120,8 @@ jobs:
       - name: Run tests
         run: bundle exec rspec
 >>>>>>> 39ff67c (Add system test)
+=======
+
+    - name: Rubocop
+      run: bundle exec rubocop
+>>>>>>> 4ead598 (Set Rubocop to GitHub Actions)
