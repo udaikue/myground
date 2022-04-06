@@ -19,7 +19,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示される' do
-        expect(page).to have_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
+        expect(page).to have_content "#{Time.zone.today.year}/#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
       end
     end
   end
@@ -32,7 +32,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示される' do
-        expect(page).to have_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島 @ZOZOマリン"
+        expect(page).to have_content "#{Time.zone.today.year}/#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
       end
     end
 
@@ -43,7 +43,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示されない' do
-        expect(page).to have_no_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島 @ZOZOマリン"
+        expect(page).to have_no_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
       end
 
       it '本人がログイン時は表示される' do
@@ -53,7 +53,7 @@ describe '観戦日記管理', type: :system do
         click_button 'ログイン'
 
         visit diaries_path(@user.username)
-        expect(page).to have_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島 @ZOZOマリン"
+        expect(page).to have_content "#{Time.zone.today.year}/#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
       end
     end
 
