@@ -19,7 +19,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示される' do
-        expect(page).to have_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島 @ZOZOマリン"
+        expect(page).to have_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
       end
     end
   end
