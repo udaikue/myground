@@ -10,6 +10,7 @@ import 'channels'
 import '../new-diary.js'
 import '../edit-diary.js'
 import '../header.js'
+import '../notification.js'
 
 Rails.start()
 ActiveStorage.start()
