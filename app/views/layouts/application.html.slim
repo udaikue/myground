@@ -1,6 +1,14 @@
 doctype html
-html
+html prefix="og: https://ogp.me/ns#"
   head
+    meta charset="utf-8"
+    meta name="description" content="自分だけの野球観戦日記を作ろう"
+    meta property="og:title" content="My Ground"
+    meta property="og:description" content="自分だけの野球観戦日記を作ろう"
+    meta property="og:type" content="website"
+    meta property="og:url" content="https://my-ground.herokuapp.com/"
+    meta property="og:site_name" content="My Ground"
+    meta property="og:image" content="#{image_url('ogp.png')}"
     title
       | MyGround
     meta[name="viewport" content="width=device-width,initial-scale=1"]
