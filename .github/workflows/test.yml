@@ -70,6 +70,10 @@ jobs:
     - name: Setup rails
       run: bin/setup
 
+    - name: Get current date and time
+      env:
+        TZ: "Asia/Tokyo"
+
     - name: Run test
       run: bundle exec rspec
 <<<<<<< HEAD
