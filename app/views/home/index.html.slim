@@ -10,13 +10,11 @@ header.page-header
     - @diaries.map do |diary|
       - game = Game.find(diary.game_id)
       .index-container.diary-index-title
-        = link_to "#{game.date.year}/#{game.date.month}/#{game.date.day} #{Team.find(game.team_home_id).name}VS#{Team.find(game.team_visitor_id).name}", "/#{User.find(diary.user_id).username}/diaries/#{diary.id}"
-        br
-        span
-          = link_to "@#{Ballpark.find(game.ballpark_id).name} #{User.find(diary.user_id).username}", "/#{User.find(diary.user_id).username}/diaries/#{diary.id}"
-        / a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}" #{game.date.year}/#{game.date.month}/#{game.date.day} #{Team.find(game.team_home_id).name}VS#{Team.find(game.team_visitor_id).name}
-        / span
-        / a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}" @#{Ballpark.find(game.ballpark_id).name} #{User.find(diary.user_id).username}
+        a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}"
+          | #{game.date.year}/#{game.date.month}/#{game.date.day} #{Team.find(game.team_home_id).name}VS#{Team.find(game.team_visitor_id).name}
+          br
+          span
+            | @#{Ballpark.find(game.ballpark_id).name} #{User.find(diary.user_id).username}
     br
   .container
     - if current_user

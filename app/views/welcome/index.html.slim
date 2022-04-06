@@ -12,16 +12,20 @@
   .container
     ul.visitor-actions__items
       li.visitor-actions__item
-        = link_to '登録してはじめる', new_user_registration_path, class: 'button is-normal is-fullwidth is-primary'
+        = link_to '登録してはじめる', new_user_registration_path, class: 'button is-normal is-fullwidth is-success'
       li.visitor-actions__item
-        = link_to t('button.log_in'), new_user_session_path, class: 'button is-normal is-fullwidth'
+        = link_to t('button.log_in'), new_user_session_path, class: 'button is-normal is-fullwidth is-warning'
       li.visitor-actions__item
         p
           | 新着日記
-      li.visitor-actions__item
+      li.visitor-actions__item.container
         - @diaries.map do |diary|
           - game = Game.find(diary.game_id)
-          .container.index-container
-            a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}" #{game.date.month}/#{game.date.day} #{Team.find(game.team_home_id).name}VS#{Team.find(game.team_visitor_id).name} @#{Ballpark.find(game.ballpark_id).name} #{User.find(diary.user_id).username}
+          .index-container.diary-index-title
+            a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}"
+              | #{game.date.year}/#{game.date.month}/#{game.date.day} #{Team.find(game.team_home_id).name}VS#{Team.find(game.team_visitor_id).name}
+              br
+              span
+                | @#{Ballpark.find(game.ballpark_id).name} #{User.find(diary.user_id).username}
       li.visitor-actions__item
         = link_to 'もっとみる', latest_diaries_path, class: 'button is-normal is-fullwidth'
