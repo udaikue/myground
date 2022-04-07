@@ -56,14 +56,14 @@
           </thead>
           <tbody>
             <tr>
-              <td width='100'><div class='has-text-left score-element'>{{ getTeamName(selectedGame.team_visitor_id) }}</div></td>
+              <td width='100'><div v-bind:class='getTeamColor(selectedGame.team_visitor_id)'><div class='has-text-left score-element visitor-team-name'>{{ getTeamName(selectedGame.team_visitor_id) }}</div></div></td>
               <td v-for='score in displayScores' :key='score.id'><div class='has-text-centered score-element'>{{ score.visitor }}</div></td>
               <td><div class='has-text-centered score-element'>{{ selectedGame.score_visitor }}</div></td>
               <td><div class='has-text-centered score-element'>{{ selectedGame.hits_visitor }}</div></td>
               <td><div class='has-text-centered score-element'>{{ selectedGame.errors_visitor }}</div></td>
             </tr>
             <tr>
-              <td><div class='has-text-left score-element'>{{ getTeamName(selectedGame.team_home_id) }}</div></td>
+              <td><div v-bind:class='getTeamColor(selectedGame.team_home_id)'><div class='has-text-left score-element home-team-name'>{{ getTeamName(selectedGame.team_home_id) }}</div></div></td>
               <td v-for='score in displayScores' :key='score.id'><div class='has-text-centered score-element'>{{ score.home }}</div></td>
               <td><div class='has-text-centered score-element'>{{ selectedGame.score_home }}</div></td>
               <td><div class='has-text-centered score-element'>{{ selectedGame.hits_home }}</div></td>
@@ -224,6 +224,35 @@ export default {
           return 'オリックス'
         case 12:
           return 'ソフトバンク'
+      }
+      getTeamColor(team_id)
+    },
+    getTeamColor(team_id) {
+      switch(team_id) {
+        case 1:
+          return 'is-giants'
+        case 2:
+          return 'is-yakult'
+        case 3:
+          return 'is-baystars'
+        case 4:
+          return 'is-dragons'
+        case 5:
+          return 'is-tigers'
+        case 6:
+          return 'is-carp'
+        case 7:
+          return 'is-fighters'
+        case 8:
+          return 'is-eagles'
+        case 9:
+          return 'is-loins'
+        case 10:
+          return 'is-marines'
+        case 11:
+          return 'is-buffaloes'
+        case 12:
+          return 'is-hawks'
       }
     },
     getCurrentYear() {
