@@ -142,7 +142,7 @@ describe '観戦日記管理', type: :system do
 
       it '日記を更新できる' do
         uncheck '公開する'
-        click_button '保存'
+        click_button '更新'
         expect(page).to have_text '日記を更新しました'
       end
     end

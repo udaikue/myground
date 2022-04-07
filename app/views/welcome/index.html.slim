@@ -26,7 +26,7 @@
               span.diary-index__date
                 = index_game_date(game)
               span.diary-index__card
-                = index_game_card(game)
+                |  #{index_game_card(game)}
               br
               span.diary-index__ballpark
                 | #{index_game_ballpark(game)} #{index_diary_username(diary)}
