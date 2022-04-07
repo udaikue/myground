@@ -9,11 +9,11 @@
           <textarea class='textarea' name='diary[comment]' v-bind:value='diary.comment'></textarea>
         </div>
       </div>
-      <table class='table'>
+      <table class='table is-full-width link-destroy-selector'>
         <thead>
           <tr>
-            <th>リンク</th>
-            <th>削除</th>
+            <th><div class='has-text-centered'>リンク</div></th>
+            <th width='50'><div class='has-text-centered'>削除</div></th>
           </tr>
         </thead>
         <tbody v-for='link in links' :key='link.key'>
@@ -21,8 +21,8 @@
           <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][url]`" v-bind:value='link.url'>
           <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][title]`" v-bind:value='link.title'>
           <tr>
-            <td>{{ link.title }}</td>
-            <td><input type='checkbox' v-bind:name="`diary[links_attributes][${link.id}][_destroy]`"></td>
+            <td><div class='has-text-left'>{{ link.title }}</div></td>
+            <td><div class='has-text-centered'><input type='checkbox' v-bind:name="`diary[links_attributes][${link.id}][_destroy]`"></div></td>
           </tr>
         </tbody>
       </table>
@@ -46,8 +46,8 @@
       </div>
       <div class='field is-grouped'>
         <div class='control'>
-          <button class='button is-dark'>保存</button>
-          <button class='button is-gray-light' type='button' onclick='history.back()'>キャンセル</button>
+          <button class='button is-link'>更新</button>
+          <button class='button is-link is-outlined' type='button' onclick='history.back()'>キャンセル</button>
         </div>
       </div>
     </form>
