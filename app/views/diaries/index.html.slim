@@ -9,19 +9,22 @@ header.page-header
   .container
     - if @diaries.present?
       - @diaries.map do |diary|
-        - @game = Game.find(diary.game_id)
-        .index-container.diary-index-title
+        - game = Game.find(diary.game_id)
+        .index-container.diary-index__title
           a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}"
-            | #{@game.date.year}/#{@game.date.month}/#{@game.date.day} #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name}
+            span.diary-index__date
+              = index_game_date(game)
+            span.diary-index__card
+              = index_game_card(game)
             br
-            span
-              | @#{Ballpark.find(@game.ballpark_id).name}
+            span.diary-index__ballpark
+              = index_game_ballpark(game)
     - else
       .block.has-text-centered
         | まだ日記はありません。
         br
         i.far.fa-meh.fa-5x
-    br
+  br
   .container
     - if my_diaries_index?
       = link_to '+', new_diary_path(current_user&.username), class: 'button is-primary plus'
