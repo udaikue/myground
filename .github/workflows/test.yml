@@ -68,8 +68,14 @@ jobs:
     - name: Install uri 0.11.0
       run: gem install uri -v 0.11.0
 
-    - name: Setup rails
-      run: bin/setup
+    - name: yarn install
+      run:  yarn install --check-files
+
+    - name: Setup test DB
+      run: bundle exec rails db:create
+
+    - name: Setup test DB
+      run: bundle exec rails db:schema:load
 
     - name: Run test
       run: bundle exec rspec
