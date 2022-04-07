@@ -2412,7 +2412,7 @@ g2022040315:
   homerun_visitor: 糸井 2号(6回表2ラン) 、 木浪 1号(9回表ソロ) 、 梅野 1号(9回表ソロ)
 
 g2022040346:
-  date: 2022-04-03
+  date: <%= Time.zone.today %>
   ballpark_id: 8
   team_home_id: 4
   team_visitor_id: 6
@@ -2429,7 +2429,7 @@ g2022040346:
   homerun_visitor:
 
 g20220403117:
-  date: 2022-04-03
+  date: <%= Time.zone.today %>
   ballpark_id: 9
   team_home_id: 11
   team_visitor_id: 7
@@ -2446,7 +2446,7 @@ g20220403117:
   homerun_visitor: 今川 1号(4回表2ラン)
 
 g20220403109:
-  date: 2022-04-03
+  date: <%= Time.zone.today %>
   ballpark_id: 6
   team_home_id: 10
   team_visitor_id: 9
