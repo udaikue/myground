@@ -2,46 +2,46 @@ g202202261211_user1:
   published: true
   comment: 'test_user1の公開されている日記です。'
   game: g202202261211
-  user_id: 1
+  user_id: 100
 
 d2022031992_user1:
   published: true
   comment: 'test_user1の公開されている日記です。'
   game: g2022031992
-  user_id: 1
+  user_id: 100
 
 g2022032118_user1:
   published: true
   comment: 'test_user1の公開されている日記です。'
   game: g2022032118
-  user_id: 1
+  user_id: 100
 
 g2022032614_user1:
   published: true
   comment: 'test_user1の公開されている日記です。'
   game: g2022032614
-  user_id: 1
+  user_id: 100
 
 g2022032714_user1:
   published: false
   comment: 'test_user1の非公開日記です。'
   game: g2022032714
-  user_id: 1
+  user_id: 100
 
 g2022032614_user2:
   published: true
   comment: 'test_user2の公開されている日記です。'
   game: g2022032614
-  user_id: 2
+  user_id: 200
 
 g2022040123_user2:
   published: true
   comment: 'test_user2の公開されている日記です。'
   game: g2022040123
-  user_id: 2
+  user_id: 200
 
 g2022040315_user2:
   published: true
   comment: 'test_user2の公開されている日記です。'
   game: g2022040315
-  user_id: 2
+  user_id: 200
