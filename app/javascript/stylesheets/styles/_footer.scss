@@ -1,15 +1,10 @@
 .footer {
   background-color: #f3f3f2;
-  color: #383c3c;
-
-  .content {
-    font-size: 10px;
-  }
-
+  color: $body-color;
+  font-size: .875rem;
   .sns-icon {
-    color: #383c3c;
+    color: $body-color;
   }
-
   a {
     margin: 0 0.5rem;
   }

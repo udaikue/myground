@@ -1,4 +1,5 @@
-= render partial: 'shared/tabs', locals: { user: @user, tab1: @tab1, tab2: @tab2 }
+- if current_user
+  = render 'shared/tabs', locals: { user: @user, tab1: @tab1, tab2: @tab2 }
 
 header.page-header
   .container
@@ -6,25 +7,15 @@ header.page-header
       = "#{params[:username] ||= current_user.username}の#{t('title.diaries')}"
 
 .page-body
-  .container
-    - if @diaries.present?
-      - @diaries.map do |diary|
-        - game = Game.find(diary.game_id)
-        .index-container.diary-index__title
-          a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}"
-            span.diary-index__date
-              = index_game_date(game)
-            span.diary-index__card
-              |  #{index_game_card(game)}
-            br
-            span.diary-index__ballpark
-              = index_game_ballpark(game)
-    - else
-      .block.has-text-centered
-        | まだ日記はありません。
-        br
-        i.far.fa-meh.fa-5x
-  br
+  - if @diaries.present?
+    = render 'diaries', diaries: @diaries
+  - else
+    .empty-message
+      .container
+        .block.has-text-centered
+          | まだ日記はありません。
+          br
+          i.far.fa-meh.fa-5x
   .container
     - if my_diaries_index?
       = link_to '+', new_diary_path(current_user&.username), class: 'button is-primary plus'

@@ -1,0 +1,27 @@
+.diaries
+  .container
+    .diaries__inner
+      - if defined?(title)
+        header.diaries__header
+          h2.diaries__title
+            = title
+      .diaries__items
+        - diaries.map do |diary|
+          - game = Game.find(diary.game_id)
+          .diaries-item
+            a.diaries-item__inner(href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}")
+              .diaries-item__row
+                .diaries-item__col
+                  .diaries-item__date
+                    = index_game_date(game)
+                .diaries-item__col
+                  .diaries-item__user
+                    = User.find(diary.user_id).username
+              .diaries-item__row
+                .diaries-item__col
+                  .diaries-item__card
+                    | #{index_game_card(game)}
+                .diaries-item__col
+                  .diaries-item__ballpark
+                    = index_game_ballpark(game)
+    = yield

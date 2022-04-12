@@ -1,0 +1,73 @@
+.diaries__inner {
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.diaries__header {
+  padding: .75rem .75rem;
+  border-bottom: solid #f3f3f2 1px;
+}
+
+.diaries__title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.diaries__more {
+  padding: .75rem .75rem;
+  text-align: center;
+  border-top: solid #f3f3f2 1px;
+}
+
+.diaries__more-link {
+  text-decoration: underline;
+  font-size: .875rem;
+}
+
+.diaries-item {
+  .diaries-item + & {
+    border-top: solid #f3f3f2 1px;
+  }
+}
+
+.diaries-item__inner {
+  display: block;
+  padding: .5rem .75rem;
+  color: $body-color-muted;
+  transition: all .2s ease-out;
+  &:hover {
+    background-color: #f7fffe;
+  }
+}
+
+.diaries-item__row {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  .diaries-item__row + & {
+    margin-top: .125rem;
+  }
+}
+
+.diaries-item__date {
+  font-size: .75rem;
+ }
+
+ .diaries-item__user {
+  font-size: .75rem;
+ }
+
+.diaries-item__card {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $link;
+  .diaries-item__inner:hover & {
+    text-decoration: underline;
+  }
+}
+
+.diaries-item__ballpark {
+  font-size: .75rem;
+  font-weight: 400;
+ }

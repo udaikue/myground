@@ -1,0 +1,11 @@
+.diary__items {
+  margin-top: 1rem;
+}
+
+.diary__item + .diary__item {
+  margin-top: 2rem;
+}
+
+.diary__item-title {
+  margin-bottom: .75rem;
+}

@@ -1,16 +1,15 @@
-header.page-header
-  .container
-    h1.page-header__title
-      = t('title.resend_unlock_email')
-
 .page-body
   .container
-    = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
-      = render 'devise/shared/error_messages', resource: resource
-      .field
-        = f.label :email
-        br
-        = f.email_field :email, autofocus: true, autocomplete: 'email'
-      .actions
-        = f.submit t('button.resend_unlock_email')
+    .auth-form
+      .auth-form__header
+        = t('title.resend_unlock_email')
+      .auth-form__body
+        = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+          = render 'devise/shared/error_messages', resource: resource
+          .field
+            = f.label :email
+            br
+            = f.email_field :email, autofocus: true, autocomplete: 'email'
+          .actions
+            = f.submit t('button.resend_unlock_email')
     = render 'devise/shared/links'

@@ -1,106 +1,127 @@
-= render partial: 'shared/tabs', locals: { user: @user }
+- if current_user
+  = render partial: 'shared/tabs', locals: { user: @user }
 
 header.page-header
   .container
     h1.page-header__title
-      = t('title.show_diary')
+      span.game-header-user
+        | #{@diary.user.username}さんの観戦日記
 
 .page-body
-  .container
-    columns.column
-      .game-header-date
-        | #{@game.date.year}年#{@game.date.month}月#{@game.date.day}日(#{@game_wday})
-      .game-header-card
-        | #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name} @#{Ballpark.find(@game.ballpark_id).name}
+  .diary
+    header.diary-header
+      .container
+        h1.diary-header__title
+          span.diary-header__date
+            | #{@game.date.year}年#{@game.date.month}月#{@game.date.day}日(#{@game_wday})
+          span.diary-header__card
+            | #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name}
+          span.diary-header__ballpark
+            | @#{Ballpark.find(@game.ballpark_id).name}
+    .diary__items
+      .container
+        .diary__items-inner
+          - if my_diary?
+            .diary__item
+              | #{@diary.published ? '公開中' : '非公開'}
 
-    table.table.is-bordered.is-fullwidth.score-board
-      thead
-        tr
-          th.score-team-name.has-text-left
-          - 1.upto(@display_innings) do |i|
-            th.has-text-centered
-              = i
-          th.has-text-centered
-            | 計
-          th.has-text-centered
-            | 安
-          th.has-text-centered
-            | 失
-      tbody
-        tr
-          td.has-text-left.score-element
-            = Team.find(@game.team_visitor_id).name
-          - 1.upto(@display_innings) do |i|
-            td.has-text-centered.score-element
-              = @scores.find_by(inning: i)&.visitor
-          td.has-text-centered.score-element
-            = @game.score_visitor
-          td.has-text-centered.score-element
-            = @game.hits_visitor
-          td.has-text-centered.score-element
-            = @game.errors_visitor
-        tr
-          td.has-text-left.score-element
-            = Team.find(@game.team_home_id).name
-          - 1.upto(@display_innings) do |i|
-            td.has-text-centered.score-element
-              = @scores.find_by(inning: i)&.home
-          td.has-text-centered.score-element
-            = @game.score_home
-          td.has-text-centered.score-element
-            = @game.hits_home
-          td.has-text-centered.score-element
-            = @game.errors_home
-    h2
-      | 責任投手
-    table.table.is-bordered.is-fullwidth.record
-      tbody
-        tr
-          td.record-element width='100'
-            | 勝利投手
-          td.record-element
-            = @game.winning_pitcher
-        tr
-          td.record-element width='100'
-            | 敗戦投手
-          td.record-element
-            = @game.losing_pitcher
-        tr
-          td.record-element
-            | セーブ
-          td.record-element
-            = @game.saving_pitcher
+          .diary__item
+            h2.diary__item-title
+              | 試合結果
+            table.table.is-bordered.is-fullwidth.score-board
+              thead
+                tr
+                  th.score-team-name.has-text-left
+                  - 1.upto(@display_innings) do |i|
+                    th.has-text-centered
+                      = i
+                  th.has-text-centered
+                    | 計
+                  th.has-text-centered
+                    | 安
+                  th.has-text-centered
+                    | 失
+              tbody
+                tr
+                  td.has-text-left.score-element
+                    = Team.find(@game.team_visitor_id).name
+                  - 1.upto(@display_innings) do |i|
+                    td.has-text-centered.score-element
+                      = @scores.find_by(inning: i)&.visitor
+                  td.has-text-centered.score-element
+                    = @game.score_visitor
+                  td.has-text-centered.score-element
+                    = @game.hits_visitor
+                  td.has-text-centered.score-element
+                    = @game.errors_visitor
+                tr
+                  td.has-text-left.score-element
+                    = Team.find(@game.team_home_id).name
+                  - 1.upto(@display_innings) do |i|
+                    td.has-text-centered.score-element
+                      = @scores.find_by(inning: i)&.home
+                  td.has-text-centered.score-element
+                    = @game.score_home
+                  td.has-text-centered.score-element
+                    = @game.hits_home
+                  td.has-text-centered.score-element
+                    = @game.errors_home
 
-    h2
-      | 本塁打
-    table.table.is-bordered.is-fullwidth.record
-      tbody
-        tr
-          td.record-element width='100'
-            = Team.find(@game.team_visitor_id).name
-          td.record-element
-            = @game.homerun_visitor
-        tr
-          td.record-element width='100'
-            = Team.find(@game.team_home_id).name
-          td.record-element
-            = @game.homerun_home
+          .diary__item
+            h2.diary__item-title
+              | 責任投手
+            table.table.is-bordered.is-fullwidth.record
+              tbody
+                tr
+                  td.record-element width='100'
+                    | 勝利投手
+                  td.record-element
+                    = @game.winning_pitcher
+                tr
+                  td.record-element width='100'
+                    | 敗戦投手
+                  td.record-element
+                    = @game.losing_pitcher
+                tr
+                  td.record-element
+                    | セーブ
+                  td.record-element
+                    = @game.saving_pitcher
 
-    .container.has-background-light
-      columns.column.is-full
-        = simple_format @diary.comment
+          .diary__item
+            h2.diary__item-title
+              | 本塁打
+            table.table.is-bordered.is-fullwidth.record
+              tbody
+                tr
+                  td.record-element width='100'
+                    = Team.find(@game.team_visitor_id).name
+                  td.record-element
+                    = @game.homerun_visitor
+                tr
+                  td.record-element width='100'
+                    = Team.find(@game.team_home_id).name
+                  td.record-element
+                    = @game.homerun_home
 
-      columns.column.is-full
-        ul
-          - @diary.links.each do |link|
-            li
-              a href="#{link.url}" target="_blank" rel="noopener noreferrer" #{link.title}
+          .diary__item
+            h2.diary__item-title
+              | コメント
+            = simple_format @diary.comment
 
-      columns.column.is-full
-        | #{@diary.published ? '公開中' : '非公開'}
-    br
+          - if @diary.links.present?
+            .diary__item
+              h2.diary__item-title
+                | 関連記事
+              .diary-links
+                ul.diary-links__items
+                  - @diary.links.each do |link|
+                    li.diary-links__item
+                      a.diary-links__item-link(href="#{link.url}" target="_blank" rel="noopener noreferrer")
+                        = link.title
 
-    buttons
-      - if my_diary?
-        = link_to t('button.edit'), edit_diary_path(params[:username]), class: 'button is-info'
-      = link_to t('button.back'), :back, class: 'button is-warning'
+          .diary__item
+            buttons
+              - if my_diary?
+                = link_to t('button.edit'), edit_diary_path(params[:username]), class: 'button is-info'
+              = link_to t('button.back'), :back, class: 'button is-warning'

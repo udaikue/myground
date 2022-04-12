@@ -1,34 +1,13 @@
-.overview
-  .container
-    .overview__inner
-      .overview__logo-container
-        = image_tag('logo.png', class: 'overview__logo', alt: 'My Groundのロゴ')
-      h1.overview__copy.has-text-centered
-        | 自分だけの
-        br
-        | 野球観戦日記を作ろう
+.page-body
+  = render 'overview'
 
-.visitor-actions
-  .container
-    ul.visitor-actions__items
-      li.visitor-actions__item
-        = link_to '登録してはじめる', new_user_registration_path, class: 'button is-normal is-fullwidth is-success'
-      li.visitor-actions__item
-        = link_to t('button.log_in'), new_user_session_path, class: 'button is-normal is-fullwidth is-warning'
-      li.visitor-actions__item
-        p
-          | 新着日記
-      li.visitor-actions__item.container
-        - @diaries.map do |diary|
-          - game = Game.find(diary.game_id)
-          .index-container.diary-index__title
-            a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}"
-              span.diary-index__date
-                = index_game_date(game)
-              span.diary-index__card
-                |  #{index_game_card(game)}
-              br
-              span.diary-index__ballpark
-                | #{index_game_ballpark(game)} #{index_diary_username(diary)}
-      li.visitor-actions__item
-        = link_to 'もっとみる', latest_diaries_path, class: 'button is-outlined is-fullwidth is-danger'
+  .visitor-actions
+    .container
+      .visitor-actions__main-action
+        = link_to '登録してはじめる', new_user_registration_path, class: 'button is-normal is-fullwidth is-primary'
+      .visitor-actions__sub-action
+        = link_to '登録済の方はこちらからログイン', new_user_session_path, class: ''
+
+  = render '/diaries/diaries', diaries: @diaries, title: '新着日記' do
+    .diaries__more
+      = link_to 'もっとみる', latest_diaries_path, class: 'diaries__more-link'
