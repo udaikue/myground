@@ -16,6 +16,6 @@ header.page-header
           | まだ日記はありません。
           br
           i.far.fa-meh.fa-5x
-  .container
-    - if my_diaries_index?
-      = link_to '+', new_diary_path(current_user&.username), class: 'button is-primary plus'
+
+  - if my_diaries_index?
+    = render '/diaries/create_diary_action'

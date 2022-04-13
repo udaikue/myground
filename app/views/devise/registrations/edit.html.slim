@@ -22,18 +22,13 @@
               = f.text_field :username, autocomplete: 'username', class: 'input'
           .field
             label.label
-              = f.label :password
-            .password-information
-              i
-                = t('information.leave_blank_if_not_change')
+              | #{f.label :password}（#{t('information.leave_blank_if_not_change')}）
             .control
               = f.password_field :password, autocomplete: 'new-password', class: 'input'
-              - if @minimum_password_length
-                br
-                .password-information
-                  em
-                    = @minimum_password_length
-                    = t('information.minimum_character')
+            - if @minimum_password_length
+              p.help
+                = @minimum_password_length
+                = t('information.minimum_character')
           .field
             label.label
               = f.label :password_confirmation

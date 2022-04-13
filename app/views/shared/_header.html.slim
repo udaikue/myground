@@ -5,7 +5,7 @@ header.header
         = link_to latest_diaries_path, class: 'navbar-brand__logo-link' do
           = image_tag('logo.png', class: 'navbar-brand__logo-image')
         .navbar-burger(aria-label="menu" data-target="menu")
-          i.fas.fa-cog
+          i.fas.fa-user
         .menu#menu
           ul.menu__items
             - if current_user

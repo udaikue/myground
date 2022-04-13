@@ -1,0 +1,8 @@
+.create-diary-action
+  .container
+    .create-diary-action__inner
+      = link_to  new_diary_path(current_user&.username), class: 'create-diary-action__link' do
+        .create-diary-action__icon
+          i.fas.fa-plus
+        .create-diary-action__label
+          | 日記作成

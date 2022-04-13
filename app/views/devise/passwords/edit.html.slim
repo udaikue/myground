@@ -22,7 +22,7 @@
             .control
               = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'input'
           .actions
-            = f.submit t('button.change_password'), class: 'button is-info'
+            = f.submit t('button.change_password'), class: 'button is-primary'
     .auth-links
       ul.auth-links__items
         = render 'devise/shared/links'

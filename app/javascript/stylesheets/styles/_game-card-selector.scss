@@ -1,0 +1,50 @@
+.game-card-selector {
+  background-color: white;
+  border-radius: 4px;
+}
+
+.game-card-selector__header {
+  padding: .5rem;
+}
+
+.game-card-selector__title {
+  font-size: .875rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.game-card-selector__rows {
+  border-top: solid 1px #d9d9d9;
+}
+
+.game-card-selector__row {
+  display: flex;
+  align-items: center;
+  font-size: .875rem;
+  padding: .75rem 0;
+  cursor: pointer;
+  &:not(:first-child) {
+    border-top: solid 1px #f3f3f2;
+  }
+  &:hover {
+    background-color: $hover-background;
+  }
+}
+
+.game-card-selector__column {
+  &:nth-child(1) {
+    flex: 1;
+    text-align: right;
+  }
+  &:nth-child(2) {
+    flex: 0 0 5rem;
+    text-align: center;
+    color: $link;
+    text-decoration: underline;
+    font-size: 1rem;
+  }
+  &:nth-child(3) {
+    flex: 1;
+    text-align: left;
+  }
+}

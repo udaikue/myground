@@ -37,7 +37,7 @@
   color: $body-color-muted;
   transition: all .2s ease-out;
   &:hover {
-    background-color: #f7fffe;
+    background-color: $hover-background;
   }
 }
 
@@ -59,9 +59,9 @@
  }
 
 .diaries-item__card {
-  font-size: 1rem;
+  font-size: .875rem;
   font-weight: 700;
-  color: $link;
+  color: $text;
   .diaries-item__inner:hover & {
     text-decoration: underline;
   }

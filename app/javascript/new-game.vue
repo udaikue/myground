@@ -1,113 +1,128 @@
 <template>
-  <div id='diaries'>
-    <section>
-      <h2>試合結果</h2>
-      <p v-if='!gameCards.length && !result'>いつの日記を書きますか？</p>
-      <p v-if='gameCards.length && !result'>どの試合について書きますか？</p>
-      <div class='' v-if='gameCards.length && !result'>
-        <div class='' id='game-cards'>
-          <header>
-            <div class='has-text-centered card-date-header'>{{ cardMonth }}月 {{ cardDate }}日</div>
-          </header>
-          <div class='game-card-columns'>
-            <div class='columns is-mobile' v-for='game in gameCards' :key='game.id' @click='getScore(game.id)'>
-              <div class='column game-card-column'><div class='has-text-left'>{{ getTeamName(game.team_home_id) }}</div></div>
-              <div class='column game-card-column'><div class='game-card has-text-centered'>{{ game.score_home }} - {{ game.score_visitor }}</div></div>
-              <div class='column game-card-column'><div class='has-text-right'>{{ getTeamName(game.team_visitor_id) }}</div></div>
+  <div id='diaries' class='diary'>
+    <div class='diary__items'>
+      <div class='container'>
+        <div class='diary__item'  v-if='gameCards.length && !result'>
+          <h2 class='diary__item-title' v-if='gameCards.length && !result'>どの試合について書きますか？</h2>
+          <div class='game-card-selector' id='game-cards'>
+            <header class='game-card-selector__header'>
+              <h3 class='game-card-selector__title'>{{ cardMonth }}月{{ cardDate }}日に行われた試合</h3>
+            </header>
+            <div class='game-card-selector__rows'>
+              <div class='game-card-selector__row' v-for='game in gameCards' :key='game.id' @click='getScore(game.id)'>
+                <div class='game-card-selector__column'>{{ getTeamName(game.team_home_id) }}</div>
+                <div class='game-card-selector__column'>{{ game.score_home }} - {{ game.score_visitor }}</div>
+                <div class='game-card-selector__column'>{{ getTeamName(game.team_visitor_id) }}</div>
+              </div>
             </div>
           </div>
         </div>
+
+        <div class='diary__item' v-if='!result'>
+          <h2 class='diary__item-title' v-if='!gameCards.length && !result'>いつの日記を書きますか？</h2>
+          <h2 class='diary__item-title' v-if='gameCards.length && !result'>日にちを変更する</h2>
+          <div class='calendar-date-selector'>
+            <div class='calendar-month-selector'>
+              <div class='calendar-month-selector__item'><div v-if='!oldestMonth()' @click='previousMonth'>前の月</div></div>
+              <div class='calendar-month-selector__item'><div>{{ calendarYear }}年{{ calendarMonth }}月</div></div>
+              <div class='calendar-month-selector__item'><div v-if='!newestMonth()' @click='nextMonth'>次の月</div></div>
+            </div>
+            <div class='calendar-day-selector'>
+              <table class='calendar-day-selector__table table is-fullwidth' id='calendar'>
+                <thead>
+                  <tr>
+                    <th>月</th>
+                    <th>火</th>
+                    <th>水</th>
+                    <th>木</th>
+                    <th>金</th>
+                    <th>土</th>
+                    <th>日</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for='week in monthlyCalendar' :key='week.id'>
+                    <td v-for='date in week.value' :key='date.key' @click='getGameCards(date.date)'>{{ date.date }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class='diary__item' v-if='result'>
+          <h2 class='diary__item-title'>スコア</h2>
+          <table class='table game-result-table score-board-table is-fullwidth is-bordered' id='score-board'>
+            <thead>
+              <tr>
+                <th class='score-team-name'></th>
+                <th v-for='score in displayScores' :key='score.id'>{{ score.inning }}</th>
+                <th>計</th>
+                <th>安</th>
+                <th>失</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class='score-element'>{{ getTeamName(selectedGame.team_visitor_id) }}</th>
+                <td class='score-element' v-for='score in displayScores' :key='score.id'>{{ score.visitor }}</td>
+                <td class='score-element'>{{ selectedGame.score_visitor }}</td>
+                <td class='score-element'>{{ selectedGame.hits_visitor }}</td>
+                <td class='score-element'>{{ selectedGame.errors_visitor }}</td>
+              </tr>
+              <tr>
+                <th class='score-element'>{{ getTeamName(selectedGame.team_home_id) }}</th>
+                <td class='score-element' v-for='score in displayScores' :key='score.id'>{{ score.home }}</td>
+                <td class='score-element'>{{ selectedGame.score_home }}</td>
+                <td class='score-element'>{{ selectedGame.hits_home }}</td>
+                <td class='score-element'>{{ selectedGame.errors_home }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class='diary__item' v-if='result'>
+          <h2 class='diary__item-title'>責任投手</h2>
+          <table class='table game-result-table is-fullwidth is-bordered'>
+            <tbody>
+              <tr>
+                <th class='record-element'>勝利投手</th>
+                <td class='record-element'>{{ selectedGame.winning_pitcher }}</td>
+              </tr>
+              <tr>
+                <th class='record-element'>敗戦投手</th>
+                <td class='record-element'>{{ selectedGame.losing_pitcher }}</td>
+              </tr>
+              <tr>
+                <th class='record-element'>セーブ</th>
+                <td class='record-element'>{{ selectedGame.saving_pitcher }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class='diary__item' v-if='result'>
+          <h2 class='diary__item-title'>本塁打</h2>
+          <table class='table game-result-table is-fullwidth is-bordered'>
+            <tbody>
+              <tr>
+                <th class='record-element'>{{ getTeamName(selectedGame.team_visitor_id) }}</th>
+                <td class='record-element'>{{ selectedGame.homerun_visitor }}</td>
+              </tr>
+              <tr>
+                <th class='record-element'>{{ getTeamName(selectedGame.team_home_id) }}</th>
+                <td class='record-element'>{{ selectedGame.homerun_home }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class='diary__item' v-if='!result'>
+          <button class='button is-gray-light is-small' type='button' onclick='history.back()'>キャンセル</button>
+        </div>
+
       </div>
-      <div class='columns is-mobile calendar-month-selector' v-if='!result'>
-        <div class='column'><div v-if='!oldestMonth()' @click='previousMonth'>前の月</div></div>
-        <div class='column'><div class='has-text-centered'>{{ calendarYear }}年{{ calendarMonth }}月</div></div>
-        <div class='column'><div v-if='!newestMonth()' @click='nextMonth'>次の月</div></div>
-      </div>
-      <div class='' v-if='!result'>
-        <table class='table is-fullwidth' id='calendar'>
-          <thead>
-            <tr>
-              <th><div class='has-text-centered'>月</div></th>
-              <th><div class='has-text-centered'>火</div></th>
-              <th><div class='has-text-centered'>水</div></th>
-              <th><div class='has-text-centered'>木</div></th>
-              <th><div class='has-text-centered'>金</div></th>
-              <th><div class='has-text-centered'>土</div></th>
-              <th><div class='has-text-centered'>日</div></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for='week in monthlyCalendar' :key='week.id'>
-              <td v-for='date in week.value' :key='date.key' @click='getGameCards(date.date)'><div class='has-text-centered'>{{ date.date }}</div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class='' v-if='result'>
-        <table class='table score-board is-fullwidth is-bordered' id='score-board'>
-          <thead>
-            <tr>
-              <th><div class='score-team-name has-text-left'></div></th>
-              <th v-for='score in displayScores' :key='score.id'><div class='has-text-centered'>{{ score.inning }}</div></th>
-              <th><div class='has-text-centered'>計</div></th>
-              <th><div class='has-text-centered'>安</div></th>
-              <th><div class='has-text-centered'>失</div></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td width='100'><div class='has-text-left score-element'>{{ getTeamName(selectedGame.team_visitor_id) }}</div></td>
-              <td v-for='score in displayScores' :key='score.id'><div class='has-text-centered score-element'>{{ score.visitor }}</div></td>
-              <td><div class='has-text-centered score-element'>{{ selectedGame.score_visitor }}</div></td>
-              <td><div class='has-text-centered score-element'>{{ selectedGame.hits_visitor }}</div></td>
-              <td><div class='has-text-centered score-element'>{{ selectedGame.errors_visitor }}</div></td>
-            </tr>
-            <tr>
-              <td><div class='has-text-left score-element'>{{ getTeamName(selectedGame.team_home_id) }}</div></td>
-              <td v-for='score in displayScores' :key='score.id'><div class='has-text-centered score-element'>{{ score.home }}</div></td>
-              <td><div class='has-text-centered score-element'>{{ selectedGame.score_home }}</div></td>
-              <td><div class='has-text-centered score-element'>{{ selectedGame.hits_home }}</div></td>
-              <td><div class='has-text-centered score-element'>{{ selectedGame.errors_home }}</div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div v-if='result'>
-        <h2>責任投手</h2>
-        <table class='table record is-fullwidth is-bordered'>
-          <tbody>
-            <tr>
-              <td width='100'><div class='has-text-left record-element'>勝利投手</div></td>
-              <td><div class='has-text-left record-element'>{{ selectedGame.winning_pitcher }}</div></td>
-            </tr>
-            <tr>
-              <td><div class='has-text-left record-element'>敗戦投手</div></td>
-              <td><div class='has-text-left record-element'>{{ selectedGame.losing_pitcher }}</div></td>
-            </tr>
-            <tr>
-              <td><div class='has-text-left record-element'>セーブ</div></td>
-              <td><div class='has-text-left record-element'>{{ selectedGame.saving_pitcher }}</div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div v-if='result'>
-        <h2>本塁打</h2>
-        <table class='table record is-fullwidth is-bordered'>
-          <tbody>
-            <tr>
-              <td width='100'><div class='has-text-left record-element'>{{ getTeamName(selectedGame.team_visitor_id) }}</div></td>
-              <td><div class='has-text-left record-element'>{{ selectedGame.homerun_visitor }}</div></td>
-            </tr>
-            <tr>
-              <td><div class='has-text-left record-element'>{{ getTeamName(selectedGame.team_home_id) }}</div></td>
-              <td><div class='has-text-left record-element'>{{ selectedGame.homerun_home }}</div></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <button v-if='!result' class='button is-gray-light' type='button' onclick='history.back()'>キャンセル</button>
-    </section>
+    </div>
     <NewForm v-if='result' :game='selectedGame' :diariesPath='diariesPath'></NewForm>
   </div>
 </template>

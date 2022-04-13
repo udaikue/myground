@@ -7,23 +7,13 @@
   border-radius: 50px;
 }
 
-.game-card-column {
-  padding: 0.25rem;
-  border-bottom: solid #adadad;
-  border-width: 1px;
-  font-size: 14px;
-}
-
 .edit-information {
   font-size: 12px;
-}
-
-.password-information {
-  font-size: 12px;
-  font-weight: 700;
-
-  i {
-  color: #f14668;
+  background-color: $primary;
+  color: white;
+  padding: .5rem 0;
+  &.is-danger {
+    background-color: $danger;
   }
 }
 

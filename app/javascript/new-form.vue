@@ -1,46 +1,63 @@
 <template>
-  <form class='form' v-bind:action='diariesPath' method='post'>
-    <h2>観戦日記をつける</h2>
-    <input type='hidden' name='authenticity_token' v-bind:value='token()'>
-    <input type='hidden' name='diary[game_id]' v-bind:value='game.id'>
-    <div class='field'>
-      <label class='label'>日記</label>
-      <div class='control'>
-        <textarea class='textarea' name='diary[comment]'></textarea>
+  <div class='diary__items'>
+    <form class='form' v-bind:action='diariesPath' method='post'>
+      <input type='hidden' name='authenticity_token' v-bind:value='token()'>
+      <input type='hidden' name='diary[game_id]' v-bind:value='game.id'>
+      <div class='container'>
+        <div class='diary__items-inner'>
+          <div class='diary__item'>
+            <label class='diary__item-title'>日記</label>
+            <div class='control'>
+              <textarea class='textarea' name='diary[comment]'></textarea>
+            </div>
+          </div>
+
+          <div class='diary__item'>
+            <label class='diary__item-title'>関連記事</label>
+            <div class='links' v-if='links.length'>
+              <div class='links__item' v-for='link in links' :key='link.key'>
+                <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][url]`" v-bind:value='link.url'>
+                <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][title]`" v-bind:value='link.title'>
+                {{ link.title }}
+              </div>
+            </div>
+            <div class='field'>
+              <p class='label'>URL</p>
+              <div class='control'>
+                <input type='text' class='input' v-model='url'>
+              </div>
+            </div>
+            <div class='field'>
+              <p class='label'>タイトル</p>
+              <div class='control'>
+                <input type='text' class='input' v-model='title'>
+              </div>
+            </div>
+            <div class='field'>
+              <input type='button' @click='addLink()' value='リンク追加' class='button is-small'>
+            </div>
+          </div>
+
+          <div class='diary__item'>
+            <div class='control'>
+              <label class='checkbox'>
+                <input type='checkbox' name='diary[published]'>
+                公開する
+              </label>
+            </div>
+          </div>
+
+          <div class='diary__item'>
+            <div class='buttons'>
+              <button class='button is-primary'>保存</button>
+              <button class='button is-gray-light is-small' type='button' onclick='history.back()'>キャンセル</button>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-    <div class='field'>
-      <label class='label'>ニュースのリンク</label>
-      <div class='link' v-for='link in links' :key='link.key'>
-        <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][url]`" v-bind:value='link.url'>
-        <input type='hidden' v-bind:name="`diary[links_attributes][${link.id}][title]`" v-bind:value='link.title'>
-        {{ link.title }}
-      </div>
-      <div class='control'>
-        <p>URL</p>
-        <input type='text' class='input is-small' v-model='url'>
-        <p>タイトル</p>
-        <input type='text' class='input is-small' v-model='title'>
-        <input type='button' @click='addLink()' value='リンク追加' class='button is-small'>
-      </div>
-    </div>
-    <div class='field'>
-      <div class='control'>
-        <label class='checkbox'>
-          <input type='checkbox' name='diary[published]'>
-          公開する
-        </label>
-      </div>
-    </div>
-    <div class='field is-grouped'>
-      <div class='control'>
-        <button class='button is-primary'>保存</button>
-      </div>
-      <div class='control'>
-        <button class='button is-gray-light' type='button' onclick='history.back()'>キャンセル</button>
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </template>
 
 <script>

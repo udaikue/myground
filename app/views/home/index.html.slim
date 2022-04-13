@@ -10,5 +10,4 @@ header.page-header
   = render '/diaries/diaries', diaries: @diaries
 
   - if current_user
-    .container
-      = link_to '+', new_diary_path(current_user&.username), class: 'button is-primary plus'
+    = render '/diaries/create_diary_action'

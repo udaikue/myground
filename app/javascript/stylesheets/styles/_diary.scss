@@ -1,11 +1,20 @@
-.diary__items {
+.diary__items:not(:first-child) {
   margin-top: 1rem;
 }
 
 .diary__item + .diary__item {
   margin-top: 2rem;
+  gap: .75rem;
+}
+
+.diary__item.is-grouped {
+  display: flex;
+  align-items: flex-end;
 }
 
 .diary__item-title {
-  margin-bottom: .75rem;
+  display: block;
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
