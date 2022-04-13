@@ -1,13 +1,18 @@
-.visitor-actions__item {
-  &:not(:first-child) {
-    margin-top: 1rem;
-  }
+.visitor-actions {
+  margin-bottom: 2rem;
+}
 
-  p {
-    font-weight: 700;
-  }
+.visitor-actions__main-action {
+  width: 26rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
 
+.visitor-actions__sub-action {
+  text-align: center;
+  margin-top: .75rem;
+  font-size: .875rem;
   a {
-    color: #2f4f4f;
+    text-decoration: underline;
   }
 }

@@ -1,0 +1,19 @@
+.diary-header {
+  margin-bottom: 1.75rem;
+}
+
+.diary-header__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .25rem;
+  border-bottom: solid 2px #d9d9d9;
+  padding-bottom: .375rem;
+}
+
+.diary-header__date {
+  font-size: .875rem;
+  flex: 0 0 100%;
+}

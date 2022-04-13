@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #f3f3f2;
+  background-color: transparent;
   color: #203744;
 }
 
@@ -7,13 +7,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: -1rem;
 }
 
-.navbar-menu {
-  background-color: #a9a9a9;
+.navbar-brand {
+  flex: 1;
+  position: relative;
+  margin-left: 0 !important;
 }
 
-.navbar-item {
+.navbar-brand__logo-link {
+  height: 100%;
   display: flex;
-  font-size: small;
+  align-items: center;
+}
+
+.navbar-brand__logo-image {
+  width: 2.25rem;
 }

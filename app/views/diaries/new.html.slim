@@ -6,5 +6,4 @@ header.page-header
       = t('title.new_diary')
 
 .page-body
-  .container
-    #js-new-diary(data-diaries-path="#{diaries_path(username: current_user.username)}")
+  #js-new-diary(data-diaries-path="#{diaries_path(username: current_user.username)}")

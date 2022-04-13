@@ -1,0 +1,31 @@
+.auth-form {
+  width: 30rem;
+  max-width: 100%;
+  margin: 4rem auto 1.5rem;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.auth-form__header {
+  padding: .75rem 1rem;
+  border-bottom: solid 1px #f3f3f2;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.auth-form__body {
+  padding: .75rem 1rem;
+  .field:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+  .label {
+    font-size: .875rem;
+  }
+}
+
+.auth-links__items {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}

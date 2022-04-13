@@ -1,10 +1,8 @@
 .tabs ul {
-  color: #383c3c;
-
+  color: $body-color;
   .is-active a {
     color: #494a41;
   }
-
   a {
     color: #adadad;
   }

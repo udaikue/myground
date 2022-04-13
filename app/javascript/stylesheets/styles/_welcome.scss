@@ -1,0 +1,5 @@
+.welcome__content {
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+}

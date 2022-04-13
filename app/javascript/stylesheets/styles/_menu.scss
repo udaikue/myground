@@ -1,0 +1,28 @@
+.menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  &.is-active {
+    display: block;
+  }
+}
+
+.menu__items {
+  background-color: $body-color;
+  padding: .75rem 0;
+  border-radius: 4px;
+  min-width: 10rem;
+}
+
+.menu__item-link {
+  display: block;
+  padding: .5rem 1rem;
+  color: white;
+  font-size: .875rem;
+  transition: all .2s ease-out;
+  &:hover {
+    color: white;
+    background-color: rgba(white, .1);
+  }
+}

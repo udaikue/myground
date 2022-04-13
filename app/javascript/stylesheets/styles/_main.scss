@@ -3,90 +3,17 @@
   padding: 0 1rem;
 }
 
-.page-header {
-  background-color: #f3f3f2;
-  color: #383c3c;
-  padding: 0.75rem 0;
-
-  h1 {
-    font-size: 18px;
-    font-weight: 700;
-  }
-}
-
-.page-body {
-  color: #383c3c;
-  padding: 0.75rem 0;
-
-  .card-date-header {
-    padding: 0.5rem;
-    font-size: 14px;
-  }
-
-  .score-element, .record-element {
-    padding: 0.25rem;
-  }
-
-  .game-card-columns {
-    margin: 1rem 0.5rem;
-  }
-
-  .game-header-date {
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  .game-header-card {
-    font-weight: 700;
-  }
-
-  .calendar-month-selector {
-    font-size: 14px;
-  }
-
-  h2 {
-    font-size: 16px;
-    font-weight: 700;
-  }
-
-  p, li {
-    font-size: 14px;
-  }
-
-  a {
-    color: #696969;
-  }
-}
-
 .plus {
   border-radius: 50px;
 }
 
-.column li {
-  font-size: 12px;
-
-  a {
-    text-decoration-line: underline;
-  }
-}
-
-.game-card-column {
-  padding: 0.25rem;
-  border-bottom: solid #adadad;
-  border-width: 1px;
-  font-size: 14px;
-}
-
 .edit-information {
   font-size: 12px;
-}
-
-.password-information {
-  font-size: 12px;
-  font-weight: 700;
-
-  i {
-  color: #f14668;
+  background-color: $primary;
+  color: white;
+  padding: .5rem 0;
+  &.is-danger {
+    background-color: $danger;
   }
 }
 

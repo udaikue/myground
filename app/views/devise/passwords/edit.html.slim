@@ -1,28 +1,28 @@
-header.page-header
-  .container
-    h1.page-header__title
-      = t('title.change_password')
-
 .page-body
   .container
-    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-      = render 'devise/shared/error_messages', resource: resource
-      = f.hidden_field :reset_password_token
-      .field
-        label.label
-          = f.label :password, '新しいパスワード'
-          - if @minimum_password_length
-            em
-              = @minimum_password_length
-              = t('information.minimum_character')
-        .control
-          = f.password_field :password, autofocus: true, autocomplete: 'new-password', class: 'input is-small'
-      .field
-        label.label
-          = f.label :password_confirmation, '新しいパスワード(確認)'
-        .control
-          = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'input is-small'
-      .actions
-        = f.submit t('button.change_password'), class: 'button is-info'
-
-    = render 'devise/shared/links'
+    .auth-form
+      .auth-form__header
+        = t('title.change_password')
+      .auth-form__body
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+          = render 'devise/shared/error_messages', resource: resource
+          = f.hidden_field :reset_password_token
+          .field
+            label.label
+              = f.label :password, '新しいパスワード'
+              - if @minimum_password_length
+                em
+                  = @minimum_password_length
+                  = t('information.minimum_character')
+            .control
+              = f.password_field :password, autofocus: true, autocomplete: 'new-password', class: 'input'
+          .field
+            label.label
+              = f.label :password_confirmation, '新しいパスワード(確認)'
+            .control
+              = f.password_field :password_confirmation, autocomplete: 'new-password', class: 'input'
+          .actions
+            = f.submit t('button.change_password'), class: 'button is-primary'
+    .auth-links
+      ul.auth-links__items
+        = render 'devise/shared/links'

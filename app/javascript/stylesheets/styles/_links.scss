@@ -1,0 +1,12 @@
+.links {
+  margin-bottom: 1rem;
+}
+
+.links__item {
+  font-size: .875rem;
+  padding-bottom: .25rem;
+  border-bottom: 1px dashed #d9d9d9;
+  .links__item + & {
+    margin-top: .25rem;
+  }
+}

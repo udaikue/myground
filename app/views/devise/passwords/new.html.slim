@@ -1,17 +1,19 @@
-header.page-header
-  .container
-    h1.page-header__title
-      = t('title.forgot_password')
-
 .page-body
   .container
-    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-      = render 'devise/shared/error_messages', resource: resource
-      .field
-        label.label
-          = f.label :email
-        .control
-          = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input is-small'
-      .actions
-        = f.submit t('button.send_reset_password'), class: 'button is-info'
-    = render 'devise/shared/links'
+    .auth-form
+      .auth-form__header
+        = t('title.forgot_password')
+      .auth-form__body
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = render 'devise/shared/error_messages', resource: resource
+          .field
+            label.label
+              = f.label :email
+            .control
+              = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input'
+          .actions
+            = f.submit t('button.send_reset_password'), class: 'button is-primary'
+
+    .auth-links
+      ul.auth-links__items
+        = render 'devise/shared/links'

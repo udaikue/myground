@@ -1,32 +1,35 @@
-header.page-header
-  .container
-    h1.page-header__title
-      = t('title.log_in')
-
 .alert
   = alert
 
 .page-body
   .container
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field
-        label.label
-          = f.label :email
-        .control
-          = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input is-small'
-      .field
-        label.label
-          = f.label :password
-        .control
-          = f.password_field :password, autocomplete: 'current-password', class: 'input is-small'
-        - if devise_mapping.rememberable?
-        .field
-          .control
-            label.checkbox
-              = f.check_box :remember_me
-              = f.label :remember_me, class: 'checkbox'
-      .actions
-        = f.submit t('button.log_in'), class: 'button is-primary'
-    = render 'devise/shared/links'
+    .auth-form
+      .auth-form__header
+        = t('title.log_in')
+      .auth-form__body
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            label.label
+              = f.label :email
+            .control
+              = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input'
+          .field
+            label.label
+              = f.label :password
+            .control
+              = f.password_field :password, autocomplete: 'current-password', class: 'input'
+              = link_to t('button.forgot_password'), new_password_path(resource_name)
+          - if devise_mapping.rememberable?
+            .field
+              .control
+                label.checkbox
+                  = f.check_box :remember_me
+                  = f.label :remember_me, class: 'checkbox'
+          .actions
+            = f.submit t('button.log_in'), class: 'button is-primary'
 
-    = link_to t('button.back'), root_path
+    .auth-links
+      ul.auth-links__items
+        = render 'devise/shared/links'
+        li.auth-links__item
+          = link_to t('button.back'), root_path

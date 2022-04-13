@@ -1,4 +1,5 @@
-= render partial: 'shared/tabs', locals: { user: @user }
+- if current_user
+  = render partial: 'shared/tabs', locals: { user: @user }
 
 header.page-header
   .container
@@ -6,19 +7,7 @@ header.page-header
       | みんなの新着日記
 
 .page-body
-  .container
-    - @diaries.map do |diary|
-      - game = Game.find(diary.game_id)
-      .index-container.diary-index__title
-        a href="/#{User.find(diary.user_id).username}/diaries/#{diary.id}"
-          span.diary-index__date
-            = index_game_date(game)
-          span.diary-index__card
-            |  #{index_game_card(game)}
-          br
-          span.diary-index__ballpark
-            | #{index_game_ballpark(game)} #{index_diary_username(diary)}
-    br
-  .container
-    - if current_user
-      = link_to '+', new_diary_path(current_user&.username), class: 'button is-primary plus'
+  = render '/diaries/diaries', diaries: @diaries
+
+  - if current_user
+    = render '/diaries/create_diary_action'
