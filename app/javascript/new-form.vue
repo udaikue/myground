@@ -24,13 +24,13 @@
             <div class='field'>
               <p class='label'>URL</p>
               <div class='control'>
-                <input type='text' class='input' v-model='url'>
+                <input type='text' class='input' v-model='url' placeholder='https://www.hiroshima-athlete.com/articles/-/3001'>
               </div>
             </div>
             <div class='field'>
               <p class='label'>タイトル</p>
               <div class='control'>
-                <input type='text' class='input' v-model='title'>
+                <input type='text' class='input' v-model='title' placeholder='カープが再び輝くため必要となる會澤翼の力'>
               </div>
             </div>
             <div class='field'>

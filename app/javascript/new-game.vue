@@ -11,7 +11,7 @@
             <div class='game-card-selector__rows'>
               <div class='game-card-selector__row' v-for='game in gameCards' :key='game.id' @click='getScore(game.id)'>
                 <div class='game-card-selector__column'>{{ getTeamName(game.team_home_id) }}</div>
-                <div class='game-card-selector__column'>{{ game.score_home }} - {{ game.score_visitor }}</div>
+                <div class='game-card-selector__column' id='game-card'>{{ game.score_home }} - {{ game.score_visitor }}</div>
                 <div class='game-card-selector__column'>{{ getTeamName(game.team_visitor_id) }}</div>
               </div>
             </div>

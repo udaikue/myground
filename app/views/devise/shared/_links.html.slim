@@ -5,7 +5,7 @@
   li.auth-links__item
     = link_to t('button.sign_up'), new_registration_path(resource_name)
 - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-  li.auth-links__item
+  li.auth-links__item.forgot-password
     = link_to t('button.forgot_password'), new_password_path(resource_name)
 - if devise_mapping.confirmable? && controller_name != 'confirmations'
   li.auth-links__item

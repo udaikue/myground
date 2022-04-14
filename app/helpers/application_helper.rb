@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def index_game_card(game)
-    "#{Team.find(game.team_home_id).name}VS#{Team.find(game.team_visitor_id).name}"
+    "#{Team.find(game.team_home_id).name} #{game.score_home} - #{game.score_visitor} #{Team.find(game.team_visitor_id).name}"
   end
 
   def index_game_ballpark(game)

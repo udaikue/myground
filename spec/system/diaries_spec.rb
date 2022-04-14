@@ -19,7 +19,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示される' do
-        expect(page).to have_content "#{Time.zone.today.year}/#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
+        expect(page).to have_content "#{Time.zone.today.year}/#{Time.zone.today.month}/#{Time.zone.today.day}"
       end
     end
   end
@@ -32,7 +32,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示される' do
-        expect(page).to have_content "#{Time.zone.today.year}/#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
+        expect(page).to have_content "#{Time.zone.today.year}/#{Time.zone.today.month}/#{Time.zone.today.day}"
       end
     end
 
@@ -43,7 +43,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '日記が表示されない' do
-        expect(page).to have_no_content "#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
+        expect(page).to have_no_content "#{Time.zone.today.month}/#{Time.zone.today.day}"
       end
 
       it '本人がログイン時は表示される' do
@@ -53,7 +53,7 @@ describe '観戦日記管理', type: :system do
         click_button 'ログイン'
 
         visit diaries_path(@user.username)
-        expect(page).to have_content "#{Time.zone.today.year}/#{Time.zone.today.month}/#{Time.zone.today.day} ロッテVS広島"
+        expect(page).to have_content "#{Time.zone.today.year}/#{Time.zone.today.month}/#{Time.zone.today.day}"
       end
     end
 
@@ -63,7 +63,7 @@ describe '観戦日記管理', type: :system do
       end
 
       it '「まだ日記はありません。」と表示される' do
-        expect(page).to have_content 'まだ日記はありません。'
+        expect(page).to have_content 'まだ日記はありません'
       end
     end
   end
@@ -116,7 +116,7 @@ describe '観戦日記管理', type: :system do
 
       it '日記を作成できる' do
         within '#game-cards' do
-          find('.game-card').click
+          find('#game-card').click
         end
         fill_in 'diary[comment]', with: 'テスト日記です。'
         click_button '保存'
