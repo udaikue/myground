@@ -21,12 +21,20 @@
   font-size: 12px;
 }
 
-#error_explanation {
+.error_explanation {
+  background-color: $primary;
+  color: #ffffff;
+  padding: .5rem .25rem;
+
   h2 {
-    font-size: small;
+    font-size: 14px;
   }
 
   li {
-    font-size: small;
+    list-style: circle;
   }
+}
+
+.error_explanation__details {
+  padding: 0 1.75rem;
 }

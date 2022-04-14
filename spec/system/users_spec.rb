@@ -13,7 +13,7 @@ describe 'ユーザー管理', type: :system do
         fill_in 'Eメール', with: 'abc@example.com'
         fill_in 'ユーザー名', with: 'abc'
         fill_in 'パスワード', with: 'abc123'
-        fill_in 'パスワード（確認用）', with: 'abc123'
+        fill_in '確認のためパスワードを再度入力してください', with: 'abc123'
         click_button '登録'
       end
 
@@ -29,7 +29,7 @@ describe 'ユーザー管理', type: :system do
         fill_in 'Eメール', with: 'abc@example.com'
         fill_in 'ユーザー名', with: 'abc'
         fill_in 'パスワード', with: 'abc123'
-        fill_in 'パスワード（確認用）', with: 'abc123'
+        fill_in '確認のためパスワードを再度入力してください', with: 'abc123'
         click_button '登録'
       end
 

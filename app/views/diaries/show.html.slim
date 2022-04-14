@@ -17,7 +17,7 @@ header.page-header
     .edit-information
       .container
         .edit-information__inner
-          | この非公開です。
+          | この日記は非公開です。
 .page-body
   .diary
     header.diary-header
@@ -26,7 +26,7 @@ header.page-header
           span.diary-header__date
             | #{@game.date.year}年#{@game.date.month}月#{@game.date.day}日(#{@game_wday})
           span.diary-header__card
-            | #{Team.find(@game.team_home_id).name}VS#{Team.find(@game.team_visitor_id).name}
+            | #{Team.find(@game.team_home_id).name} #{@game.score_home} - #{@game.score_visitor} #{Team.find(@game.team_visitor_id).name}
           span.diary-header__ballpark
             | @#{Ballpark.find(@game.ballpark_id).name}
     .diary__items
@@ -83,17 +83,17 @@ header.page-header
                   th.record-element
                     | 勝利投手
                   td.record-element
-                    = @game.winning_pitcher
+                    = @game.winning_pitcher.nil? ? '-' : @game.winning_pitcher
                 tr
                   th.record-element
                     | 敗戦投手
                   td.record-element
-                    = @game.losing_pitcher
+                    = @game.losing_pitcher.nil? ? '-' : @game.losing_pitcher
                 tr
                   th.record-element
                     | セーブ
                   td.record-element
-                    = @game.saving_pitcher
+                    = @game.saving_pitcher.nil? ? '-' : @game.saving_pitcher
 
           .diary__item
             h2.diary__item-title
@@ -104,12 +104,12 @@ header.page-header
                   th.record-element
                     = Team.find(@game.team_visitor_id).name
                   td.record-element
-                    = @game.homerun_visitor
+                    = @game.homerun_visitor.nil? ? '-' : @game.homerun_visitor
                 tr
                   th.record-element
                     = Team.find(@game.team_home_id).name
                   td.record-element
-                    = @game.homerun_home
+                    = @game.homerun_home.nil? ? '-' : @game.homerun_home
 
           .diary__item
             h2.diary__item-title

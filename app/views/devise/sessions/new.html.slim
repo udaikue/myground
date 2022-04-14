@@ -3,6 +3,7 @@
 
 .page-body
   .container
+    = render 'devise/shared/auth_page_header'
     .auth-form
       .auth-form__header
         = t('title.log_in')
@@ -18,7 +19,7 @@
               = f.label :password
             .control
               = f.password_field :password, autocomplete: 'current-password', class: 'input'
-              = link_to t('button.forgot_password'), new_password_path(resource_name)
+              = link_to t('button.forgot_password'), new_password_path(resource_name), class: 'forgot-password'
           - if devise_mapping.rememberable?
             .field
               .control

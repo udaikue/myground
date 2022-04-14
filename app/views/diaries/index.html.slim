@@ -13,9 +13,11 @@ header.page-header
     .empty-message
       .container
         .block.has-text-centered
-          | まだ日記はありません。
+          | まだ日記はありません
           br
-          i.far.fa-meh.fa-5x
+          br
+          - if my_diary?
+            = link_to '日記を作成する', new_diary_path(current_user&.username), class: 'button is-normal is-primary'
 
   - if my_diaries_index?
     = render '/diaries/create_diary_action'
