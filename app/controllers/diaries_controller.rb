@@ -8,7 +8,7 @@ class DiariesController < ApplicationController
 
   def show
     @game = Game.find(@diary.game_id)
-    @game_wday = set_day_of_week
+    @game_wday = convert_day_of_week
     @scores = Score.where('game_id = ?', @diary.game_id)
     set_display_innings
   end
@@ -43,7 +43,7 @@ class DiariesController < ApplicationController
 
   private
 
-  def set_day_of_week
+  def convert_day_of_week
     day_of_week = %w[日 月 火 水 木 金 土]
     day_of_week[@game.date.wday]
   end
