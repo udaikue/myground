@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    @diaries = Diary.where('published = ?', true)
+    @diaries = Diary.published
   end
 end

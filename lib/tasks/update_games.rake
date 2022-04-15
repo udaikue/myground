@@ -1,27 +1,26 @@
 # frozen_string_literal: true
 
-require_relative '../url'
-require_relative '../db'
-require_relative '../search'
-require_relative '../result'
+require_relative '../../app/models/game_card'
+require_relative '../../app/models/game_result'
 
-desc 'Heroku scheduler add-on'
-task update_scraping_and_game: :environment do
-  url = URL.new
-  # 試合がなければその後の処理は実行しない
-  next if url.today_cards.empty?
+namespace :myground do
+  desc 'Heroku scheduler add-on'
+  task update_scraping_and_game: :environment do
+    game_card = GameCard.new
+    game_url_array = game_card.today_cards
+    # 試合がなければその後の処理は実行しない
+    next if game_url_array.empty?
 
-  DB.new(url.today_cards)
-  search = Search.new
-  result = Result.new
-  result.create_games(search.responsed_urls)
-end
+    game_card.save_scrapings(game_url_array)
+    game_result = GameResult.new
+    game_result.create_games(game_result.responsed_urls)
+  end
 
-task update_game: :environment do
-  search = Search.new
-  # scrapingsテーブルに未登録分がなければその後の処理は実行しない
-  next if search.scrapings.empty?
+  task update_game: :environment do
+    game_result = GameResult.new
+    # scrapingsテーブルに未対応分がなければその後の処理は実行しない
+    next if game_result.scrapings.empty?
 
-  result = Result.new
-  result.create_games(search.responsed_urls)
+    game_result.create_games(game_result.responsed_urls)
+  end
 end

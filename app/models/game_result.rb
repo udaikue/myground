@@ -2,8 +2,24 @@
 
 require 'open-uri'
 require 'nokogiri'
+require 'net/http'
 
-class Result
+class GameResult
+  attr_reader :scrapings
+
+  def initialize
+    @scrapings = Scraping.where('game_date = ? and done = ?', DateTime.now, false)
+  end
+
+  def responsed_urls
+    responsed_urls = []
+    @scrapings.each do |scraping|
+      response = Net::HTTP.get_response(URI.parse(scraping.url))
+      responsed_urls << scraping.url if response.code == '200'
+    end
+    responsed_urls
+  end
+
   def create_games(urls)
     urls.each do |url|
       html = URI.parse(url).open.read
@@ -45,7 +61,6 @@ class Result
 
   def fetch_game_date
     @game.date = DateTime.now
-    # @game.date = '2022-3-31'
   end
 
   def fetch_ballpark
