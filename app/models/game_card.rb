@@ -4,15 +4,15 @@ require 'open-uri'
 require 'nokogiri'
 
 class GameCard
-  def initialize
+  def this_years_schedule
     schedule_url = 'https://baseball-freak.com/game/'
 
     schedule_html = URI.parse(schedule_url).open.read
-    schedule_doc = Nokogiri::HTML.parse(schedule_html)
+    @schedule_doc = Nokogiri::HTML.parse(schedule_html)
 
     @schedule = []
     # 今シーズンの全日程を取得(配列)
-    schedule_doc.css('.schedule tr').each do |date|
+    @schedule_doc.css('.schedule tr').each do |date|
       @schedule << date.css('td').text
     end
   end
