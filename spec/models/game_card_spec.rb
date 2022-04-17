@@ -6,7 +6,8 @@ RSpec.describe GameCard, type: :model do
   describe '正常系' do
     before do
       @game_card = GameCard.new
-      @game_card.instance_variable_set('@schedule', ["#{DateTime.now.month}月#{DateTime.now.day}日(土)オ - ソ京セラD大阪18:00 #{DateTime.now.month}月#{DateTime.now.day}日(土)"])
+      @schedule = ["#{DateTime.now.month}月#{DateTime.now.day}日(土)オ - ソ京セラD大阪18:00 #{DateTime.now.month}月#{DateTime.now.day}日(土)"]
+      @game_card.instance_variable_set('@schedule', @schedule)
     end
 
     it 'today_cardsメソッドを実行すると試合URLを返す' do
