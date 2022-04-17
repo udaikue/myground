@@ -10,7 +10,7 @@ class DiariesController < ApplicationController
     @game = Game.find(@diary.game_id)
     @game_wday = convert_day_of_week
     @scores = Score.where('game_id = ?', @diary.game_id)
-    set_display_innings
+    calculate_display_innings
   end
 
   def new; end
@@ -48,7 +48,7 @@ class DiariesController < ApplicationController
     day_of_week[@game.date.wday]
   end
 
-  def set_display_innings
+  def calculate_display_innings
     @display_innings = [9, @scores.length].max
   end
 

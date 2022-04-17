@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
-require_relative '../../app/models/game_card'
-require_relative '../../app/models/game_result'
-
 namespace :myground do
   desc 'Heroku scheduler add-on'
   task update_scraping_and_game: :environment do
     game_card = GameCard.new
+    game_card.this_years_schedule
     game_url_array = game_card.today_cards
     # 試合がなければその後の処理は実行しない
     next if game_url_array.empty?
