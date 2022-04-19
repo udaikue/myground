@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class DiariesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_diaries, only: %i[index]
   before_action :set_diary, only: %i[show edit update destroy]
 
@@ -57,15 +58,10 @@ class DiariesController < ApplicationController
   end
 
   def set_diaries
-    if (current_user.present? && current_user.username == params[:username]) || params[:username].nil?
-      @diaries = Diary.where('user_id = ?', current_user.id)
-    else
-      @user = User.find_by(username: params[:username])
-      @diaries = Diary.where('user_id = ? and published = ?', @user.id, true)
-    end
+    @diaries = Diary.where('user_id = ?', current_user.id)
   end
 
   def diary_params
-    params.require(:diary).permit(:id, :comment, :published, :game_id, links_attributes: %i[id url title _destroy])
+    params.require(:diary).permit(:id, :comment, :game_id, links_attributes: %i[id url title _destroy])
   end
 end

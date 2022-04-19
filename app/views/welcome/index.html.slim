@@ -7,7 +7,3 @@
         = link_to '登録してはじめる', new_user_registration_path, class: 'button is-normal is-fullwidth is-primary'
       .visitor-actions__sub-action
         = link_to '登録済の方はこちらからログイン', new_user_session_path, class: ''
-
-  = render '/diaries/diaries', diaries: @diaries, title: '新着日記' do
-    .diaries__more
-      = link_to 'もっとみる', latest_diaries_path, class: 'diaries__more-link'

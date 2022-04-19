@@ -2,7 +2,7 @@ header.header
   .container
     nav.navbar
       .navbar-brand
-        = link_to latest_diaries_path, class: 'navbar-brand__logo-link' do
+        = link_to diaries_path(current_user.username), class: 'navbar-brand__logo-link' do
           = image_tag('logo.png', class: 'navbar-brand__logo-image')
         .navbar-burger(aria-label="menu" data-target="menu")
           i.fas.fa-user

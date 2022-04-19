@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
     authenticated :user do
-      root to: 'home#index', as: :authenticated_root
+      root to: 'diaries#index', as: :authenticated_root
     end
   end
 
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     resources :diaries, only: %i[show]
   end
 
-  get '/diaries', to: 'home#index', as: 'latest_diaries'
   scope ':username' do
     resources :diaries
   end
