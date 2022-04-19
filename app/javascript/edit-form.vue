@@ -10,7 +10,7 @@
             <div class='diary__item'>
               <label class='diary__item-title'>日記</label>
               <div class='control'>
-                <textarea class='textarea' name='diary[comment]' v-bind:value='diary.comment'></textarea>
+                <textarea class='textarea' name='diary[comment]' v-bind:value='diary.comment' id='diary_comment'></textarea>
               </div>
             </div>
 
@@ -51,16 +51,6 @@
               </div>
               <div class='field'>
                 <input type='button' @click='addLink()' value='リンク追加' class='button is-small'>
-              </div>
-            </div>
-
-            <div class='diary__item'>
-              <div class='control'>
-                <label class='diary__item-title'>
-                <input name="diary[published]" type="hidden" value="0">
-                <input type="checkbox" value="1" name="diary[published]" v-bind:checked='diary.published'>
-                公開する
-                </label>
               </div>
             </div>
 

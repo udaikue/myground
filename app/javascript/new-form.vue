@@ -39,15 +39,6 @@
           </div>
 
           <div class='diary__item'>
-            <div class='control'>
-              <label class='checkbox'>
-                <input type='checkbox' name='diary[published]'>
-                公開する
-              </label>
-            </div>
-          </div>
-
-          <div class='diary__item'>
             <div class='buttons'>
               <button class='button is-primary'>保存</button>
               <button class='button is-gray-light is-small' type='button' onclick='history.back()'>キャンセル</button>
@@ -73,7 +64,6 @@ export default {
       key: 0,
       links: [],
       comment: '',
-      published: false,
     }
   },
   methods: {

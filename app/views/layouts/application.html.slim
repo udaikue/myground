@@ -24,7 +24,7 @@ html prefix="og: https://ogp.me/ns#"
       .wrapper__start
         - if header?
           = render 'shared/header'
-        - if notice
+        - if alert || notice
           = render 'shared/flash'
         = yield
       .wrapper__end

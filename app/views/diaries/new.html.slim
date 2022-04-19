@@ -1,9 +1,10 @@
-= render partial: 'shared/tabs', locals: { user: @user }
-
 header.page-header
   .container
     h1.page-header__title
       = t('title.new_diary')
 
 .page-body
-  #js-new-diary(data-diaries-path="#{diaries_path(username: current_user.username)}")
+  - if my_diary?
+    #js-new-diary(data-diaries-path="#{diaries_path(username: current_user.username)}")
+  - else
+    = render '/shared/can_not_display'

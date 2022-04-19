@@ -1,13 +1,15 @@
-= render partial: 'shared/tabs', locals: { user: @user }
-
 header.page-header
   .container
     h1.page-header__title
       = t('title.edit_diary')
 
-.edit-information
-  .container
-    .edit-information__inner
-      | 試合の再選択はできません。試合を変更する場合は日記を削除して、作り直してください。
-.page-body
-  #js-edit-diary(data-diaries-path="#{diaries_path(username: current_user.username)}", data-diary-id="#{@diary.id}")
+- if my_diary?
+  .edit-information
+    .container
+      .edit-information__inner
+        | 試合の再選択はできません。試合を変更する場合は日記を削除して、作り直してください。
+  .page-body
+    #js-edit-diary(data-diaries-path="#{diaries_path(username: current_user.username)}", data-diary-id="#{@diary.id}")
+- else
+  .page-body
+    = render '/shared/can_not_display'
