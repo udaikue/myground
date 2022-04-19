@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :diary do
     comment { '菊池の守備がいい！' }
-    published { 'true' }
+    published { 'false' }
   end
 end
