@@ -5,10 +5,8 @@ require 'nokogiri'
 require 'net/http'
 
 class GameResult
-  attr_reader :scrapings
-
   def responsed_urls
-    scrapings = Scraping.where('game_date = ? and done = ?', DateTime.now, false)
+    scrapings = Scraping.not_done
 
     responsed_urls = []
     scrapings.each do |scraping|
