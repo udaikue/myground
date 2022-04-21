@@ -50,6 +50,7 @@
           </div>
         </div>
 
+        <div class='diary-header diary-header__title' v-if='result'>{{ cardMonth }}月{{ cardDate }}日の試合</div>
         <div class='diary__item' v-if='result'>
           <h2 class='diary__item-title'>スコア</h2>
           <table class='table game-result-table score-board-table is-fullwidth is-bordered' id='score-board'>
