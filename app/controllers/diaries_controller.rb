@@ -58,7 +58,7 @@ class DiariesController < ApplicationController
   end
 
   def set_diaries
-    @diaries = Diary.where('user_id = ?', current_user.id)
+    @diaries = Diary.where(user_id: current_user.id).order(id: :desc)
   end
 
   def diary_params

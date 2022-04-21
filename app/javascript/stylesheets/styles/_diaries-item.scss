@@ -71,3 +71,29 @@
   font-size: .75rem;
   font-weight: 400;
  }
+
+.diary-link-selector {
+  display: flex;
+}
+
+.diary-link-selector__item {
+  font-size: 1rem;
+  
+  > div {
+    padding: .5rem;
+  }
+  &:nth-child(1) {
+    flex: 1;
+    text-align: left;
+    color: $link;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  &:nth-child(2) {
+    flex: 1;
+    text-align: right;
+    color: $link;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
