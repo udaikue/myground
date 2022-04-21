@@ -7,10 +7,10 @@ class Diary < ApplicationRecord
   accepts_nested_attributes_for :links, allow_destroy: true
 
   def previous
-    Diary.where('id < ? and user_id = ?', id, user_id).order(id: :desc).first
+    Diary.where(id: ...id, user_id: user_id).order(id: :desc).first
   end
 
   def next
-    Diary.where('id > ? and user_id = ?', id, user_id).order(id: :asc).first
+    Diary.where(id: id.., user_id: user_id).order(id: :asc).second
   end
 end

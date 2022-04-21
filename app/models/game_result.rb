@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'open-uri'
-require 'nokogiri'
 require 'net/http'
 
 class GameResult
@@ -75,7 +74,7 @@ class GameResult
   end
 
   def set_game_date
-    @game.date = DateTime.now
+    @game.date = Date.current
   end
 
   def convert_ballpark_name_to_id
