@@ -122,10 +122,10 @@ header.page-header
                 .diary-link-selector__item
                   - if @diary.next.present?
                     = link_to '次の日記 >', diary_path(current_user.username, @diary.next)
-                    
+
             .diary__item
               .buttons
-                = link_to t('button.edit'), edit_diary_path(params[:username]), class: 'button is-primary'
+                = link_to t('button.edit'), edit_diary_path(current_user.username), class: 'button is-primary'
               = link_to t('button.back'), :back, class: 'button is-small'
 
   - else

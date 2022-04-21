@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'open-uri'
-require 'nokogiri'
 
 class GameCard
   def this_years_schedule
@@ -18,11 +17,11 @@ class GameCard
   end
 
   def today_cards
-    today_element = @schedule.grep(/#{DateTime.now.month}月#{DateTime.now.day}日/)
+    today_element = @schedule.grep(/#{Date.current.month}月#{Date.current.day}日/)
 
     today_cards = []
     today_element.to_s.gsub(/\d+?月+\d+?日\(.\)|\d+?|京セラD大阪|楽天生命パーク|中止/, '').scan(/巨|ヤ|D|中|阪|広|日|楽|西|ロ|オ|ソ/).each_slice(2) do |g|
-      path = DateTime.now.strftime('%y%m%d') + g.join('-')
+      path = Date.current.strftime('%y%m%d') + g.join('-')
       url = "https://baseball-freak.com/game/#{path}.html"
       today_cards << url.gsub(/巨|ヤ|D|中|阪|広|日|楽|西|ロ|オ|ソ/,
                               '巨' => 'g',
@@ -47,7 +46,7 @@ class GameCard
 
       scraping = Scraping.new
       scraping.url = url
-      scraping.game_date = DateTime.now
+      scraping.game_date = Date.current
       scraping.save
     end
   end
