@@ -143,7 +143,7 @@ export default {
     return {
       games: [],
       scores: [],
-      gamesForCalendarMonth: [],
+      gamesForDisplayMonth: [],
       currentYear: this.getCurrentYear(),
       currentMonth: this.getCurrentMonth(),
       cardYear: this.getCurrentYear(),
@@ -191,7 +191,7 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           this.games = json
-          this.gamesForCalendarMonth = json
+          this.gamesForDisplayMonth = json
           this.getGamesForDisplayMonth()
           this.getTodayCards()
         })
@@ -343,7 +343,7 @@ export default {
       let todaysGame = []
       if (date !== undefined) {
         let month = this.calendarMonth
-        todaysGame = this.gamesForCalendarMonth.filter((value) => {
+        todaysGame = this.gamesForDisplayMonth.filter((value) => {
           return value.date.includes(`${this.twoDigitsFormatter(month)}-${this.twoDigitsFormatter(date)}`)
         })
       }
