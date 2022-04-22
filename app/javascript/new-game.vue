@@ -42,7 +42,9 @@
                 </thead>
                 <tbody>
                   <tr v-for='week in monthlyCalendar' :key='week.id'>
-                    <td v-for='date in week.value' :key='date.key' @click='getGameCards(date.date)'>{{ date.date }}</td>
+                    <td v-for='date in week.value' :key='date.key' @click='getGameCards(date.date)'>
+                      <div :class='linkDecoration(date.date)'>{{ date.date }}</div>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -141,6 +143,7 @@ export default {
     return {
       games: [],
       scores: [],
+      gamesForCalendarMonth: [],
       currentYear: this.getCurrentYear(),
       currentMonth: this.getCurrentMonth(),
       cardYear: this.getCurrentYear(),
@@ -165,7 +168,6 @@ export default {
       const lastDay = new Date(this.calendarYear, this.calendarMonth, 0)
       return lastDay.getDate()
     },
-
   },
   mounted()  {
     this.getGameSchedule()
@@ -189,6 +191,8 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           this.games = json
+          this.gamesForCalendarMonth = json
+          this.getGamesForDisplayMonth()
           this.getTodayCards()
         })
         .catch((error) => {
@@ -253,7 +257,7 @@ export default {
     },
     getTodayCards() {
       this.gameCards = this.games.filter((value) => {
-        return value.date === this.formatMonthDate().join('-')
+        return value.date === `${this.cardYear}-${this.twoDigitsFormatter(this.cardMonth)}-${this.twoDigitsFormatter(this.cardDate)}`
       })
     },
     getDisplayScores(game_id) {
@@ -304,16 +308,8 @@ export default {
         }
       }
     },
-    formatMonthDate() {
-      // 日付を'YYYY-MM-DD'にフォーマット
-      const date = `${this.cardYear}-${this.cardMonth}-${this.cardDate}`.split('-')
-      if (date[1].length === 1) {
-        date.splice(1, 1, `0${date[1]}`)
-      }
-      if (date[2].length === 1) {
-        date.splice(2, 1, `0${date[2]}`)
-      }
-      return date
+    twoDigitsFormatter(digit) {
+      return digit.toString().length === 1 ? `0${digit}` : digit
     },
     getGameCards(date) {
       this.cardYear = this.calendarYear
@@ -321,7 +317,7 @@ export default {
       this.cardDate = date
 
       this.gameCards = this.games.filter((value) => {
-        return value.date === this.formatMonthDate().join('-')
+        return value.date === `${this.cardYear}-${this.twoDigitsFormatter(this.cardMonth)}-${this.twoDigitsFormatter(this.cardDate)}`
       })
       this.gameCards.sort(function(a, b) {
         if(a.team_home_id < b.team_home_id) return -1
@@ -335,6 +331,25 @@ export default {
         return value.id === game_id
       })
       this.getGameScores(game_id)
+    },
+    getGamesForDisplayMonth() {
+      let year = this.calendarYear
+      let month = this.calendarMonth
+      this.gamesForDisplayMonth.filter((value) => {
+        return value.date.includes(`${year}-${this.twoDigitsFormatter(month)}`)
+      })
+    },
+    linkDecoration(date) {
+      let todaysGame = []
+      if (date !== undefined) {
+        let month = this.calendarMonth
+        todaysGame = this.gamesForCalendarMonth.filter((value) => {
+          return value.date.includes(`${this.twoDigitsFormatter(month)}-${this.twoDigitsFormatter(date)}`)
+        })
+      }
+      if (todaysGame.length > 0) {
+        return 'game-date'
+      }
     },
     previousMonth() {
       if (this.calendarMonth === 1) {
