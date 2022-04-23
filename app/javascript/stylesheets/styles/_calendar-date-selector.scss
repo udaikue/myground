@@ -35,11 +35,12 @@
     text-align: center;
   }
   tbody td {
-    color: $link;
+    color: $text;
     cursor: pointer;
 
     .game-date {
       text-decoration: underline;
+      color: $link;
     }
   }
 
