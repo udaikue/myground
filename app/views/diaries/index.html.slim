@@ -15,8 +15,7 @@ header.page-header
             br
             br
             = link_to '日記を作成する', new_diary_path(current_user&.username), class: 'button is-normal is-primary'
-
     = render '/diaries/create_diary_action'
-
+    br
   - else
     = render '/shared/can_not_display'

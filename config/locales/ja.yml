@@ -32,6 +32,9 @@ ja:
             password_confirmation:
               blank: が入力されていません
               confirmation: が内容とあっていません
+            current_password:
+              blank: が入力されていません
+              invalid: は有効な値ではありません
         score:
           attributes:
             inning:
