@@ -6,3 +6,11 @@ p
 - else
   p
     = t('.message', email: @resource.email)
+p
+  | ------------------------------------
+p
+ = t('signature.description')
+p
+ = t('signature.name')
+p
+ = link_to t('signature.url'), t('signature.url')

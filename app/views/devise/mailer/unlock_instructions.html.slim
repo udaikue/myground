@@ -6,3 +6,11 @@ p
   = t('.instruction')
 p
   = link_to t('.action'), unlock_url(@resource, unlock_token: @token)
+p
+  | ------------------------------------
+p
+ = t('signature.description')
+p
+ = t('signature.name')
+p
+ = link_to t('signature.url'), t('signature.url')
