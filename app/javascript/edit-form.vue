@@ -72,7 +72,7 @@
         <div class='container'>
           <div class='diary__item'>
             <div class='control'>
-              <button class='button is-small' type='button' onclick="return confirm('本当に削除しますか?')">削除</button>
+              <button class='button is-small' onclick="return confirm('本当に削除しますか?')">削除</button>
             </div>
           </div>
         </div>
