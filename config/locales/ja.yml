@@ -76,3 +76,7 @@ ja:
   information:
     minimum_character: 文字以上
     leave_blank_if_not_change: 変更しない場合は不要
+  signature:
+    description: 自分だけの野球観戦日記を作ろう!!
+    name: My Ground
+    url: https://my-ground.herokuapp.com/
