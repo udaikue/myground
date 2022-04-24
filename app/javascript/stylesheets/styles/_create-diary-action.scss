@@ -1,14 +1,14 @@
 .create-diary-action {
   position: fixed;
-  bottom: 0;
+  bottom: 7rem;
   left: 0;
   right: 0;
+  pointer-events: none;
 }
 
 .create-diary-action__inner {
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 7rem;
 }
 
 .create-diary-action__link {
@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  pointer-events: all;
 }
 
 .create-diary-action__icon {
