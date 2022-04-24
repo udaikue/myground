@@ -39,6 +39,7 @@ end
 
 group :development do
   gem 'html2slim'
+  gem 'letter_opener_web', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'rubocop-fjord', require: false
   gem 'rubocop-rails', require: false
