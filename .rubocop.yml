@@ -9,4 +9,3 @@ inherit_gem:
 Metrics/BlockLength:
  Exclude:
    - "spec/**/*"
-   - "lib/tasks/myground.rake"
